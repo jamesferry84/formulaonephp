@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - formulaonepredictor@localhost" uuid="71179a3f-f0c9-4657-8d8f-945dc4c684fb">
+    <database-info product="MySQL" version="5.6.15-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="formulaonepredictor"/>
+    <table name="driver" schema="" catalog="formulaonepredictor" type="TABLE">
+      <column name="Name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Price" sqlType="DECIMAL" precision="5" scale="2" nullable="false" jdbcType="3"/>
+      <column name="Points" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="Team" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Wins" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="Name,Team"/>
+    </table>
+    <table name="racecalendar" schema="" catalog="formulaonepredictor" type="TABLE">
+      <column name="Date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="Country" sqlType="VARCHAR" precision="75" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="Country"/>
+    </table>
+    <table name="submissions" schema="" catalog="formulaonepredictor" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="UserName" sqlType="VARCHAR" precision="75" scale="0" nullable="false" jdbcType="12"/>
+      <column name="driver1" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="driver2" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="constructor1" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="constructor2" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="joker" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="Country" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="team" schema="" catalog="formulaonepredictor" type="TABLE">
+      <column name="Name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Price" sqlType="DECIMAL" precision="5" scale="2" nullable="false" jdbcType="3"/>
+      <primary-key name="PRIMARY" columns="Name"/>
+    </table>
+    <table name="users" schema="" catalog="formulaonepredictor" type="TABLE">
+      <column name="Id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="UserName" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Password" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Email" sqlType="VARCHAR" precision="120" scale="0" nullable="false" jdbcType="12"/>
+      <column name="teamname" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Activated" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="jokers" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="budget" sqlType="DECIMAL" precision="5" scale="2" nullable="false" jdbcType="3" def="NTUuMDA="/>
+      <column name="points" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="isadmin" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="Id"/>
+      <index name="UserName" unique="true" columns="UserName,Email"/>
+    </table>
+  </data-source>
+</component>

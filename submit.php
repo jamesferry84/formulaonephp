@@ -20,6 +20,7 @@ $today = date("y-m-d");
 $sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,1";
 $queryResult = $conn->query($sql);
 $numrows=mysqli_num_rows($queryResult);
+$country = "";
 
 while($row = mysqli_fetch_assoc($queryResult))
 {

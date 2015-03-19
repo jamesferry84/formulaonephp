@@ -7,4 +7,3 @@ session_destroy();
 header("location:login.php");
 
 include 'includes/footer.php';
-?>

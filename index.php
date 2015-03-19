@@ -1,6 +1,5 @@
 <?php
 
-//require 'template.html';
 include 'init.php';
 include 'functions/general.php';
 if (isset($_SESSION["username"]))
