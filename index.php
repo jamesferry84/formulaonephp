@@ -18,7 +18,10 @@ while($row = mysqli_fetch_assoc($queryResult))
 {
     $country =  $row["Country"];
 }
-$alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
+
+//For testing
+$alreadySubmitted = 0;
+//$alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
 
 /**
  * Created by PhpStorm.
@@ -57,6 +60,8 @@ $alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
                 <li class = "active"><a href="index.php">Home</a></li>
 
                 <li><a href="rules.php">Rules</a></li>
+                <li><a href="profile.php">Profile</a></li>
+                <li><a href="logout.php">Log Out</a></li>
                 <!--
                <li><a href="login.html">Log In</a></li>
                <li><a href="Register.html">Register</a></li>
@@ -170,7 +175,7 @@ $alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
                     <div class="form-group">
                         <label for = "driver" class = "col-lg-3 control-label">Driver 1:</label>
                         <div class = "col-lg-7">
-                            <select class="form-control" id="driver1DropDown" name="driver1">
+                            <select class="form-control" id="driver1DropDown" name="driver1" required="true">
                                 <option value="">Select</option>
                             </select>
                         </div>
@@ -180,7 +185,7 @@ $alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
                     <div class="form-group">
                         <label for = "driver" class = "col-lg-3 control-label">Driver 2:</label>
                         <div class = "col-lg-7">
-                            <select class="form-control" id="driver2DropDown" name="driver2">
+                            <select class="form-control" id="driver2DropDown" name="driver2" required="true">
                                 <option value="">Select</option>
                             </select>
                         </div>
@@ -190,7 +195,7 @@ $alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
                     <div class="form-group">
                         <label for = "constructor" class = "col-lg-3 control-label">Constructor 1:</label>
                         <div class = "col-lg-7">
-                            <select class="form-control" id="constructor1DropDown" name="constructor1">
+                            <select class="form-control" id="constructor1DropDown" name="constructor1" required="true">
                                 <option value="">Select</option>
                             </select>
                         </div>
@@ -200,7 +205,7 @@ $alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
                     <div class="form-group">
                         <label for = "constructor" class = "col-lg-3 control-label">Constructor 2:</label>
                         <div class = "col-lg-7">
-                            <select class="form-control" id="constructor2DropDown" name="constructor2">
+                            <select class="form-control" id="constructor2DropDown" name="constructor2" required="true">
                                 <option value="">Select</option>
                             </select>
                         </div>
