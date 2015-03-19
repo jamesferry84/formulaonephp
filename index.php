@@ -2,6 +2,13 @@
 
 //require 'template.html';
 include 'init.php';
+if (isset($_SESSION["username"]))
+{
+    // DO NOTHING
+}
+else{
+    header("location:login.php");
+}
 
 
 /**
@@ -40,7 +47,7 @@ include 'init.php';
             <ul class = "nav navbar-nav navbar-right">
                 <li class = "active"><a href="index.php">Home</a></li>
 
-                <li><a href="rules.html">Rules</a></li>
+                <li><a href="rules.php">Rules</a></li>
                 <!--
                <li><a href="login.html">Log In</a></li>
                <li><a href="Register.html">Register</a></li>
@@ -200,7 +207,7 @@ include 'init.php';
 </div>
 <div class = "navbar navbar-default navbar-fixed-bottom">
     <div class = "container">
-        <p class = "navbar-text pull-left">Please send e-mail to <a href="#contact" data-toggle="modal">pmc@cs.stir.ac.uk</a> to be registered to this website</p>
+        <p class = "navbar-text pull-left">Please send e-mail to <a href="mailto:meno38@sky.com" data-toggle="modal">meno38@sky.com</a> to be registered to this website</p>
     </div>
 </div>
 <script>
