@@ -2,6 +2,7 @@
 
 //require 'template.html';
 include 'init.php';
+include 'functions/general.php';
 if (isset($_SESSION["username"]))
 {
     // DO NOTHING
@@ -9,7 +10,15 @@ if (isset($_SESSION["username"]))
 else{
     header("location:login.php");
 }
+$sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,1";
+$queryResult = $conn->query($sql);
+$numrows=mysqli_num_rows($queryResult);
 
+while($row = mysqli_fetch_assoc($queryResult))
+{
+    $country =  $row["Country"];
+}
+$alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
 
 /**
  * Created by PhpStorm.
@@ -66,20 +75,11 @@ else{
         <p>Welcome to the University of Stirling's Computing Science and Mathematics department's Formula 1 Predictor League for the new and improved 2015 season!</p>
         <p> Next Race:
             <?php
-            $today = date("y-m-d");
-            $sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,1";
-            $queryResult = $conn->query($sql);
-            $numrows=mysqli_num_rows($queryResult);
-
-            while($row = mysqli_fetch_assoc($queryResult))
-            {
-                echo $row["Country"];
-            }
-
+            echo $country;
             ?>
         </p>
 
-        <a href="#chooseteam" data-toggle="modal" class = "btn btn-success">Choose Team</a>
+        <a href="#chooseteam" data-toggle="modal" class = "btn btn-success" <?php if ($alreadySubmitted == 1) echo 'disabled="true"' ?>>Choose Team</a>
     </div>
 </div>
 

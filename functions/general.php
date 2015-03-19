@@ -24,4 +24,16 @@ function get_drivers_and_constructors_with_prices()
     return $output;
 }
 
+function doesSubmissionExistForUser($username, $country)
+{
+    global $conn;
+    $sql = "SELECT * FROM submissions WHERE username = '$username' AND country = '$country'";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0)
+    {
+        return true;
+    }
+    return false;
+}
+
 ?>
