@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ae78f95-d753-498a-bbaf-9f7090b30b71" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/functions/general.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rules.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/footer.php" afterPath="$PROJECT_DIR$/includes/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init.php" afterPath="$PROJECT_DIR$/init.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="F1PredictorPhp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,15 +32,13 @@
           <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7875" vertical-offset="2894" max-vertical-offset="6171">
-                  <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
+                <state vertical-scroll-proportion="0.28977272" vertical-offset="867" max-vertical-offset="6885">
+                  <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
                   <folding>
-                    <marker date="1426752404168" expanded="true" signature="5556:5592" placeholder="select * fro..users..." />
-                    <marker date="1426752404168" expanded="true" signature="5556:5593" placeholder="select * fro..users..." />
-                    <marker date="1426752404168" expanded="true" signature="5556:5594" placeholder="select * fro..users..." />
-                    <marker date="1426752404168" expanded="true" signature="5556:5616" placeholder="select * fro..users..." />
-                    <marker date="1426752404168" expanded="true" signature="5556:5617" placeholder="select * fro..users..." />
-                    <marker date="1426752404168" expanded="true" signature="5556:5618" placeholder="select * fro..users..." />
+                    <marker date="1426753167903" expanded="true" signature="1959:2019" placeholder="select * fro..racecalendar..." />
+                    <marker date="1426753167903" expanded="true" signature="2836:2865" placeholder="select * fro..users..." />
+                    <marker date="1426753167903" expanded="true" signature="3832:3892" placeholder="select * fro..racecalendar..." />
+                    <marker date="1426753167903" expanded="true" signature="7114:7176" placeholder="select * fro..users..." />
                   </folding>
                 </state>
               </provider>
@@ -506,12 +499,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="4187" max-vertical-offset="5304">
           <caret line="223" column="45" selection-start-line="223" selection-start-column="45" selection-end-line="223" selection-end-column="45" />
           <folding>
-            <marker date="1426752404168" expanded="true" signature="5556:5592" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5593" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5594" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5616" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5617" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5618" placeholder="select * fro..users..." />
+            <marker date="1426753167903" expanded="true" signature="1959:2019" placeholder="select * fro..racecalendar..." />
+            <marker date="1426753167903" expanded="true" signature="2836:2865" placeholder="select * fro..users..." />
+            <marker date="1426753167903" expanded="true" signature="3832:3892" placeholder="select * fro..racecalendar..." />
+            <marker date="1426753167903" expanded="true" signature="7114:7176" placeholder="select * fro..users..." />
           </folding>
         </state>
       </provider>
@@ -598,12 +589,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="4187" max-vertical-offset="5304">
           <caret line="223" column="45" selection-start-line="223" selection-start-column="45" selection-end-line="223" selection-end-column="45" />
           <folding>
-            <marker date="1426752404168" expanded="true" signature="5556:5592" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5593" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5594" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5616" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5617" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5618" placeholder="select * fro..users..." />
+            <marker date="1426753167903" expanded="true" signature="1959:2019" placeholder="select * fro..racecalendar..." />
+            <marker date="1426753167903" expanded="true" signature="2836:2865" placeholder="select * fro..users..." />
+            <marker date="1426753167903" expanded="true" signature="3832:3892" placeholder="select * fro..racecalendar..." />
+            <marker date="1426753167903" expanded="true" signature="7114:7176" placeholder="select * fro..users..." />
           </folding>
         </state>
       </provider>
@@ -690,12 +679,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="2142" max-vertical-offset="2635">
           <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding>
-            <marker date="1426752404168" expanded="true" signature="5556:5592" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5593" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5594" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5616" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5617" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5618" placeholder="select * fro..users..." />
+            <marker date="1426753167903" expanded="true" signature="1959:2019" placeholder="select * fro..racecalendar..." />
+            <marker date="1426753167903" expanded="true" signature="2836:2865" placeholder="select * fro..users..." />
+            <marker date="1426753167903" expanded="true" signature="3832:3892" placeholder="select * fro..racecalendar..." />
+            <marker date="1426753167903" expanded="true" signature="7114:7176" placeholder="select * fro..users..." />
           </folding>
         </state>
       </provider>
@@ -782,12 +769,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1411" max-vertical-offset="2635">
           <caret line="104" column="50" selection-start-line="104" selection-start-column="50" selection-end-line="104" selection-end-column="50" />
           <folding>
-            <marker date="1426752404168" expanded="true" signature="5556:5592" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5593" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5594" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5616" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5617" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5618" placeholder="select * fro..users..." />
+            <marker date="1426753167903" expanded="true" signature="1959:2019" placeholder="select * fro..racecalendar..." />
+            <marker date="1426753167903" expanded="true" signature="2836:2865" placeholder="select * fro..users..." />
+            <marker date="1426753167903" expanded="true" signature="3832:3892" placeholder="select * fro..racecalendar..." />
+            <marker date="1426753167903" expanded="true" signature="7114:7176" placeholder="select * fro..users..." />
           </folding>
         </state>
       </provider>
@@ -998,15 +983,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7875" vertical-offset="2894" max-vertical-offset="6171">
-          <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.28977272" vertical-offset="867" max-vertical-offset="6885">
+          <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
           <folding>
-            <marker date="1426752404168" expanded="true" signature="5556:5592" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5593" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5594" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5616" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5617" placeholder="select * fro..users..." />
-            <marker date="1426752404168" expanded="true" signature="5556:5618" placeholder="select * fro..users..." />
+            <marker date="1426753167903" expanded="true" signature="1959:2019" placeholder="select * fro..racecalendar..." />
+            <marker date="1426753167903" expanded="true" signature="2836:2865" placeholder="select * fro..users..." />
+            <marker date="1426753167903" expanded="true" signature="3832:3892" placeholder="select * fro..racecalendar..." />
+            <marker date="1426753167903" expanded="true" signature="7114:7176" placeholder="select * fro..users..." />
           </folding>
         </state>
       </provider>

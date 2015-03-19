@@ -35,7 +35,7 @@ else{
 <body>
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container">
-        <a href="index.php" class="navbar-brand">F1 Predictor 2015</a>
+        <a href="index.php" class="navbar-brand">F1 Predictor 2015 <?php echo " - " . $_SESSION["username"] ?></a>
 
         <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
             <span class = "icon-bar"></span>
@@ -63,40 +63,84 @@ else{
 <div class="container">
     <div class="jumbotron text-center">
         <h1>Welcome to the F1 Predictor</h1>
-        <?php echo "<h1>Hello " . $_SESSION["username"] . "</h1>" ?>
         <p>Welcome to the University of Stirling's Computing Science and Mathematics department's Formula 1 Predictor League for the new and improved 2015 season!</p>
+        <p> Next Race:
+            <?php
+            $today = date("y-m-d");
+            $sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,1";
+            $queryResult = $conn->query($sql);
+            $numrows=mysqli_num_rows($queryResult);
+
+            while($row = mysqli_fetch_assoc($queryResult))
+            {
+                echo $row["Country"];
+            }
+
+            ?>
+        </p>
+
         <a href="#chooseteam" data-toggle="modal" class = "btn btn-success">Choose Team</a>
     </div>
 </div>
-<!--
+
 <div class = "container">
     <div class="row">
         <div class="col-md-6">
-            <h3><a href="#">Leaderboard</a></h3>
-                <div class="table-responsive ">
-                    <table class="table table-bordered">
-                        <tr class ="success">
+            <h3>Top 3</h3>
+            <div class="table-responsive ">
+                <table class="table table-bordered">
+                    <tr class ="success">
 
-                            <td>Name</td>
-                            <td>Points</td>
+                        <td>Name</td>
+                        <td>Points</td>
+                    </tr>
+                    <?php
+                    $today = date("y-m-d");
+                    $sql = "select * from users LIMIT 0,3";
+                    $queryResult = $conn->query($sql);
+                    $numrows=mysqli_num_rows($queryResult);
+
+                    while($row = mysqli_fetch_assoc($queryResult))
+                    {
+                        ?>
+                        <tr>
+                            <td> <?php echo $row["UserName"]?></td>
+                            <td> <?php echo $row["points"]?></td>
                         </tr>
-
-                    </table>
-                </div>
+                    <?php
+                    }
+                    ?>
+                </table>
+            </div>
         </div>
 
         <div class="col-md-6">
-            <h3><a href="#">Next 3 Races</a></h3>
-                <div class="table-responsive ">
-                    <table class="table table-bordered">
-                        <tr class ="success">
+            <h3>Next 3 Races</h3>
+            <div class="table-responsive ">
+                <table class="table table-bordered">
+                    <tr class ="success">
 
-                            <td>Date</td>
-                            <td>Country</td>
+                        <td>Date</td>
+                        <td>Country</td>
+                    </tr>
+                    <?php
+                    $today = date("y-m-d");
+                    $sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,3";
+                    $queryResult = $conn->query($sql);
+                    $numrows=mysqli_num_rows($queryResult);
+
+                    while($row = mysqli_fetch_assoc($queryResult))
+                    {
+                        ?>
+                        <tr>
+                            <td> <?php echo $row["Date"]?></td>
+                            <td> <?php echo $row["Country"]?></td>
                         </tr>
-
-                    </table>
-                </div>
+                    <?php
+                    }
+                    ?>
+                </table>
+            </div>
         </div>
 
 
@@ -109,7 +153,6 @@ else{
         </div>
     </div>
 </div>
--->
 
 
 
@@ -195,7 +238,6 @@ else{
                         </div>
                     </div>
                 </div>
-
 
                 <div class = "modal-footer">
                     <a href="#" class="btn btn-danger" data-dismiss = "modal">Cancel</a>
