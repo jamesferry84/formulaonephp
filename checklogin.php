@@ -37,4 +37,8 @@ if (empty($_POST) === false) {
     }
 
 }
+else
+{
+    header("location:login.php?");
+}
 
