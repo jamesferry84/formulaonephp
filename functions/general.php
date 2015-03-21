@@ -53,14 +53,13 @@ function check_login($username, $password)
     $result = $conn->query($sql);
 
 
-    if($result->num_rows >= 1){
+    if($result->num_rows == 1){
         $row = $result->fetch_assoc();
         $_SESSION["username"] = $row["UserName"];
         $_SESSION["admin"] = $row["isadmin"];
         header("location:index.php");
     }
     else {
-        $error = "Wrong Username or Password";
         header("location:login.php?");
     }
 }
@@ -85,6 +84,22 @@ function output_errors($errors) {
         $output[] = '<li>' . $error . '</li>';
     }
     return '<ul>' . implode('', $output) . '</ul>';
+}
+
+function is_user_admin($username) {
+    global $conn;
+    $sql="SELECT * FROM users WHERE Email='$username'";
+    $result = $conn->query($sql);
+
+
+    if($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+
+        if ($row["isadmin"] == 1) {
+            return true;
+        }
+    }
+    return false;
 }
 
 ?>

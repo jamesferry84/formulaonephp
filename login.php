@@ -1,6 +1,6 @@
 <?php
 include 'init.php';
-include 'functions/general';
+include 'functions/general.php';
 ?>
 
 <html>

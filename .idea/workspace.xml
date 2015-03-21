@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ae78f95-d753-498a-bbaf-9f7090b30b71" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/chooseteam.php" />
       <change type="DELETED" beforePath="C:\Users\James\PhpstormProjects\F1PredictorPhp\connect.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checklogin.php" afterPath="$PROJECT_DIR$/checklogin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/customScripts.js" afterPath="$PROJECT_DIR$/js/customScripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions/general.php" afterPath="$PROJECT_DIR$/functions/general.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init.php" afterPath="$PROJECT_DIR$/init.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/navbar.php" afterPath="$PROJECT_DIR$/includes/navbar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="F1PredictorPhp.iws" />
@@ -137,8 +131,8 @@
       <file leaf-file-name="init.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/init.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="170">
-              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+            <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="170">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -147,8 +141,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.26923" vertical-offset="0" max-vertical-offset="1972">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state vertical-scroll-proportion="-3.2692308" vertical-offset="51" max-vertical-offset="1972">
+              <caret line="8" column="1" selection-start-line="5" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
               <folding>
                 <marker date="1426939531865" expanded="true" signature="197:257" placeholder="select * fro..racecalendar..." />
                 <marker date="1426939531865" expanded="true" signature="1568:1618" placeholder="select * fro..users..." />
@@ -171,11 +165,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="navbar.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/navbar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="425">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.46896553" vertical-offset="0" max-vertical-offset="870">
+              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -194,8 +188,8 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.692307" vertical-offset="255" max-vertical-offset="2652">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="2652">
+              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -210,24 +204,25 @@
       <file leaf-file-name="checklogin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/checklogin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="663">
-              <caret line="8" column="42" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="42" />
+            <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="663">
+              <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="general.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="general.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/general.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2896552" vertical-offset="0" max-vertical-offset="1615">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.269231" vertical-offset="745" max-vertical-offset="1870">
+              <caret line="58" column="24" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="24" />
               <folding>
-                <marker date="1426946088109" expanded="true" signature="190:269" placeholder="SELECT * FRO..submissions..." />
-                <marker date="1426946088109" expanded="true" signature="453:496" placeholder="SELECT * FRO..users..." />
-                <marker date="1426946088109" expanded="true" signature="677:720" placeholder="SELECT * FRO..users..." />
-                <marker date="1426946088109" expanded="true" signature="1005:1073" placeholder="SELECT * FRO..users..." />
-                <marker date="1426946088109" expanded="true" signature="1525:1682" placeholder="INSERT INTO ..." />
+                <marker date="1426947545109" expanded="true" signature="190:269" placeholder="SELECT * FRO..submissions..." />
+                <marker date="1426947545109" expanded="true" signature="453:496" placeholder="SELECT * FRO..users..." />
+                <marker date="1426947545109" expanded="true" signature="677:720" placeholder="SELECT * FRO..users..." />
+                <marker date="1426947545109" expanded="true" signature="1005:1073" placeholder="SELECT * FRO..users..." />
+                <marker date="1426947545109" expanded="true" signature="1478:1635" placeholder="INSERT INTO ..." />
+                <marker date="1426947545109" expanded="true" signature="2029:2072" placeholder="SELECT * FRO..users..." />
               </folding>
             </state>
           </provider>
@@ -278,12 +273,12 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/customScripts.js" />
         <option value="$PROJECT_DIR$/includes/chooseteam.php" />
-        <option value="$PROJECT_DIR$/includes/navbar.php" />
-        <option value="$PROJECT_DIR$/init.php" />
-        <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/functions/general.php" />
         <option value="$PROJECT_DIR$/checklogin.php" />
         <option value="$PROJECT_DIR$/register.php" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/functions/general.php" />
+        <option value="$PROJECT_DIR$/init.php" />
+        <option value="$PROJECT_DIR$/includes/navbar.php" />
       </list>
     </option>
   </component>
@@ -955,14 +950,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/navbar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="425">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/chooseteam.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.076923" vertical-offset="490" max-vertical-offset="1700">
@@ -971,56 +958,6 @@
             <marker date="1426941175278" expanded="true" signature="2369:2431" placeholder="select * fro..users..." />
             <marker date="1426941175278" expanded="true" signature="3079:3141" placeholder="select * fro..users..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="170">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.26923" vertical-offset="0" max-vertical-offset="1972">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <marker date="1426939531865" expanded="true" signature="197:257" placeholder="select * fro..racecalendar..." />
-            <marker date="1426939531865" expanded="true" signature="1568:1618" placeholder="select * fro..users..." />
-            <marker date="1426939531865" expanded="true" signature="2585:2645" placeholder="select * fro..racecalendar..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307" vertical-offset="255" max-vertical-offset="2652">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/checklogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="663">
-          <caret line="8" column="42" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="646">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,17 +972,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308" vertical-offset="51" max-vertical-offset="1972">
+          <caret line="8" column="1" selection-start-line="5" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <marker date="1426939531865" expanded="true" signature="197:257" placeholder="select * fro..racecalendar..." />
+            <marker date="1426939531865" expanded="true" signature="1568:1618" placeholder="select * fro..users..." />
+            <marker date="1426939531865" expanded="true" signature="2585:2645" placeholder="select * fro..racecalendar..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="2652">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="646">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="170">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checklogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="663">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/functions/general.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2896552" vertical-offset="0" max-vertical-offset="1615">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+        <state vertical-scroll-proportion="-9.269231" vertical-offset="745" max-vertical-offset="1870">
+          <caret line="58" column="24" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="24" />
           <folding>
-            <marker date="1426946088109" expanded="true" signature="190:269" placeholder="SELECT * FRO..submissions..." />
-            <marker date="1426946088109" expanded="true" signature="453:496" placeholder="SELECT * FRO..users..." />
-            <marker date="1426946088109" expanded="true" signature="677:720" placeholder="SELECT * FRO..users..." />
-            <marker date="1426946088109" expanded="true" signature="1005:1073" placeholder="SELECT * FRO..users..." />
-            <marker date="1426946088109" expanded="true" signature="1525:1682" placeholder="INSERT INTO ..." />
+            <marker date="1426947545109" expanded="true" signature="190:269" placeholder="SELECT * FRO..submissions..." />
+            <marker date="1426947545109" expanded="true" signature="453:496" placeholder="SELECT * FRO..users..." />
+            <marker date="1426947545109" expanded="true" signature="677:720" placeholder="SELECT * FRO..users..." />
+            <marker date="1426947545109" expanded="true" signature="1005:1073" placeholder="SELECT * FRO..users..." />
+            <marker date="1426947545109" expanded="true" signature="1478:1635" placeholder="INSERT INTO ..." />
+            <marker date="1426947545109" expanded="true" signature="2029:2072" placeholder="SELECT * FRO..users..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/navbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46896553" vertical-offset="0" max-vertical-offset="870">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
