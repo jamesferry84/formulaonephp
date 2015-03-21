@@ -26,15 +26,10 @@ include 'includes/navbar.php';
 ?>
 
 <div class="container">
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center container">
         <h1>Welcome to the F1 Predictor</h1>
-        <p>Welcome to the University of Stirling's Computing Science and Mathematics department's Formula 1 Predictor League for the new and improved 2015 season!</p>
-        <p> Next Race:
-            <?php
-            echo $country;
-            ?>
-        </p>
-
+        <p> Next Race: <?php echo $country; ?></p>
+        <p >Submissions close in: <p id="clock"></p></p>
         <a href="chooseteam.php" class = "btn btn-success" <?php if ($alreadySubmitted == 1) echo 'disabled="true"' ?>>Choose Team</a>
     </div>
 </div>
@@ -100,12 +95,31 @@ include 'includes/navbar.php';
         </div>
     </div>
 </div>
+<div id="nextrace" style="display: none">
+    <?php
+    $today = date("y-m-d");
+    $sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,1";
+    $queryResult = $conn->query($sql);
+    $numrows=mysqli_num_rows($queryResult);
 
+    while($row = mysqli_fetch_assoc($queryResult))
+    {
+        echo $row["Date"];
+    }
+    ?>
+</div>
 
+</body>
+<script>
 
-
-
-<?php
-//include 'includes/chooseteam.php';
-include 'includes/footer.php';
-?>
+    var div = document.getElementById("nextrace");
+    var timeToNextRace = div.textContent;
+    var date = new Date(timeToNextRace);
+    date.setDate(date.getDate()-2);
+    $('#clock').countdown(date, function(event) {
+        $(this).html(event.strftime('%D days %H:%M:%S'));
+       // var totalHours = event.offset.totalDays * 24 + event.offset.hours;
+       // $(this).html(event.strftime(totalHours + ' hr %M min %S sec'));
+    });
+</script>
+</html>
