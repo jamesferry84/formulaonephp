@@ -52,7 +52,7 @@ include 'includes/navbar.php';
                         <div class="form-group">
                             <label for = "constructor" class = "col-lg-3 control-label">Constructor 2:</label>
                             <div class = "col-lg-5">
-                                <select class="form-control" id="constructor2DropDown" name="constructor2" required="required">
+                                <select class="form-control" id="constructor2DropDown" name="constructor2" required="required" >
                                     <option value="">Second Constructor</option>
                                 </select>
                             </div>
@@ -69,7 +69,7 @@ include 'includes/navbar.php';
                             ?>
                             <label for = "jokerUsed" class = "col-lg-3 control-label">Use Joker? (Jokers available <?php echo $row["jokers"] ?>)</label>
                             <div class = "col-lg-5">
-                                <select class="form-control" id="jokerUsed" name="jokerUsed">
+                                <select class="form-control" id="jokerUsed" name="jokerUsed" <?php if($row["jokers"] <= 0){echo "disabled";}?>>
                                     <option value="0">No</option>
                                     <option value="1">Yes</option>
                                 </select>
@@ -106,7 +106,8 @@ include 'includes/navbar.php';
                         </div>
 
                     </form>
-                </div>
+                 </div>
+              </div>
             </div>
         </div>
     </div>
