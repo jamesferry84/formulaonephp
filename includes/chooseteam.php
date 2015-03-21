@@ -73,7 +73,7 @@
                         ?>
                         <label for = "carriedOver" class = "col-lg-5 control-label">Carried Over:</label>
                         <div class = "col-lg-5">
-                            <input type = "text" class="form-control" id="carriedOver" placeholder="Hint Text" value=<?php echo $row["budget"] ?> />
+                            <input type = "text" class="form-control" id="carriedOver" placeholder="Hint Text" readonly value=<?php echo $row["budget"] ?>  />
                         </div>
                     </div>
 
@@ -81,7 +81,7 @@
                     <div class="form-group">
                         <label for = "remainingBudget" class = "col-lg-5 control-label">Remaining Budget:</label>
                         <div class = "col-lg-5">
-                            <input type = "text" class="form-control" id="remainingBudget" name="remainingBudget" placeholder="Hint Text" />
+                            <input type = "text" class="form-control" id="remainingBudget" name="remainingBudget" placeholder="Hint Text" readonly />
                         </div>
                     </div>
                 <div class = "modal-footer">

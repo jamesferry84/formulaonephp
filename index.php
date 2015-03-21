@@ -20,8 +20,8 @@ while($row = mysqli_fetch_assoc($queryResult))
 }
 
 //For testing
-$alreadySubmitted = 0;
-//$alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
+//$alreadySubmitted = 0;
+$alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
 include 'includes/navbar.php';
 ?>
 
