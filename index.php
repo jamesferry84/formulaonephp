@@ -2,6 +2,7 @@
 
 include 'init.php';
 include 'functions/general.php';
+include 'includes/header.php';
 if (isset($_SESSION["username"]))
 {
     // DO NOTHING
@@ -21,49 +22,8 @@ while($row = mysqli_fetch_assoc($queryResult))
 //For testing
 $alreadySubmitted = 0;
 //$alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
-
+include 'includes/navbar.php';
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Formula 1 Predictor</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8" />
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script async type="text/javascript" src="js/customScripts.js" ></script>
-
-</head>
-<body>
-<div class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-        <a href="index.php" class="navbar-brand">F1 Predictor 2015 <?php echo " - " . $_SESSION["username"] ?></a>
-
-        <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
-            <span class = "icon-bar"></span>
-            <span class = "icon-bar"></span>
-            <span class = "icon-bar"></span>
-        </button>
-
-        <div class="collapse navbar-collapse navHeaderCollapse">
-            <ul class = "nav navbar-nav navbar-right">
-                <li class = "active"><a href="index.php">Home</a></li>
-
-                <li><a href="rules.php">Rules</a></li>
-                <li><a href="profile.php">Profile</a></li>
-                <li><a href="logout.php">Log Out</a></li>
-                <!--
-               <li><a href="login.html">Log In</a></li>
-               <li><a href="Register.html">Register</a></li>
-               -->
-            </ul>
-        </div>
-    </div>
-</div>
-
-
-
 
 <div class="container">
     <div class="jumbotron text-center">
@@ -138,115 +98,14 @@ $alreadySubmitted = 0;
                 </table>
             </div>
         </div>
-
-
-        <div class="col-md-3">
-
-        </div>
-
-        <div class="col-md-3">
-
-        </div>
     </div>
 </div>
 
 
 
 
-<div class="modal fade" id="chooseteam" role="dialog">
-    <div class ="modal-dialog">
-        <div class = "modal-content">
-            <form class="form-horizontal" action="submit.php" method="post">
-                <div class="modal-header">
-                    <h4>Choose Team</h4>
-                </div>
-                <div class = "modal-body">
 
-
-                    <div class="form-group">
-                        <label for = "driver" class = "col-lg-3 control-label">Driver 1:</label>
-                        <div class = "col-lg-7">
-                            <select class="form-control" id="driver1DropDown" name="driver1" required="required">
-                                <option value="">Select</option>
-                            </select>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for = "driver" class = "col-lg-3 control-label">Driver 2:</label>
-                        <div class = "col-lg-7">
-                            <select class="form-control" id="driver2DropDown" name="driver2" required="required">
-                                <option value="">Select</option>
-                            </select>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for = "constructor" class = "col-lg-3 control-label">Constructor 1:</label>
-                        <div class = "col-lg-7">
-                            <select class="form-control" id="constructor1DropDown" name="constructor1" required="required">
-                                <option value="">Select</option>
-                            </select>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for = "constructor" class = "col-lg-3 control-label">Constructor 2:</label>
-                        <div class = "col-lg-7">
-                            <select class="form-control" id="constructor2DropDown" name="constructor2" required="required">
-                                <option value="">Select</option>
-                            </select>
-                        </div>
-                    </div>
-
-
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="jokerUsed" value="1">
-                            Use Joker?
-                        </label>
-                    </div>
-
-
-                    <div class="form-group">
-                        <?php
-                        $sql = "select * from users where username = '{$_SESSION['username']}'";
-                        $queryResult = $conn->query($sql);
-                        $numrows=mysqli_num_rows($queryResult);
-
-                        $row = mysqli_fetch_assoc($queryResult)
-
-                        ?>
-                        <label for = "carriedOver" class = "col-lg-5 control-label">Carried Over:</label>
-                        <div class = "col-lg-5">
-                            <input type = "text" class="form-control" id="carriedOver" placeholder="Hint Text" value=<?php echo $row["budget"] ?> />
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for = "remainingBudget" class = "col-lg-5 control-label">Remaining Budget:</label>
-                        <div class = "col-lg-5">
-                            <input type = "text" class="form-control" id="remainingBudget" name="remainingBudget" placeholder="Hint Text" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class = "modal-footer">
-                    <a href="#" class="btn btn-danger" data-dismiss = "modal">Cancel</a>
-                    <button class="btn btn-success" id="submitButton" type="submit">Submit Selection</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class = "navbar navbar-default navbar-fixed-bottom">
-    <div class = "container">
-        <p class = "navbar-text pull-left">Please send e-mail to <a href="mailto:meno38@sky.com" data-toggle="modal">meno38@sky.com</a> to be registered to this website</p>
-    </div>
-</div>
-</body>
-</html>
+<?php
+include 'includes/chooseteam.php';
+include 'includes/footer.php';
+?>

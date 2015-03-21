@@ -19,7 +19,7 @@ var elem = document.getElementById("remainingBudget");
 
 if (carryOver < startingWeeklyBudget)
 {
-    elem.value = startingWeeklyBudget + carryOver;
+    elem.value = (startingWeeklyBudget + carryOver * 1); // multiply used to force integer addition instead of concatenation
 }
 else
 {

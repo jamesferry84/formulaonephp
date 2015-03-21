@@ -1,29 +1,32 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: James
- * Date: 10/03/2015
- * Time: 07:09
- */
-include 'connect.php';
+include 'init.php';
+include 'functions/general.php';
 
-$email = $_POST["email"];
-$password = $_POST["password"];
-$encryptedPass = md5($password);
-$firstname = $_POST["firstname"];
-$lastname = $_POST["lastname"];
-$teamname = $_POST["teamname"];
-$username = $firstname.$lastname;
+if (empty($_POST) === false) {
 
-$sql = "INSERT INTO users
-        (UserName,Password,Email,teamname,Activated,jokers,budget,points)
-        VALUES ('$username','$encryptedPass','$email','$teamname','0','3','55','0')";
-$result = $conn->query($sql);
+    unset($_SESSION["registerErrorMessage"]);
+    unset($_SESSION["loginErrorMessage"]);
 
-if ($result === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    $email = sanitize($_POST["email"]);
+    $password = sanitize($_POST['password']);
+    $firstname = sanitize($_POST['firstname']);
+    $lastname = sanitize($_POST['lastname']);
+    $teamname = sanitize($_POST['teamname']);
+    $username = $firstname.$lastname;
+
+    if (empty($email) === true || empty($password) === true || empty($firstname) === true || empty($lastname) === true || empty($teamname) === true) {
+        $errors[] = "Register Error: All fields not filled out";
+    } else if (user_exists($email) === true) {
+        $errors[] = "Register Error: That username is already taken";
+    } else {
+        $encryptedPass = md5($password);
+        register_user($email, $encryptedPass, $username, $teamname);
+    }
+
+    if (empty($errors) === false) {
+        $_SESSION["registerErrorMessage"] = output_errors($errors);
+        header("location:login.php?");
+    }
+
 }
 
-?>

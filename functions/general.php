@@ -1,27 +1,8 @@
 <?php
 include 'init.php';
 
-
-function get_drivers_and_constructors_with_prices()
-{
-    global $conn;
-    $sql = "select d.name,d.price,t.name,t.price from driver d join team t on d.team = t.name order by d.price DESC";
-    $result = $conn->query($sql);
-    $dataArray = array();
-    $output = array();
-
-
-    while($row = mysqli_fetch_assoc($result))
-    {
-        $rows[] = $row;
-        array_push($dataArray, $row);
-    }
-
-    foreach($dataArray as $data)
-    {
-        $output[] = '<td>' . $data . '</td>';
-    }
-    return $output;
+function sanitize($data) {
+    return mysql_real_escape_string($data);
 }
 
 function doesSubmissionExistForUser($username, $country)
@@ -34,6 +15,76 @@ function doesSubmissionExistForUser($username, $country)
         return true;
     }
     return false;
+}
+
+function user_exists($username)
+{
+    global $conn;
+    $sql="SELECT * FROM users WHERE Email='$username'";
+    $result = $conn->query($sql);
+
+    if($result->num_rows == 1) {
+        return true;
+    }
+    return false;
+}
+
+function user_active($username)
+{
+    global $conn;
+    $sql="SELECT * FROM users WHERE Email='$username'";
+    $result = $conn->query($sql);
+
+
+    if($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+
+        if ($row["Activated"] == 1) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function check_login($username, $password)
+{
+    global $conn;
+    $sql="SELECT * FROM users WHERE Email='$username' AND Password='$password'";
+    $result = $conn->query($sql);
+
+
+    if($result->num_rows >= 1){
+        $row = $result->fetch_assoc();
+        $_SESSION["username"] = $row["UserName"];
+        $_SESSION["admin"] = $row["isadmin"];
+        header("location:index.php");
+    }
+    else {
+        $error = "Wrong Username or Password";
+        header("location:login.php?");
+    }
+}
+
+function register_user($email, $password, $username, $teamname)
+{
+    global $conn;
+    $sql = "INSERT INTO users (UserName,Password,Email,teamname,Activated,jokers,budget,points) VALUES ('$username','$password','$email','$teamname','0','5','55.00','0')";
+    $result = $conn->query($sql);
+
+    if ($result === TRUE) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function output_errors($errors) {
+    $output = array();
+
+    foreach($errors as $error) {
+        $output[] = '<li>' . $error . '</li>';
+    }
+    return '<ul>' . implode('', $output) . '</ul>';
 }
 
 ?>

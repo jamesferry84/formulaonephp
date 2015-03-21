@@ -1,11 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: James
- * Date: 09/03/2015
- * Time: 20:00
- */
 include 'init.php';
+include 'functions/general';
 ?>
 
 <html>
@@ -34,17 +29,24 @@ include 'init.php';
             <div class="collapse navbar-collapse navHeaderCollapse">
                 <ul class = "nav navbar-nav navbar-right">
                     <li class = "active"><a href="index.php">Home</a></li>
-
                     <li><a href="rules.php">Rules</a></li>
-                    <!--
-                   <li><a href="login.html">Log In</a></li>
-                   <li><a href="Register.html">Register</a></li>
-                   -->
                 </ul>
             </div>
         </div>
     </div>
     <div class="container">
+        <div class=" col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 alert-danger">
+           <?php
+
+           if (empty($_SESSION['loginErrorMessage']) == false) {
+               echo $_SESSION["loginErrorMessage"];
+           }
+           if (empty($_SESSION['registerErrorMessage']) == false) {
+               echo $_SESSION["registerErrorMessage"];
+           }
+
+           ?>
+        </div>
         <div id="loginbox" style="margin-top:50px;" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-success" >
                 <div class="panel-heading">
@@ -57,14 +59,14 @@ include 'init.php';
                         <div class="form-group" style="margin-top:20px;">
                             <label for="username" class="col-md-3 control-label">Email:</label>
                             <div class="col-md-9">
-                                <input id="login-username" type="email" class="form-control" name="username" value="" placeholder="email" required="required">
+                                <input id="login-username" type="email" class="form-control" name="username" value="" placeholder="email" >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="password" class="col-md-3 control-label">password:</label>
                             <div class="col-md-9">
-                                <input id="login-password" type="password" class="form-control" name="password" placeholder="password" required="required">
+                                <input id="login-password" type="password" class="form-control" name="password" placeholder="password" >
                             </div>
                         </div>
 

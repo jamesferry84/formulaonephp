@@ -2,23 +2,32 @@
 include 'init.php';
 include 'includes/header.php';
 include 'includes/navbar.php';
+include 'functions/general.php';
 
-$myusername=$_POST['username'];
-$mypassword=$_POST['password'];
-$encryptedPass = md5($mypassword);
+if (empty($_POST) === false) {
 
-$sql="SELECT * FROM users WHERE email='$myusername' && password='$encryptedPass'";
-$result = $conn->query($sql);
+    unset($_SESSION["loginErrorMessage"]);
+    unset($_SESSION["registerErrorMessage"]);
+
+    $username = sanitize($_POST['username']);
+    $password = sanitize($_POST['password']);
+
+    if (empty($username) === true || empty($password) === true) {
+        $errors[] = "You need to enter a username and password";
+    } else if (user_exists($username) === false) {
+        $errors[] = "We cant find that username. Have you registered?";
+    } else if (user_active($username) === false) {
+        $errors[] = "Your account has not been activated by our admins yet";
+    } else {
+        $encryptedPass = md5($password);
+        check_login($username, $encryptedPass);
+    }
 
 
-if($result->num_rows == 1){
-    $row = $result->fetch_assoc();
-    $_SESSION["username"] = $row["UserName"];
-    $_SESSION["admin"] = $row["isadmin"];
-    header("location:index.php");
+    if (empty($errors) === false) {
+        $_SESSION["loginErrorMessage"] = output_errors($errors);
+        header("location:login.php?");
+    }
+
 }
-else {
-    $error = "Wrong Username or Password";
-    header("location:login.php?");
-}
-?>
+

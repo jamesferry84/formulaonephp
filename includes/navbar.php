@@ -10,14 +10,10 @@
 
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class = "nav navbar-nav navbar-right">
-                <li class = "active"><a href="index.php">Home</a></li>
-
+                <li><a href="index.php">Home</a></li>
                 <li><a href="rules.php">Rules</a></li>
-
-               <li><a href="profile.php">Profile</a></li>
-                <!--
-               <li><a href="Register.html">Register</a></li>
-               -->
+                <li><a href="profile.php">Profile</a></li>
+                <li><a href="logout.php">Log Out</a></li>
             </ul>
         </div>
     </div>
