@@ -19,8 +19,8 @@ while($row = mysqli_fetch_assoc($queryResult))
 }
 
 //For testing
-$alreadySubmitted = 0;
-//$alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
+//$alreadySubmitted = 0;
+$alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
 
 /**
  * Created by PhpStorm.
@@ -100,7 +100,7 @@ $alreadySubmitted = 0;
                     </tr>
                     <?php
                     $today = date("y-m-d");
-                    $sql = "select * from users LIMIT 0,3";
+                    $sql = "select * from users order by points desc LIMIT 0,3";
                     $queryResult = $conn->query($sql);
                     $numrows=mysqli_num_rows($queryResult);
 
@@ -108,7 +108,7 @@ $alreadySubmitted = 0;
                     {
                         ?>
                         <tr>
-                            <td> <?php echo $row["UserName"]?></td>
+                            <td> <?php echo $row["teamname"]?></td>
                             <td> <?php echo $row["points"]?></td>
                         </tr>
                     <?php

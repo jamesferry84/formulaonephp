@@ -35,7 +35,7 @@ include 'init.php';
                 <ul class = "nav navbar-nav navbar-right">
                     <li class = "active"><a href="index.php">Home</a></li>
 
-                    <li><a href="rules.html">Rules</a></li>
+                    <li><a href="rules.php">Rules</a></li>
                     <!--
                    <li><a href="login.html">Log In</a></li>
                    <li><a href="Register.html">Register</a></li>
@@ -57,14 +57,14 @@ include 'init.php';
                         <div class="form-group" style="margin-top:20px;">
                             <label for="username" class="col-md-3 control-label">Email:</label>
                             <div class="col-md-9">
-                                <input id="login-username" type="email" class="form-control" name="username" value="" placeholder="email" required="true">
+                                <input id="login-username" type="email" class="form-control" name="username" value="" placeholder="email" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="password" class="col-md-3 control-label">password:</label>
                             <div class="col-md-9">
-                                <input id="login-password" type="password" class="form-control" name="password" placeholder="password" required="true">
+                                <input id="login-password" type="password" class="form-control" name="password" placeholder="password" required="required">
                             </div>
                         </div>
 
@@ -101,35 +101,35 @@ include 'init.php';
                         <div class="form-group">
                             <label for="email" class="col-md-3 control-label">Email</label>
                             <div class="col-md-9">
-                                <input type="email" class="form-control" name="email" placeholder="Email Address" required="true">
+                                <input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="password" class="col-md-3 control-label">Password</label>
                             <div class="col-md-9">
-                                <input type="password" class="form-control" name="password" placeholder="Password" required="true">
+                                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="firstname" class="col-md-3 control-label">First Name</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="firstname" placeholder="First Name" required="true">
+                                <input type="text" class="form-control" name="firstname" placeholder="First Name" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="lastname" class="col-md-3 control-label">Last Name</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="lastname" placeholder="Last Name" required="true">
+                                <input type="text" class="form-control" name="lastname" placeholder="Last Name" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="teamname" class="col-md-3 control-label">Team Name</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="teamname" placeholder="Team Name" required="true">
+                                <input type="text" class="form-control" name="teamname" placeholder="Team Name" required="required">
                             </div>
                         </div>
 
