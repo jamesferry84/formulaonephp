@@ -1,6 +1,4 @@
-/**
- * Created by James on 21/03/2015.
- */
+
 var constructorNames = [];
 var constructorPrices = [];
 var driverPrices = [];

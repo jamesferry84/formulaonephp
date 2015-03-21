@@ -35,7 +35,7 @@ include 'includes/navbar.php';
             ?>
         </p>
 
-        <a href="#chooseteam" data-toggle="modal" class = "btn btn-success" <?php if ($alreadySubmitted == 1) echo 'disabled="true"' ?>>Choose Team</a>
+        <a href="chooseteam.php" class = "btn btn-success" <?php if ($alreadySubmitted == 1) echo 'disabled="true"' ?>>Choose Team</a>
     </div>
 </div>
 
@@ -106,6 +106,6 @@ include 'includes/navbar.php';
 
 
 <?php
-include 'includes/chooseteam.php';
+//include 'includes/chooseteam.php';
 include 'includes/footer.php';
 ?>

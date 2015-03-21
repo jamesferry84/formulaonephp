@@ -8,11 +8,11 @@ if (empty($_POST) === false) {
     unset($_SESSION["loginErrorMessage"]);
     unset($_SESSION["registerSuccessMessage"]);
 
-    $email = sanitize($_POST["email"]);
-    $password = sanitize($_POST['password']);
-    $firstname = sanitize($_POST['firstname']);
-    $lastname = sanitize($_POST['lastname']);
-    $teamname = sanitize($_POST['teamname']);
+    $email = $_POST["email"];
+    $password =$_POST['password'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $teamname = $_POST['teamname'];
     $username = $firstname.$lastname;
 
     if (empty($email) === true || empty($password) === true || empty($firstname) === true || empty($lastname) === true || empty($teamname) === true) {

@@ -65,7 +65,7 @@ function check_login($username, $password)
 {
     global $conn;
     $sql="SELECT * FROM users WHERE Email='$username' AND Password='$password'";
-    $result = $conn->query($sql);
+    $result = $conn->query($sql) or die(mysqli_error($conn));
 
 
     if($result->num_rows == 1){
@@ -75,7 +75,10 @@ function check_login($username, $password)
         header("location:index.php");
     }
     else {
-        header("location:login.php?");
+        print_r($result);
+        echo "Something went wrong";
+        echo "USername is: " . $username;
+       // header("location:error.php?");
     }
 }
 

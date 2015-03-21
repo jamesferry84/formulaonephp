@@ -7,6 +7,6 @@
     <link href="css/styles.css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script async type="text/javascript" src="js/customScripts.js" ></script>
+  <!--  <script async type="text/javascript" src="js/customScripts.js" ></script>-->
 </head>
 <body>
