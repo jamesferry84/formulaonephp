@@ -1,5 +1,5 @@
 <?php
-	include 'connect.php';
+	include 'init.php';
 	$sql = "select * from team order by Price desc";
 	$queryResult = $conn->query($sql);
 	$numrows=mysqli_num_rows($queryResult);

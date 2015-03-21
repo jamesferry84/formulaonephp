@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: James
- * Date: 09/03/2015
- * Time: 20:57
- */
+
 include 'init.php';
 include 'includes/header.php';
 include 'includes/navbar.php';
@@ -56,7 +51,7 @@ $conn->query($query);
                     <th>Constructor 1</th>
                     <th>Constructor 2</th>
                     <th>Joker Used</th>
-                    <th>New Balance</th>
+                    <th>Carried Over</th>
                 </tr>
             </thead>
             <tbody>

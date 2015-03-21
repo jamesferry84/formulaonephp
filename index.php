@@ -19,17 +19,8 @@ while($row = mysqli_fetch_assoc($queryResult))
 }
 
 //For testing
-//$alreadySubmitted = 0;
-$alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
-
-/**
- * Created by PhpStorm.
- * User: James
- * Date: 09/03/2015
- * Time: 19:27
- */
-
-
+$alreadySubmitted = 0;
+//$alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
 
 ?>
 <!doctype html>
@@ -39,8 +30,9 @@ $alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8" />
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script async type="text/javascript" src="js/customScripts.js" ></script>
 
 </head>
 <body>
@@ -174,7 +166,7 @@ $alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
                     <div class="form-group">
                         <label for = "driver" class = "col-lg-3 control-label">Driver 1:</label>
                         <div class = "col-lg-7">
-                            <select class="form-control" id="driver1DropDown" name="driver1" required="true">
+                            <select class="form-control" id="driver1DropDown" name="driver1" required="required">
                                 <option value="">Select</option>
                             </select>
                         </div>
@@ -184,7 +176,7 @@ $alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
                     <div class="form-group">
                         <label for = "driver" class = "col-lg-3 control-label">Driver 2:</label>
                         <div class = "col-lg-7">
-                            <select class="form-control" id="driver2DropDown" name="driver2" required="true">
+                            <select class="form-control" id="driver2DropDown" name="driver2" required="required">
                                 <option value="">Select</option>
                             </select>
                         </div>
@@ -194,7 +186,7 @@ $alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
                     <div class="form-group">
                         <label for = "constructor" class = "col-lg-3 control-label">Constructor 1:</label>
                         <div class = "col-lg-7">
-                            <select class="form-control" id="constructor1DropDown" name="constructor1" required="true">
+                            <select class="form-control" id="constructor1DropDown" name="constructor1" required="required">
                                 <option value="">Select</option>
                             </select>
                         </div>
@@ -204,7 +196,7 @@ $alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
                     <div class="form-group">
                         <label for = "constructor" class = "col-lg-3 control-label">Constructor 2:</label>
                         <div class = "col-lg-7">
-                            <select class="form-control" id="constructor2DropDown" name="constructor2" required="true">
+                            <select class="form-control" id="constructor2DropDown" name="constructor2" required="required">
                                 <option value="">Select</option>
                             </select>
                         </div>
@@ -256,149 +248,5 @@ $alreadySubmitted = doesSubmissionExistForUser($_SESSION["username"], $country);
         <p class = "navbar-text pull-left">Please send e-mail to <a href="mailto:meno38@sky.com" data-toggle="modal">meno38@sky.com</a> to be registered to this website</p>
     </div>
 </div>
-<script>
-
-    var constructorNames = [];
-    var constructorPrices = [];
-    var driverPrices = [];
-    var driverNames = [];
-
-    var selectedPrices = [];
-    selectedPrices[0] = 0;
-    selectedPrices[1] = 0;
-    selectedPrices[2] = 0;
-    selectedPrices[3] = 0;
-
-    var myBudget = document.getElementById('carriedOver').value;
-    var elem = document.getElementById("remainingBudget");
-    elem.value = myBudget;
-
-    var firstSelected = null;
-    var secondSelected = null;
-
-    var firstConstructorSelected = null;
-    var secondConstructorSelected = null;
-
-    function Update()
-    {
-        var newValue = parseFloat(myBudget - selectedPrices[0] - selectedPrices[1] - selectedPrices[2] - selectedPrices[3]).toFixed(2);
-        document.getElementById("remainingBudget").value = newValue;
-
-        if (newValue < 0)
-        {
-            $('#submitButton').prop('disabled',true);
-        }
-        else
-        {
-            $('#submitButton').prop('disabled',false);
-        }
-    }
-
-    $('#driver1DropDown').change(function() {
-        var selectedValue = $('#driver1DropDown option:selected')
-
-        var str = selectedValue.val();
-        var result = str.split(",");
-        selectedPrices[0] = result[1];
-        Update();
-
-        if (selectedValue.val() != "") {
-            $('#driver2DropDown option[value="' + selectedValue.val() + '"]').remove();
-        }
-        else {
-            selectedValue = null;
-        }
-        if (firstSelected != null) {
-            $('#driver2DropDown').append($('<option>', { value : firstSelected.val() }).text(firstSelected.text()));
-
-        }
-        firstSelected = selectedValue;
-    });
-
-    $('#driver2DropDown').change(function() {
-        var selectedValue = $('#driver2DropDown option:selected')
-
-        var str = selectedValue.val();
-        var result = str.split(",");
-        selectedPrices[1] = result[1];
-        Update();
-
-        if (selectedValue.val() != "") {
-            $('#driver1DropDown option[value="' + selectedValue.val() + '"]').remove();
-        }
-        else {
-            selectedValue = null;
-        }
-
-        if (secondSelected != null) {
-            $('#driver1DropDown').append($('<option>', { value : secondSelected.val() }).text(secondSelected.text()));
-
-        }
-
-        //save the currently selected value
-        secondSelected = selectedValue;
-    });
-
-    $('#constructor1DropDown').change(function() {
-        var selectedValue = $('#constructor1DropDown option:selected')
-
-        var str = selectedValue.val();
-        var result = str.split(",");
-        selectedPrices[2] = result[1];
-        Update();
-
-        if (selectedValue.val() != "") {
-            $('#constructor2DropDown option[value="' + selectedValue.val() + '"]').remove();
-        }
-        else {
-            selectedValue = null;
-        }
-        if (firstConstructorSelected != null) {
-            $('#constructor2DropDown').append($('<option>', { value : firstConstructorSelected.val() }).text(firstConstructorSelected.text()));
-
-        }
-        firstConstructorSelected = selectedValue;
-    });
-
-    $('#constructor2DropDown').change(function() {
-        var selectedValue = $('#constructor2DropDown option:selected')
-
-        var str = selectedValue.val();
-        var result = str.split(",");
-        selectedPrices[3] = result[1];
-        Update();
-
-        if (selectedValue.val() != "") {
-            $('#constructor1DropDown option[value="' + selectedValue.val() + '"]').remove();
-        }
-        else {
-            selectedValue = null;
-        }
-
-        if (secondConstructorSelected != null) {
-            $('#constructor1DropDown').append($('<option>', { value : secondConstructorSelected.val() }).text(secondConstructorSelected.text()));
-
-        }
-
-        //save the currently selected value
-        secondConstructorSelected = selectedValue;
-    });
-
-    $.getJSON("drivers.php", function(data) {
-        $.each(data, function(key,val) {
-            driverNames.push(val.Name);
-            driverPrices.push(val.Price);
-            $("#driver1DropDown").append($("<option />").val(val.Name + ", " + val.Price).text(val.Name + " £" + val.Price));
-            $("#driver2DropDown").append($("<option />").val(val.Name + ", " + val.Price).text(val.Name + " £" + val.Price));
-        })
-    });
-
-    $.getJSON("constructors.php", function(data) {
-        $.each(data, function(key,val) {
-            constructorNames.push(val.Name);
-            constructorPrices.push(val.Price);
-            $("#constructor1DropDown").append($("<option />").val(val.Name + ", " + val.Price).text(val.Name + " £" + val.Price));
-            $("#constructor2DropDown").append($("<option />").val(val.Name + ", " + val.Price).text(val.Name + " £" + val.Price));
-        })
-    });
-</script>
+</body>
+</html>
