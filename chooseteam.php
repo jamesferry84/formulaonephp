@@ -11,13 +11,22 @@ include 'includes/navbar.php';
                 <div class = "panel-body">
                     <div class="page-header">
                         <h3>Team Choices</h3>
+                        <div class="well">
+                            <div class="alert-danger">
+                                <?php
+
+                                if (empty($_SESSION['submitErrorMessage']) == false) {
+                                    echo $_SESSION["submitErrorMessage"];
+                                }
+                                ?>
+                        </div>
                     </div>
                     <form class="form-horizontal" action="submit.php" method="post">
                         <div class="form-group">
                             <label for = "driver" class = "col-lg-3 control-label">Driver 1:</label>
                             <div class = "col-lg-5">
-                                <select class="form-control" id="driver1DropDown" name="driver1" required="required">
-                                    <option value="">Select</option>
+                                <select class="form-control" id="driver1DropDown" name="driver1" required="required" >
+                                    <option value="">First Driver</option>
                                 </select>
                             </div>
                         </div>
@@ -26,7 +35,7 @@ include 'includes/navbar.php';
                             <label for = "driver" class = "col-lg-3 control-label">Driver 2:</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="driver2DropDown" name="driver2" required="required">
-                                    <option value="">Select</option>
+                                    <option value="">Second Driver</option>
                                 </select>
                             </div>
                         </div>
@@ -35,7 +44,7 @@ include 'includes/navbar.php';
                             <label for = "constructor" class = "col-lg-3 control-label">Constructor 1:</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="constructor1DropDown" name="constructor1" required="required">
-                                    <option value="">Select</option>
+                                    <option value="">First Constructor</option>
                                 </select>
                             </div>
                         </div>
@@ -44,7 +53,7 @@ include 'includes/navbar.php';
                             <label for = "constructor" class = "col-lg-3 control-label">Constructor 2:</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="constructor2DropDown" name="constructor2" required="required">
-                                    <option value="">Select</option>
+                                    <option value="">Second Constructor</option>
                                 </select>
                             </div>
                         </div>
@@ -120,14 +129,17 @@ include 'includes/navbar.php';
 
     var carryOver = document.getElementById('carriedOver').value;
     var elem = document.getElementById("remainingBudget");
+    var totalAvailable;
 
     if (carryOver < startingWeeklyBudget)
     {
         elem.value = (startingWeeklyBudget + carryOver * 1); // multiply used to force integer addition instead of concatenation
+        totalAvailable = elem.value;
     }
     else
     {
         elem.value = carryOver;
+        totalAvailable = carryOver;
     }
 
 
@@ -139,7 +151,7 @@ include 'includes/navbar.php';
 
     function Update()
     {
-        var newValue = parseFloat(carryOver - selectedPrices[0] - selectedPrices[1] - selectedPrices[2] - selectedPrices[3]).toFixed(2);
+        var newValue = parseFloat(totalAvailable - selectedPrices[0] - selectedPrices[1] - selectedPrices[2] - selectedPrices[3]).toFixed(2);
         document.getElementById("remainingBudget").value = newValue;
 
         if (newValue < 0)

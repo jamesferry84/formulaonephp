@@ -3,61 +3,80 @@
 include 'init.php';
 include 'includes/header.php';
 include 'includes/navbar.php';
+include 'functions/general.php';
 
-$username = $_SESSION["username"];
-$driver1 = $_POST["driver1"];
-$driver2 = $_POST["driver2"];
-$constructor1 = $_POST["constructor1"];
-$constructor2 = $_POST["constructor2"];
-$joker = (isset($_REQUEST['jokerUsed']));
+    if (empty($_POST) === false) {
 
-$carryOver = $_POST["remainingBudget"];
+        $username = $_SESSION["username"];
+        $driver1 = $_POST["driver1"];
+        $driver2 = $_POST["driver2"];
+        $constructor1 = $_POST["constructor1"];
+        $constructor2 = $_POST["constructor2"];
+        $joker = (isset($_REQUEST['jokerUsed']));
+        $carryOver = $_POST["remainingBudget"];
 
-$today = date("y-m-d");
-$sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,1";
-$queryResult = $conn->query($sql);
-$numrows=mysqli_num_rows($queryResult);
-$country = "";
+        unset($_SESSION["submitErrorMessage"]);
 
-while($row = mysqli_fetch_assoc($queryResult))
-{
-    $country =  $row["Country"];
-}
+        if (empty($driver1) === true || empty($driver2) === true || empty($constructor1) === true || empty($constructor2) === true) {
+            $errors[] = "Submit Error: You need to select Two Drivers and Two Constructors";
+        }
+        else {
+            $today = date("y-m-d");
+            $sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,1";
+            $queryResult = $conn->query($sql);
+            $numrows=mysqli_num_rows($queryResult);
+            $country = "";
 
-
-if ($joker == 1)
-{
-    $joker = 1;
-}
-else
-{
-    $joker = 0;
-}
-
-$balance = $_POST["remainingBudget"];
-
-$query = "INSERT INTO `submissions` (`UserName`, `driver1`, `driver2`, `constructor1`, `constructor2`, `joker`, `country`) VALUES ('$username', '$driver1', '$driver2', '$constructor1', '$constructor2', '$joker', '$country')";
-$conn->query($query);
-
-if ($joker == 1)
-{
-    $sql="SELECT * FROM users WHERE UserName='$username'";
-    $result = $conn->query($sql);
+            while($row = mysqli_fetch_assoc($queryResult))
+            {
+                $country =  $row["Country"];
+            }
 
 
-    if($result->num_rows == 1) {
-        $row = $result->fetch_assoc();
-        $numJokers = $row["jokers"] - 1;
+            if ($joker == 1)
+            {
+                $joker = 1;
+            }
+            else
+            {
+                $joker = 0;
+            }
 
-        $query = "UPDATE `users` SET `jokers`='$numJokers',`budget`='$carryOver' WHERE `UserName`='$username'";
-        $conn->query($query);
+            $balance = $_POST["remainingBudget"];
+
+            $query = "INSERT INTO `submissions` (`UserName`, `driver1`, `driver2`, `constructor1`, `constructor2`, `joker`, `country`)
+                  VALUES ('$username', '$driver1', '$driver2', '$constructor1', '$constructor2', '$joker', '$country')";
+
+            $conn->query($query);
+
+            if ($joker == 1)
+            {
+                $sql="SELECT * FROM users WHERE UserName='$username'";
+                $result = $conn->query($sql);
+
+
+                if($result->num_rows == 1) {
+                    $row = $result->fetch_assoc();
+                    $numJokers = $row["jokers"] - 1;
+
+                    $query = "UPDATE `users` SET `jokers`='$numJokers',`budget`='$carryOver' WHERE `UserName`='$username'";
+                    $conn->query($query);
+                }
+            }
+            else
+            {
+                $query = "UPDATE `users` SET budget='$carryOver' WHERE `UserName`='$username'";
+                $conn->query($query);
+            }
+        }
+
+        if (empty($errors) === false) {
+            $_SESSION["submitErrorMessage"] = output_errors($errors);
+            header("location:chooseteam.php?");
+        }
+
+
     }
-}
-else
-{
-    $query = "UPDATE `users` SET budget='$carryOver' WHERE `UserName`='$username'";
-    $conn->query($query);
-}
 ?>
 <div class="container">
     <div class=" col-lg-12 col-md-12 col-sm-12">
