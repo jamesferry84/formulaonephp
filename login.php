@@ -47,6 +47,15 @@ include 'functions/general.php';
 
            ?>
         </div>
+        <div class=" col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 alert-success">
+            <?php
+
+            if (empty($_SESSION['registerSuccessMessage']) == false) {
+                echo $_SESSION["registerSuccessMessage"];
+            }
+
+            ?>
+        </div>
         <div id="loginbox" style="margin-top:50px;" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-success" >
                 <div class="panel-heading">

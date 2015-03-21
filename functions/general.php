@@ -46,6 +46,21 @@ function user_active($username)
     return false;
 }
 
+function username_pass_correct($username, $password)
+{
+    global $conn;
+    $sql="SELECT * FROM users WHERE Email='$username' AND Password='$password'";
+    $result = $conn->query($sql);
+
+
+    if($result->num_rows == 1){
+       return true;
+    }
+    else {
+       return false;
+    }
+}
+
 function check_login($username, $password)
 {
     global $conn;

@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5ae78f95-d753-498a-bbaf-9f7090b30b71" name="Default" comment="">
       <change type="DELETED" beforePath="C:\Users\James\PhpstormProjects\F1PredictorPhp\connect.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checklogin.php" afterPath="$PROJECT_DIR$/checklogin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions/general.php" afterPath="$PROJECT_DIR$/functions/general.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/navbar.php" afterPath="$PROJECT_DIR$/includes/navbar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
     </list>
     <ignored path="F1PredictorPhp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -165,10 +165,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="navbar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/navbar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46896553" vertical-offset="0" max-vertical-offset="870">
+            <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="646">
               <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
               <folding />
             </state>
@@ -188,24 +188,24 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="2652">
-              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+            <state vertical-scroll-proportion="-19.615385" vertical-offset="391" max-vertical-offset="2805">
+              <caret line="53" column="54" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checklogin.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="checklogin.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/checklogin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="663">
-              <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.3321839" vertical-offset="0" max-vertical-offset="870">
+              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -214,15 +214,16 @@
       <file leaf-file-name="general.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/general.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.269231" vertical-offset="745" max-vertical-offset="1870">
-              <caret line="58" column="24" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="24" />
+            <state vertical-scroll-proportion="-23.653847" vertical-offset="388" max-vertical-offset="2125">
+              <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
               <folding>
-                <marker date="1426947545109" expanded="true" signature="190:269" placeholder="SELECT * FRO..submissions..." />
-                <marker date="1426947545109" expanded="true" signature="453:496" placeholder="SELECT * FRO..users..." />
-                <marker date="1426947545109" expanded="true" signature="677:720" placeholder="SELECT * FRO..users..." />
-                <marker date="1426947545109" expanded="true" signature="1005:1073" placeholder="SELECT * FRO..users..." />
-                <marker date="1426947545109" expanded="true" signature="1478:1635" placeholder="INSERT INTO ..." />
-                <marker date="1426947545109" expanded="true" signature="2029:2072" placeholder="SELECT * FRO..users..." />
+                <marker date="1426948321154" expanded="true" signature="190:269" placeholder="SELECT * FRO..submissions..." />
+                <marker date="1426948321154" expanded="true" signature="453:496" placeholder="SELECT * FRO..users..." />
+                <marker date="1426948321154" expanded="true" signature="677:720" placeholder="SELECT * FRO..users..." />
+                <marker date="1426948321154" expanded="true" signature="1015:1083" placeholder="SELECT * FRO..users..." />
+                <marker date="1426948321154" expanded="true" signature="1294:1362" placeholder="SELECT * FRO..users..." />
+                <marker date="1426948321154" expanded="true" signature="1767:1924" placeholder="INSERT INTO ..." />
+                <marker date="1426948321154" expanded="true" signature="2318:2361" placeholder="SELECT * FRO..users..." />
               </folding>
             </state>
           </provider>
@@ -231,8 +232,8 @@
       <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="646">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="731">
+              <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -273,12 +274,12 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/customScripts.js" />
         <option value="$PROJECT_DIR$/includes/chooseteam.php" />
-        <option value="$PROJECT_DIR$/checklogin.php" />
-        <option value="$PROJECT_DIR$/register.php" />
-        <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/functions/general.php" />
         <option value="$PROJECT_DIR$/init.php" />
         <option value="$PROJECT_DIR$/includes/navbar.php" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/functions/general.php" />
+        <option value="$PROJECT_DIR$/register.php" />
+        <option value="$PROJECT_DIR$/checklogin.php" />
       </list>
     </option>
   </component>
@@ -599,11 +600,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1092" max-vertical-offset="2329">
           <caret line="110" column="82" selection-start-line="110" selection-start-column="82" selection-end-line="110" selection-end-column="82" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -665,11 +666,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1092" max-vertical-offset="2329">
           <caret line="110" column="82" selection-start-line="110" selection-start-column="82" selection-end-line="110" selection-end-column="82" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -731,11 +732,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1092" max-vertical-offset="2329">
           <caret line="110" column="82" selection-start-line="110" selection-start-column="82" selection-end-line="110" selection-end-column="82" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -797,11 +798,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2329">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -961,6 +962,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="170">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/navbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="646">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/submit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-27.461538" vertical-offset="0" max-vertical-offset="1360">
@@ -986,61 +1003,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="2652">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        <state vertical-scroll-proportion="-19.615385" vertical-offset="391" max-vertical-offset="2805">
+          <caret line="53" column="54" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/general.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.653847" vertical-offset="388" max-vertical-offset="2125">
+          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+          <folding>
+            <marker date="1426948321154" expanded="true" signature="190:269" placeholder="SELECT * FRO..submissions..." />
+            <marker date="1426948321154" expanded="true" signature="453:496" placeholder="SELECT * FRO..users..." />
+            <marker date="1426948321154" expanded="true" signature="677:720" placeholder="SELECT * FRO..users..." />
+            <marker date="1426948321154" expanded="true" signature="1015:1083" placeholder="SELECT * FRO..users..." />
+            <marker date="1426948321154" expanded="true" signature="1294:1362" placeholder="SELECT * FRO..users..." />
+            <marker date="1426948321154" expanded="true" signature="1767:1924" placeholder="INSERT INTO ..." />
+            <marker date="1426948321154" expanded="true" signature="2318:2361" placeholder="SELECT * FRO..users..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="646">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="170">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="731">
+          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checklogin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="663">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/general.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.269231" vertical-offset="745" max-vertical-offset="1870">
-          <caret line="58" column="24" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="24" />
-          <folding>
-            <marker date="1426947545109" expanded="true" signature="190:269" placeholder="SELECT * FRO..submissions..." />
-            <marker date="1426947545109" expanded="true" signature="453:496" placeholder="SELECT * FRO..users..." />
-            <marker date="1426947545109" expanded="true" signature="677:720" placeholder="SELECT * FRO..users..." />
-            <marker date="1426947545109" expanded="true" signature="1005:1073" placeholder="SELECT * FRO..users..." />
-            <marker date="1426947545109" expanded="true" signature="1478:1635" placeholder="INSERT INTO ..." />
-            <marker date="1426947545109" expanded="true" signature="2029:2072" placeholder="SELECT * FRO..users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/navbar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46896553" vertical-offset="0" max-vertical-offset="870">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.3321839" vertical-offset="0" max-vertical-offset="870">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
           <folding />
         </state>
       </provider>
