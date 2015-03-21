@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ae78f95-d753-498a-bbaf-9f7090b30b71" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chooseteam.php" />
       <change type="DELETED" beforePath="C:\Users\James\PhpstormProjects\F1PredictorPhp\connect.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\James\PhpstormProjects\F1PredictorPhp\includes\chooseteam.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checklogin.php" afterPath="$PROJECT_DIR$/checklogin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/customScripts.js" afterPath="$PROJECT_DIR$/js/customScripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/footer.php" afterPath="$PROJECT_DIR$/includes/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions/general.php" afterPath="$PROJECT_DIR$/functions/general.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/header.php" afterPath="$PROJECT_DIR$/includes/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init.php" afterPath="$PROJECT_DIR$/init.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rules.php" afterPath="$PROJECT_DIR$/rules.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/submit.php" afterPath="$PROJECT_DIR$/submit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chooseteam.php" afterPath="$PROJECT_DIR$/chooseteam.php" />
     </list>
     <ignored path="F1PredictorPhp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -171,11 +159,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rules.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="rules.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rules.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6546091" vertical-offset="0" max-vertical-offset="2584">
-              <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+            <state vertical-scroll-proportion="13.730769" vertical-offset="969" max-vertical-offset="2584">
+              <caret line="36" column="77" selection-start-line="36" selection-start-column="77" selection-end-line="36" selection-end-column="77" />
               <folding>
                 <marker date="1426953978946" expanded="true" signature="1466:1594" placeholder="select d.nam..driver..." />
                 <marker date="1426953978946" expanded="true" signature="4376:4420" placeholder="select * fro..racecalendar..." />
@@ -194,14 +182,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chooseteam.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="chooseteam.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chooseteam.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.538462" vertical-offset="3601" max-vertical-offset="4471">
-              <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.762069" vertical-offset="935" max-vertical-offset="4590">
+              <caret line="94" column="82" selection-start-line="94" selection-start-column="82" selection-end-line="94" selection-end-column="82" />
               <folding>
-                <marker date="1426953859891" expanded="true" signature="2623:2685" placeholder="select * fro..users..." />
-                <marker date="1426953859891" expanded="true" signature="3380:3442" placeholder="select * fro..users..." />
+                <marker date="1426955730561" expanded="true" signature="2622:2684" placeholder="select * fro..users..." />
+                <marker date="1426955730561" expanded="true" signature="3582:3644" placeholder="select * fro..users..." />
               </folding>
             </state>
           </provider>
@@ -230,8 +218,8 @@
       <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.26923" vertical-offset="252" max-vertical-offset="1122">
-              <caret line="55" column="6" selection-start-line="13" selection-start-column="0" selection-end-line="55" selection-end-column="6" />
+            <state vertical-scroll-proportion="-19.73077" vertical-offset="252" max-vertical-offset="1122">
+              <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
               <folding>
                 <marker date="1426781186833" expanded="true" signature="1101:1164" placeholder="select UserN..users..." />
               </folding>
@@ -284,9 +272,9 @@
         <option value="$PROJECT_DIR$/includes/chooseteam.php" />
         <option value="$PROJECT_DIR$/includes/header.php" />
         <option value="$PROJECT_DIR$/js/customScripts.js" />
-        <option value="$PROJECT_DIR$/chooseteam.php" />
         <option value="$PROJECT_DIR$/includes/footer.php" />
         <option value="$PROJECT_DIR$/rules.php" />
+        <option value="$PROJECT_DIR$/chooseteam.php" />
       </list>
     </option>
   </component>
@@ -1010,16 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.26923" vertical-offset="252" max-vertical-offset="1122">
-          <caret line="55" column="6" selection-start-line="13" selection-start-column="0" selection-end-line="55" selection-end-column="6" />
-          <folding>
-            <marker date="1426781186833" expanded="true" signature="1101:1164" placeholder="select UserN..users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deployment/connect.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="442">
@@ -1080,17 +1058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chooseteam.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.538462" vertical-offset="3601" max-vertical-offset="4471">
-          <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
-          <folding>
-            <marker date="1426953859891" expanded="true" signature="2623:2685" placeholder="select * fro..users..." />
-            <marker date="1426953859891" expanded="true" signature="3380:3442" placeholder="select * fro..users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="204">
@@ -1101,11 +1068,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rules.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6546091" vertical-offset="0" max-vertical-offset="2584">
-          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+        <state vertical-scroll-proportion="13.730769" vertical-offset="969" max-vertical-offset="2584">
+          <caret line="36" column="77" selection-start-line="36" selection-start-column="77" selection-end-line="36" selection-end-column="77" />
           <folding>
             <marker date="1426953978946" expanded="true" signature="1466:1594" placeholder="select d.nam..driver..." />
             <marker date="1426953978946" expanded="true" signature="4376:4420" placeholder="select * fro..racecalendar..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.73077" vertical-offset="252" max-vertical-offset="1122">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+          <folding>
+            <marker date="1426781186833" expanded="true" signature="1101:1164" placeholder="select UserN..users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chooseteam.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.762069" vertical-offset="935" max-vertical-offset="4590">
+          <caret line="94" column="82" selection-start-line="94" selection-start-column="82" selection-end-line="94" selection-end-column="82" />
+          <folding>
+            <marker date="1426955730561" expanded="true" signature="2622:2684" placeholder="select * fro..users..." />
+            <marker date="1426955730561" expanded="true" signature="3582:3644" placeholder="select * fro..users..." />
           </folding>
         </state>
       </provider>

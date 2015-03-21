@@ -6,7 +6,7 @@ include 'includes/navbar.php';
 
 <div class="container">
     <div class = "row">
-        <div class = "col-lg-12 col-md-12 col-sm-12">
+        <div class = "col-lg-8 col-md-8 col-sm-8">
             <div class = "panel panel-default">
                 <div class = "panel-body">
                     <div class="page-header">
@@ -15,7 +15,7 @@ include 'includes/navbar.php';
                     <form class="form-horizontal" action="submit.php" method="post">
                         <div class="form-group">
                             <label for = "driver" class = "col-lg-3 control-label">Driver 1:</label>
-                            <div class = "col-lg-7">
+                            <div class = "col-lg-5">
                                 <select class="form-control" id="driver1DropDown" name="driver1" required="required">
                                     <option value="">Select</option>
                                 </select>
@@ -24,7 +24,7 @@ include 'includes/navbar.php';
 
                         <div class="form-group">
                             <label for = "driver" class = "col-lg-3 control-label">Driver 2:</label>
-                            <div class = "col-lg-7">
+                            <div class = "col-lg-5">
                                 <select class="form-control" id="driver2DropDown" name="driver2" required="required">
                                     <option value="">Select</option>
                                 </select>
@@ -33,7 +33,7 @@ include 'includes/navbar.php';
 
                         <div class="form-group">
                             <label for = "constructor" class = "col-lg-3 control-label">Constructor 1:</label>
-                            <div class = "col-lg-7">
+                            <div class = "col-lg-5">
                                 <select class="form-control" id="constructor1DropDown" name="constructor1" required="required">
                                     <option value="">Select</option>
                                 </select>
@@ -42,14 +42,14 @@ include 'includes/navbar.php';
 
                         <div class="form-group">
                             <label for = "constructor" class = "col-lg-3 control-label">Constructor 2:</label>
-                            <div class = "col-lg-7">
+                            <div class = "col-lg-5">
                                 <select class="form-control" id="constructor2DropDown" name="constructor2" required="required">
                                     <option value="">Select</option>
                                 </select>
                             </div>
                         </div>
 
-                        <div class="checkbox">
+                        <div class="form-group">
                             <?php
                             $sql = "select * from users where username = '{$_SESSION['username']}'";
                             $queryResult = $conn->query($sql);
@@ -58,11 +58,16 @@ include 'includes/navbar.php';
                             $row = mysqli_fetch_assoc($queryResult)
 
                             ?>
-                            <label>
-                                <input type="checkbox" name="jokerUsed" value="1"  <?php if ($row["jokers"] == 0) echo 'disabled="disabled"' ?>>
-                                Use Joker? (Jokers available <?php echo $row["jokers"] ?>)
-                            </label>
+                            <label for = "jokerUsed" class = "col-lg-3 control-label">Use Joker? (Jokers available <?php echo $row["jokers"] ?>)</label>
+                            <div class = "col-lg-5">
+                                <select class="form-control" id="jokerUsed" name="jokerUsed">
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                            </div>
                         </div>
+
+
 
                         <div class="form-group">
                             <?php
@@ -73,22 +78,24 @@ include 'includes/navbar.php';
                             $row = mysqli_fetch_assoc($queryResult)
 
                             ?>
-                            <label for = "carriedOver" class = "col-lg-5 control-label">Carried Over:</label>
+                            <label for = "carriedOver" class = "col-lg-3 control-label">Carried Over:</label>
                             <div class = "col-lg-5">
-                                <input type = "text" class="form-control" id="carriedOver" placeholder="Hint Text" readonly value=<?php echo $row["budget"] ?>  />
+                                <input type = "text" class="form-control" id="carriedOver" name="carriedOver" placeholder="Hint Text" readonly value=<?php echo $row["budget"] ?>  />
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for = "remainingBudget" class = "col-lg-5 control-label">Remaining Budget:</label>
+                            <label for = "remainingBudget" class = "col-lg-3 control-label">Remaining Budget:</label>
                             <div class = "col-lg-5">
                                 <input type = "text" class="form-control" id="remainingBudget" name="remainingBudget" placeholder="Hint Text" readonly />
                             </div>
                         </div>
-                        <div class = "modal-footer">
-                            <a href="#" class="btn btn-danger" data-dismiss = "modal">Cancel</a>
+
+                        <div class="form-horizontal">
+                            <a href="index.php" class="btn btn-danger ">Cancel</a>
                             <button class="btn btn-success" id="submitButton" type="submit">Submit Selection</button>
                         </div>
+
                     </form>
                 </div>
             </div>
