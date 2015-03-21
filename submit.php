@@ -12,7 +12,7 @@ include 'functions/general.php';
         $driver2 = $_POST["driver2"];
         $constructor1 = $_POST["constructor1"];
         $constructor2 = $_POST["constructor2"];
-        $joker = (isset($_REQUEST['jokerUsed']));
+        $joker = $_POST["jokerUsed"];
         $carryOver = $_POST["remainingBudget"];
 
         unset($_SESSION["submitErrorMessage"]);
@@ -30,16 +30,6 @@ include 'functions/general.php';
             while($row = mysqli_fetch_assoc($queryResult))
             {
                 $country =  $row["Country"];
-            }
-
-
-            if ($joker == 1)
-            {
-                $joker = 1;
-            }
-            else
-            {
-                $joker = 0;
             }
 
             $balance = $_POST["remainingBudget"];

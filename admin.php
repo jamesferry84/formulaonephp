@@ -20,34 +20,42 @@ else{
                         <h3>New User Approvals</h3>
                     </div>
                     <div class="table-responsive ">
+                        <form action="submitApprovals.php" method="post">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Team Name</th>
+                                    <th>Approve?</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <?php
+                                    $sql = "select UserName, Email, teamname from users where Activated = 0";
+                                    $result = $conn->query($sql);
+                                    while($row = mysqli_fetch_assoc($result))
+                                    {
+                                        echo'<tr>' .
+                                                '<td>' . $row["UserName"] . '</td>' .
+                                                '<td>' . '<input name="email[]" value="' . $row["Email"] .'" readonly>' . '</td>' .
+                                                '<td>' . $row["teamname"] . '</td>' .
+                                                '<td>
+                                                    <select class="form-control" id="approve" name="approve[]">
+                                                        <option value="0">No</option>
+                                                        <option value="1">Yes</option>
+                                                    </select>
+                                                </td>' .
+                                            '</tr>';
+                                    }
+                                    ?>
+                                </tr>
+                                </tbody>
 
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Team Name</th>
-                                <th>Approve?</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <?php
-                                $sql = "select UserName, Email, teamname from users where Activated = 0";
-                                $result = $conn->query($sql);
-                                while($row = mysqli_fetch_assoc($result))
-                                {
-                                    echo'<tr>' .
-                                        '<td>' . $row["UserName"] . '</td>' .
-                                        '<td>' . $row["Email"] . '</td>' .
-                                        '<td>' . $row["teamname"] . '</td>' .
-                                        '<td><input type="submit" class="btn btn-success" name="Submit" value="Approve"></td>' .
-                                        '</tr>';
-                                }
-                                ?>
-                            </tr>
-                            </tbody>
-                        </table>
+                            </table>
+                            <button class="btn btn-success" name="submitButton" type="submit">Submit Selections</button>
+                        </form>
                     </div>
                 </div>
             </div>
