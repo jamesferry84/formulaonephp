@@ -3,6 +3,7 @@ include 'init.php';
 $active="profile";
 include 'includes/header.php';
 include 'includes/navbar.php';
+$username = $_SESSION["username"];
 ?>
 <?php
 $sql = "select teamname, Email from users where UserName = '$username' ";
