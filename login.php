@@ -29,7 +29,7 @@ include 'functions/general.php';
             <div class="collapse navbar-collapse navHeaderCollapse">
                 <ul class = "nav navbar-nav navbar-right">
                     <li class = "active"><a href="index.php">Home</a></li>
-                    <li><a href="rules.php">Rules</a></li>
+                    <li><a href="rulesGeneral.php">Rules</a></li>
                 </ul>
             </div>
         </div>
