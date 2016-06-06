@@ -6,7 +6,7 @@ include 'init.php';
 
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container">
-        <a href="index.php" class="navbar-brand">F1 Predictor 2015 <?php echo " - " . $_SESSION["username"] ?></a>
+        <a href="index.php" class="navbar-brand">F1 Predictor 2016</a>
 
         <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
             <span class = "icon-bar"></span>
@@ -16,9 +16,9 @@ include 'init.php';
 
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class = "nav navbar-nav navbar-right">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="rules.php">Rules</a></li>
-                <li><a href="profile.php">Profile</a></li>
+                <li<?php if ($active == 'home') {echo 'class="active"';} ?>><a href="index.php">Home</a></li>
+                <li<?php if ($active == 'rules') {echo 'class="active"';} ?>><a href="rules.php">Rules</a></li>
+                <li<?php if ($active == 'profile') {echo 'class="active"';} ?>><a href="profile.php">Profile</a></li>
                 <?php
                 if ($_SESSION["admin"] == 1)
                 {

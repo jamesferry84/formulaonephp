@@ -18,7 +18,7 @@ include 'functions/general.php';
 
     <div class="navbar navbar-inverse navbar-static-top">
         <div class="container">
-            <a href="index.php" class="navbar-brand">F1 Predictor 2015</a>
+            <a href="index.php" class="navbar-brand">F1 Predictor 2016</a>
 
             <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
                 <span class = "icon-bar"></span>

@@ -2,6 +2,7 @@
 
 include 'init.php';
 include 'functions/general.php';
+$active="home";
 include 'includes/header.php';
 if (isset($_SESSION["username"]))
 {
