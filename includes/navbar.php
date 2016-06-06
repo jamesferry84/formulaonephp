@@ -19,6 +19,9 @@ include 'init.php';
                 <li <?php if ($active == 'home') {echo 'class="active"';} ?>>
                     <a href="index.php">Home</a>
                 </li>
+                <li <?php if ($active == 'chooseTeam') {echo 'class="active"';} ?>>
+                    <a href="chooseteam.php">Choose Team</a>
+                </li>
                 <li <?php if ($active == 'rules') {echo 'class="active"';} ?>>
                     <a href="rules.php">Rules</a>
                 </li>

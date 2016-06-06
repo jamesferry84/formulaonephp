@@ -45,7 +45,7 @@ include 'functions/general.php';
                     </div>
                     <ol>
                         <li>Register your intention to join the league by emailing <a href="mailto:meno38@sky.com">meno38@sky.com</a>. You will receive a welcome email and how to pay your &pound;3 entry fee to the League Organiser.</li>
-                        <li>You are allocated an operating budget for your team during the season - you can spend up to &pound;55 million on your team's Line-up with each Constructor and Driver incurring a cost according to the current prices shown below:</li>
+                        <li>You are allocated an operating budget £55 million for your team line-ups during the season - you can spend up to &pound;55 million on your team's Line-up with each Constructor and Driver incurring a cost according to the current prices shown below:</li>
 
                         <div class="table-responsive  col-lg-12">
                             <table class="table table-bordered text-center">
@@ -72,12 +72,13 @@ include 'functions/general.php';
 
                             </table>
                         </div>
-                        <li>Unspent team budgets from one Race  weekend will be rolled over into the next race.</li>
-                        <li>Driver and Constructor prices will be recalculated after each race, based on their performance over a rolling 12 month period. For example, once the Australian G.P. is complete each Driver's and Team's price for the next race will be re-calculated on the Total 2014 season points scored minus the 2014 Australian GP plus the 2015 Australian GP points, and so on after each race.</li>
-                        <li>You cannot submit the same Driver or Constructor more than once for a race, e.g. choose Alonso as your Driver twice for the same Race weekend.</li>
+                        <li>Unspent team budgets from one Race will be rolled over into the next race.</li>
+                        <li>Driver and Constructor prices will be recalculated after each race, based on their performance over a rolling 12 month period. For example, once the Australian G.P. is complete each Driver's and Team's price for the next race will be re-calculated on the Total 2014 season points scored minus the 2015 Australian GP plus the 2016 Australian GP points, and so on after each race.</li>
+                        <li>You cannot submit the same Driver or Constructor more than once for a race, e.g. choose Alonso as your Driver twice for any Grand Prix.</li>
                         <li>Driver and Constructor prices will be calculated using the points they have scored in OUR league over the previous 12 months, rather than only the points they have earned in the official F1 championship.</li>
-                        <li>Each team will be given 5 'Jokers' to play on any race over the season, an increase from the 4 Jokers available in 2014. A Joker played before a race weekend starts will double the points scored by your team over the weekend. There are no double points being scored in the final Race of the season at Abu Dhabi this year. Thankfully.</li>
+                        <li>Each team will be given 5 'Jokers' to play on any race over the season. A Joker played before a race weekend starts will double the points scored by your team over the weekend.</li>
                         <li>Your Team can be altered between Grand Prixs but not during a Grand Prix weekend, which runs from the start of the First Practice session until the end of the Race itself during each Grand Prix weekend.</li>
+                        <li>Each entry and alteration made to your team will only be accepted by email - no verbal changes will be acceptes. This is to maintain a timestamp on entries to ensure that they have been made within the time windows described in point 8 above.</li>
                         <li>The current<sup>1</sup> race calendar is:</li>
 
                         <div class="table-responsive  col-lg-12 col-md-12 col-sm-12">

@@ -3,9 +3,16 @@ include 'init.php';
 $active="profile";
 include 'includes/header.php';
 include 'includes/navbar.php';
-$username = $_SESSION["username"];
 ?>
-
+<?php
+$sql = "select teamname, Email from users where UserName = '$username' ";
+$result = $conn->query($sql);
+while($row = mysqli_fetch_assoc($result))
+{
+    $teamName = $row["teamname"];
+    $emailAddress = $row["Email"];
+}
+?>
 
     <div class="container">
         <div class = "row">
@@ -13,41 +20,45 @@ $username = $_SESSION["username"];
                 <div class = "panel panel-default">
                     <div class = "panel-body">
                         <div class="page-header">
-                            <h3>Your Selections</h3>
+                            <h3>Team Name: <?php echo $teamName?></h3>
+                            <h3>Email: <?php echo $emailAddress?></h3>
                         </div>
-                        <div class="table-responsive ">
-                            <table class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Race</th>
-                                    <th>Driver 1</th>
-                                    <th>Driver 2</th>
-                                    <th>Constructor 1</th>
-                                    <th>Constructor 2</th>
-                                    <th>Joker Used</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <?php
-                                    $sql = "select Country, driver1, driver2, constructor1, constructor2, joker from submissions where UserName = '$username' order by date desc  ";
-                                    $result = $conn->query($sql);
-                                    while($row = mysqli_fetch_assoc($result))
-                                    {
-                                        echo'<tr>' .
-                                            '<td>' . $row["Country"] . '</td>' .
-                                            '<td>' . $row["driver1"] . '</td>' .
-                                            '<td>' . $row["driver2"] . '</td>' .
-                                            '<td>' . $row["constructor1"] . '</td>' .
-                                            '<td>' . $row["constructor2"] . '</td>' .
-                                            '<td>' . $row["joker"] . '</td>' .
-                                            '</tr>';
-                                    }
-                                    ?>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
+<!--                        -->
+<!--                        <div class="table-responsive ">-->
+<!--                            <table class="table table-striped">-->
+<!--                                <thead>-->
+<!--                                <tr>-->
+<!--                                    <th>Race</th>-->
+<!--                                    <th>Driver 1</th>-->
+<!--                                    <th>Driver 2</th>-->
+<!--                                    <th>Constructor 1</th>-->
+<!--                                    <th>Constructor 2</th>-->
+<!--                                    <th>Joker Used</th>-->
+<!--                                </tr>-->
+<!--                                </thead>-->
+<!--                                <tbody>-->
+<!--                                <tr>-->
+<!--                                    --><?php
+//                                    $sql = "select Country, driver1, driver2, constructor1, constructor2, joker from submissions where UserName = '$username' order by date desc  ";
+//                                    $result = $conn->query($sql);
+//                                    while($row = mysqli_fetch_assoc($result))
+//                                    {
+//                                        echo'<tr>' .
+//                                            '<td>' . $row["Country"] . '</td>' .
+//                                            '<td>' . $row["driver1"] . '</td>' .
+//                                            '<td>' . $row["driver2"] . '</td>' .
+//                                            '<td>' . $row["constructor1"] . '</td>' .
+//                                            '<td>' . $row["constructor2"] . '</td>' .
+//                                            '<td>' . $row["joker"] . '</td>' .
+//                                            '</tr>';
+//                                    }
+//                                    ?>
+
+<!--                                </tr>-->
+<!--                                </tbody>-->
+<!--                            </table>-->
+<!--                        </div>-->
+<!--                        -->
                     </div>
                 </div>
             </div>
