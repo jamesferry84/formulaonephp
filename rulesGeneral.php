@@ -28,7 +28,7 @@ include 'functions/general.php';
 
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class = "nav navbar-nav navbar-right">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="login.php">Home</a></li>
                 <li class = "active"><a href="rulesGeneral.php">Rules</a></li>
             </ul>
         </div>
