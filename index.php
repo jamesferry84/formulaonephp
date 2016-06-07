@@ -29,9 +29,16 @@ include 'includes/navbar.php';
 <div class="container">
     <div class="jumbotron text-center container">
         <h1>Welcome to the F1 Predictor</h1>
-        <p> Next Race: <?php echo $country; ?></p>
-        <p >Submissions close in: <p id="clock"></p></p>
-        <a href="chooseteam.php" class = "btn btn-success" <?php if ($alreadySubmitted == 1) echo 'disabled="true"' ?>>Choose Team</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pharetra pretium nisi.
+            Praesent mollis mauris sit amet tristique fermentum. Maecenas at urna sollicitudin, blandit justo vitae, volutpat leo. Nam pellentesque diam sed lorem
+            iaculis aliquet. Sed condimentum, risus vehicula semper blandit, ex purus tincidunt dolor, ut elementum libero augue eget ante. Sed ac arcu sed
+            nibh hendrerit molestie. Vestibulum tempus, neque sit amet congue tincidunt, nunc ante molestie eros, id ultricies eros velit efficitur nisi. Nulla facilisi.
+            Ut tempus semper condimentum. Nullam pharetra euismod odio, ac auctor ante ultricies vitae. Suspendisse pharetra feugiat nisl. Integer sed ante in dui pellentesque ultrices.
+            Aliquam eu odio vulputate, feugiat risus sit amet, tempor massa. Suspendisse sit amet erat mauris. Ut quis nibh in velit molestie pretium. Fusce lorem arcu, consequat et augue at, finibus ultricies ex.</p>
+<!--        <p> Next Race: --><?php //echo $country; ?><!--</p>-->
+<!--        <p >Submissions close in: <p id="clock"></p></p>-->
+<!--        <a href="chooseteam.php" class = "btn btn-success" --><?php //if ($alreadySubmitted == 1) echo 'disabled="true"' ?><!-->
+        <!--Choose Team</a>-->
     </div>
 </div>
 
