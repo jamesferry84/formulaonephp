@@ -103,63 +103,7 @@ include 'includes/navbar.php';
 
 
 
-        <div class="col-md-6">
-            <h3>Top 3</h3>
-            <div class="table-responsive ">
-                <table class="table table-bordered">
-                    <tr class ="success">
 
-                        <td>Name</td>
-                        <td>Points</td>
-                    </tr>
-                    <?php
-                    $today = date("y-m-d");
-                    $sql = "select * from users order by points desc LIMIT 0,3";
-                    $queryResult = $conn->query($sql);
-                    $numrows=mysqli_num_rows($queryResult);
-
-                    while($row = mysqli_fetch_assoc($queryResult))
-                    {
-                        ?>
-                        <tr>
-                            <td> <?php echo $row["teamname"]?></td>
-                            <td> <?php echo $row["points"]?></td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </table>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <h3>Next 3 Races</h3>
-            <div class="table-responsive ">
-                <table class="table table-bordered">
-                    <tr class ="success">
-
-                        <td>Date</td>
-                        <td>Country</td>
-                    </tr>
-                    <?php
-                    $today = date("y-m-d");
-                    $sql = "select * from racecalendar where Date >= CURDATE() order by date LIMIT 0,3";
-                    $queryResult = $conn->query($sql);
-                    $numrows=mysqli_num_rows($queryResult);
-
-                    while($row = mysqli_fetch_assoc($queryResult))
-                    {
-                        ?>
-                        <tr>
-                            <td> <?php echo $row["Date"]?></td>
-                            <td> <?php echo $row["Country"]?></td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </table>
-            </div>
-        </div>
     </div>
 </div>
 
