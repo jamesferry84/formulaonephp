@@ -74,6 +74,31 @@ include 'includes/navbar.php';
                 ?>
             </table>
         </div>
+        <div class="table-responsive  col-md-12">
+            <table class="table table-bordered text-center">
+                <tr class ="success">
+
+                    <td>Driver</td>
+                    <td>Price</td>
+                    <td>Constructor</td>
+                    <td>Price</td>
+                </tr>
+                <?php
+                $sql = "select d.name,d.price,t.name as teamname,t.price as teamprice from driver d join team t on d.team = t.name order by d.price DESC";
+                $result = $conn->query($sql);
+                while($row = mysqli_fetch_assoc($result))
+                {
+                    echo'<tr>' .
+                        '<td>' . $row["name"] . '</td>' .
+                        '<td>' . $row["price"] . '</td>' .
+                        '<td>' . $row["teamname"] . '</td>' .
+                        '<td>' . $row["teamprice"] . '</td>' .
+                        '</tr>';
+                }
+                ?>
+
+            </table>
+        </div>
 
 
 
