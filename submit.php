@@ -4,6 +4,7 @@ include 'init.php';
 include 'includes/header.php';
 include 'includes/navbar.php';
 include 'functions/general.php';
+$active="home";
 
     if (empty($_POST) === false) {
 
