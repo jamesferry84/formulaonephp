@@ -34,7 +34,7 @@ include 'functions/general.php';
 
             $balance = $_POST["remainingBudget"];
 
-            $query = "INSERT INTO `submissions` (`UserName`, `driver1`, `driver2`, `constructor1`, `constructor2`, `joker`, `country`)
+            $query = "INSERT INTO `submissions` (`UserName`, `driver1`, `driver2`, `constructor1`, `constructor2`, `joker`, `Country`)
                   VALUES ('$username', '$driver1', '$driver2', '$constructor1', '$constructor2', '$joker', '$country')";
 
             $conn->query($query);
