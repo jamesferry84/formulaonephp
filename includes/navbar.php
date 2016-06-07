@@ -1,12 +1,19 @@
 <?php
 include 'init.php';
 //include 'functions/general.php';
+$sql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
+$queryResult = $conn->query($sql);
+$numrows=mysqli_num_rows($queryResult);
 
+while($row = mysqli_fetch_assoc($queryResult))
+{
+    $country =  $row["Country"];
+}
 ?>
 
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container">
-        <a href="index.php" class="navbar-brand">F1 Predictor 2016</a>
+        <a href="index.php" class="navbar-brand">F1 2016 - <?php echo $_SESSION["username"] ?> | Next Race: <?php echo $country; ?> | Submissions Close:  <span id="clock"></span></a>
 
         <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
             <span class = "icon-bar"></span>
@@ -35,3 +42,28 @@ include 'init.php';
         </div>
     </div>
 </div>
+<div id="nextrace" style="display: none">
+    <?php
+    $today = date("y-m-d");
+    $sql = "select * from racecalendar where Date >= CURDATE() order by date LIMIT 0,1";
+    $queryResult = $conn->query($sql);
+    $numrows=mysqli_num_rows($queryResult);
+
+    while($row = mysqli_fetch_assoc($queryResult))
+    {
+        echo $row["Date"];
+    }
+    ?>
+</div>
+<script>
+
+    var div = document.getElementById("nextrace");
+    var timeToNextRace = div.textContent;
+    var date = new Date(timeToNextRace);
+    date.setDate(date.getDate()-2);
+    $('#clock').countdown(date, function(event) {
+        $(this).html(event.strftime('%D days %H:%M:%S'));
+        // var totalHours = event.offset.totalDays * 24 + event.offset.hours;
+        // $(this).html(event.strftime(totalHours + ' hr %M min %S sec'));
+    });
+</script>

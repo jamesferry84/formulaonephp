@@ -11,7 +11,7 @@ if (isset($_SESSION["username"]))
 else{
     header("location:login.php");
 }
-$sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,1";
+$sql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
 $queryResult = $conn->query($sql);
 $numrows=mysqli_num_rows($queryResult);
 
@@ -96,31 +96,6 @@ include 'includes/navbar.php';
         </div>
     </div>
 </div>
-<div id="nextrace" style="display: none">
-    <?php
-    $today = date("y-m-d");
-    $sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,1";
-    $queryResult = $conn->query($sql);
-    $numrows=mysqli_num_rows($queryResult);
-
-    while($row = mysqli_fetch_assoc($queryResult))
-    {
-        echo $row["Date"];
-    }
-    ?>
-</div>
 
 </body>
-<script>
-
-    var div = document.getElementById("nextrace");
-    var timeToNextRace = div.textContent;
-    var date = new Date(timeToNextRace);
-    date.setDate(date.getDate()-2);
-    $('#clock').countdown(date, function(event) {
-        $(this).html(event.strftime('%D days %H:%M:%S'));
-       // var totalHours = event.offset.totalDays * 24 + event.offset.hours;
-       // $(this).html(event.strftime(totalHours + ' hr %M min %S sec'));
-    });
-</script>
 </html>

@@ -103,7 +103,7 @@ include 'includes/navbar.php';
 
                         <div class="form-horizontal">
                             <a href="index.php" class="btn btn-danger ">Cancel</a>
-                            <button class="btn btn-success" id="submitButton" type="submit">Submit Selection</button>
+                            <button class="btn btn-success" id="submitButton" type="submit">Submit Team</button>
                         </div>
 
                     </form>
