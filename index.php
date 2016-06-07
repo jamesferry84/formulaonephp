@@ -84,7 +84,7 @@ include 'includes/navbar.php';
                     </tr>
                     <?php
                     $today = date("y-m-d");
-                    $sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,3";
+                    $sql = "select * from racecalendar where Date >= CURDATE() order by date LIMIT 0,3";
                     $queryResult = $conn->query($sql);
                     $numrows=mysqli_num_rows($queryResult);
 
