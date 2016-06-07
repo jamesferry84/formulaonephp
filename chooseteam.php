@@ -7,11 +7,11 @@ $username = $_SESSION["username"];
 
 <div class="container">
     <div class = "row">
-        <div class = "col-lg-8 col-md-8 col-sm-8">
+        <div class = "col-lg-12 col-md-8 col-sm-8">
             <div class = "panel panel-default">
                 <div class = "panel-body">
                     <div class="page-header">
-                        <h3>Team Choices</h3>
+                        <h3>Team Choices for <?php echo $country ?></h3>
                         <div class="well">
                             <div class="alert-danger">
                                 <?php
@@ -22,7 +22,7 @@ $username = $_SESSION["username"];
                                 ?>
                         </div>
                     </div>
-                    <form class="form-horizontal" action="submit.php" method="post">
+                    <form class="form-horizontal" action="submit.php" method="post" onsubmit="return confirm('Are you sure you want to submit this team?');">
                         <div class="form-group">
                             <label for = "driver" class = "col-lg-3 control-label">Driver 1:</label>
                             <div class = "col-lg-5">
@@ -102,7 +102,7 @@ $username = $_SESSION["username"];
                         </div>
 
                         <div class="form-horizontal">
-                            <a href="index.php" class="btn btn-danger ">Cancel</a>
+                            <a href="index.php" class="btn btn-danger ">Reset Team</a>
                             <button class="btn btn-success" id="submitButton" type="submit">Submit Team</button>
                         </div>
 
