@@ -26,13 +26,10 @@ while($row = mysqli_fetch_assoc($queryResult))
                         <li>Register your intention to join the league by emailing <a href="mailto:f1predictor@virginmedia.com">f1predictor@virginmedia.com</a>.</li>
                         <li>You are allocated an operating budget &pound;55 million for your team line-ups during the season - for each race you recruit two Drivers and two Constructors who each incur a cost.  The current prices going into the 2016 <?php echo $country?> Grand Prix are shown below</li>
 
-                        <div class="table-responsive  col-lg-12">
+                        <div class="table-responsive  col-lg-6 col-md-12 col-sm-12 ">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
-
                                     <td>Driver</td>
-                                    <td>Price</td>
-                                    <td>Constructor</td>
                                     <td>Price</td>
                                 </tr>
                                 <?php
@@ -43,14 +40,32 @@ while($row = mysqli_fetch_assoc($queryResult))
                                     echo'<tr>' .
                                         '<td>' . $row["name"] . '</td>' .
                                         '<td>' . $row["price"] . '</td>' .
-                                        '<td>' . $row["teamname"] . '</td>' .
-                                        '<td>' . $row["teamprice"] . '</td>' .
                                         '</tr>';
                                 }
                                 ?>
+                            </table>
 
+                        </div>
+                        <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
+                            <table class="table table-bordered text-center">
+                                <tr class ="success">
+                                    <td>Constructor</td>
+                                    <td>Price</td>
+                                </tr>
+                                <?php
+                                $sql = "select Name,Price from team order by Price DESC";
+                                $result = $conn->query($sql);
+                                while($row = mysqli_fetch_assoc($result))
+                                {
+                                    echo'<tr>' .
+                                        '<td>' . $row["Name"] . '</td>' .
+                                        '<td>' . $row["Price"] . '</td>' .
+                                        '</tr>';
+                                }
+                                ?>
                             </table>
                         </div>
+                        <div class="clearfix visible-xs-block"></div>
                         <li>Unspent team budgets from one Race will be rolled over into the next race.</li>
                         <li>Driver and Constructor prices will be recalculated after each race, based on their performance over a rolling 12 month period. For example, once the Australian G.P. is complete each Driver's and Team's price for the next race will be re-calculated on the Total 2014 season points scored minus the 2015 Australian GP plus the 2016 Australian GP points, and so on after each race.</li>
                         <li>You cannot submit the same Driver or Constructor more than once for a race, e.g. choose Alonso as your Driver twice for any Grand Prix.</li>
@@ -59,11 +74,10 @@ while($row = mysqli_fetch_assoc($queryResult))
                         <li>Your Team can be altered between Grand Prixs but not during a Grand Prix weekend, which runs from the start of the First Practice session until the end of the Race itself during each Grand Prix weekend.</li>
                         <li>Each entry and alteration made to your team will only be accepted by email - no verbal changes will be acceptes. This is to maintain a timestamp on entries to ensure that they have been made within the time windows described in point 8 above.</li>
                         <li>The current<sup>1</sup> race calendar is:</li>
-
-                        <div class="table-responsive  col-lg-12 col-md-12 col-sm-12">
+                        <div class="table-responsive  col-lg-12 col-md-8 col-sm-8">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
-                                    <td>Date</td>
+                                    <td>Date (YYYY-MM-DD)</td>
                                     <td>Country</td>
                                 </tr>
                                 <?php
@@ -79,10 +93,11 @@ while($row = mysqli_fetch_assoc($queryResult))
                                 ?>
                             </table>
                         </div>
+                        <div class="clearfix visible-xs-block"></div>
                         <li>If you fail to submit your team for a race on time , your submission for the previous race will be used. This will prevent anyone being excessively penalised for late or no submission of a team.</li>
                         <li>If your team has been rolled over unchanged from one race to the next, and your Team's value is above your current rolling Budget, then the MOST EXPENSIVE component of your Team will be dropped from your Line-up. This will bring your Budget spend for the Race within your current Budget allowance. However you will also be fined £10 million for the CURRENT Race weekend, as you should not be intentionally or unintentionally spending more than your current Budget. This would potentially result in you losing the SECOND MOST EXPENSIVE component of your Team for the CURRENT Race. If you have some unspent Budget left (after the Fine and dropping Team components) then this will be rolled over into the following Race's unspent Budget value.</li>
                         <li>There are a number of ways in which your Drivers and Constructors can score Points (see below for an example). </li>
-
+                        <div class="clearfix visible-xs-block"></div>
                         <div class="table-responsive  col-lg-12">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
@@ -132,8 +147,9 @@ while($row = mysqli_fetch_assoc($queryResult))
                                 </tr>
                             </table>
                         </div>
-
+                        <div class="clearfix visible-xs-block"></div>
                         <li>Here is an example of the scoring system using results from the Australian Grand Prix in Melbourne in 2013 with a team comprised of :</li>
+                        <div class="clearfix visible-xs-block"></div>
                         <div class="table-responsive  col-lg-12">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
@@ -171,21 +187,19 @@ while($row = mysqli_fetch_assoc($queryResult))
                                 </tr>
                             </table>
                         </div>
-
+                        <div class="clearfix visible-xs-block"></div>
                         <li>The constructor placings will be determined by addition of the Constructor's Driver's final Race positions, with the lowest scoring constructor placing first and the highest scoring constructor placing eleventh. In the event of a tie between constructors for a particular race, the average number of points will be used, i.e. 3 constructors tying for 4th place, then the points for 4th, 5th and 6th places will be equally shared between the 3 constructors (rounded up to nearest whole number).</li>
                         <li>If you do not use the most recent spreadsheet to select your team line-up, you run the risk of submitting a team which will be over your current budget (due to Driver and Constructor Prices being recalculated after every race). If you submit a team which is over budget, your team line-up from the previous race will be used. No Joker for the current race will be applied in this circumstance whether you have asked for one or not.</li>
                         <li>If any Constructor teams are tied for Best Combined Qualifying Performance, then all tied teams will score 5 Points.</li>
                         <li>The Driver Placing, Constructor Placing, Fastest Lap Time, Fastest Pitstop and Completed Race Points will all be determined using the official www.f1.com results. The Fastest Pitstop is determined from data on the FIA's website, with the time use being from when the Driver enters the pitlane, then exits it after his stop.</li>
                         <li>A driver will be deemed to have completed the race if he is not listed as having retired from the race on www.f1.com - if a driver finishes the race but has been lapped by the race winner then they will be deemed to have completed the race and will score the 5 point bonus.</li>
-                        <li>* Disclaimer - The Dictator-in-Chief of the League do not accept responsibility if you suffer any symptoms due to the thrilling effects of being part of this league. Please consult your G.P. if you experience any shortness of breath, arrythmia, sweaty palms or homicidal tendencies towards fellow League members during the course of the season.</li>
+
                     </ol>
+                    <p>* Disclaimer - The Dictator-in-Chief of the League do not accept responsibility if you suffer any symptoms due to the thrilling effects of being part of this league. Please consult your G.P. if you experience any shortness of breath, arrythmia, sweaty palms or homicidal tendencies towards fellow League members during the course of the season.</p>
                     <p><small><sup>1</sup> Subject to change by the FIA.</small></p>
                 </div>
             </div>
         </div>
-
-
-
     </div>
 </div>
 
