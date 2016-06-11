@@ -104,10 +104,10 @@ while($row = mysqli_fetch_assoc($queryResult))
                         <li>Your Team can be altered between Grand Prixs but not during a Grand Prix weekend, which runs from the start of the First Practice session until the end of the Race itself during each Grand Prix weekend.</li>
                         <li>Each entry and alteration made to your team will only be accepted by email - no verbal changes will be acceptes. This is to maintain a timestamp on entries to ensure that they have been made within the time windows described in point 8 above.</li>
                         <li>The current<sup>1</sup> race calendar is:</li>
-                        <div class="table-responsive  col-lg-12 col-md-12 col-sm-12">
+                        <div class="table-responsive  col-lg-12 col-md-8 col-sm-8">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
-                                    <td>Date</td>
+                                    <td>Date (YYYY-MM-DD)</td>
                                     <td>Country</td>
                                 </tr>
                                 <?php
