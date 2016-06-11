@@ -13,7 +13,7 @@ while($row = mysqli_fetch_assoc($queryResult))
 
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container">
-        <a href="index.php" class="navbar-brand">F1 2016 - <?php echo $_SESSION["username"] ?> | Next Race: <?php echo $country; ?> | Submissions Close:  <span id="clock"></span></a>
+        <a href="index.php" class="navbar-brand">F1 Predictor 2016 : Next Race: <?php echo $country; ?> | Submissions Close:  <span id="clock"></span></a>
 
         <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
             <span class = "icon-bar"></span>
@@ -36,7 +36,8 @@ while($row = mysqli_fetch_assoc($queryResult))
                     <a href="profile.php">Profile</a>
                 </li>
                 <li>
-                    <a href="logout.php">Log Out</a>
+
+                    <a href="logout.php">Log Out (<?php echo $_SESSION["username"]?>)</a>
                 </li>
             </ul>
         </div>
