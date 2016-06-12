@@ -13,7 +13,7 @@ while($row = mysqli_fetch_assoc($queryResult))
 
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container">
-        <a href="index.php" class="navbar-brand">F1 Predictor 2016 : Next Race: <?php echo $country; ?> | Submissions Close:  <span id="clock"></span></a>
+        <a href="index.php" class="navbar-brand">Next Race: <?php echo $country; ?> | Submit Team by:  <span id="clock"></span></a>
 
         <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
             <span class = "icon-bar"></span>
