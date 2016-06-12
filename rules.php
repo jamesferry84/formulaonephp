@@ -195,7 +195,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                         <li>A driver will be deemed to have completed the race if he is not listed as having retired from the race on www.f1.com - if a driver finishes the race but has been lapped by the race winner then they will be deemed to have completed the race and will score the 5 point bonus.</li>
 
                     </ol>
-                    <p>* Disclaimer - The Dictator-in-Chief of the League do not accept responsibility if you suffer any symptoms due to the thrilling effects of being part of this league. Please consult your G.P. if you experience any shortness of breath, arrythmia, sweaty palms or homicidal tendencies towards fellow League members during the course of the season.</p>
+                    <p>* Disclaimer - The Dictator-in-Chief of the League does not accept responsibility if you suffer any symptoms due to the thrilling effects of being part of this league. Please consult your G.P. if you experience any shortness of breath, arrythmia, sweaty palms or homicidal tendencies towards fellow League members during the course of the season.</p>
                     <p><small><sup>1</sup> Subject to change by the FIA.</small></p>
                 </div>
             </div>
