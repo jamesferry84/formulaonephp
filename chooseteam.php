@@ -3,6 +3,19 @@ $active="chooseTeam";
 include 'includes/header.php';
 include 'includes/navbar.php';
 $username = $_SESSION["username"];
+$previousRaceSql = "select * from racecalendar where Date <= CURDATE() ORDER BY date desc LIMIT 0,1;";
+$result = $conn->query($previousRaceSql);
+$row = mysqli_fetch_assoc($result);
+$previousRace = $row["Country"];
+
+$sql = "select * from submissions where Country = '$previousRace'  and UserName = '{$_SESSION['username']}'";
+$queryResult = $conn->query($sql);
+$row = mysqli_fetch_assoc($queryResult);
+$driver1 = $row["driver1"];
+$driver2 = $row["driver2"];
+$constructor1 = $row["constructor1"];
+$constructor2 = $row["constructor2"];
+
 ?>
 
 <div class="container">
@@ -27,7 +40,7 @@ $username = $_SESSION["username"];
                             <label for = "driver" class = "col-lg-3 control-label">Driver 1:</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="driver1DropDown" name="driver1" required="required" >
-                                    <option value="">First Driver</option>
+                                    <option value=""><?php echo $driver1 ?></option>
                                 </select>
                             </div>
                         </div>
@@ -36,7 +49,7 @@ $username = $_SESSION["username"];
                             <label for = "driver" class = "col-lg-3 control-label">Driver 2:</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="driver2DropDown" name="driver2" required="required">
-                                    <option value="">Second Driver</option>
+                                    <option value=""><?php echo $driver2 ?></option>
                                 </select>
                             </div>
                         </div>
@@ -45,7 +58,7 @@ $username = $_SESSION["username"];
                             <label for = "constructor" class = "col-lg-3 control-label">Constructor 1:</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="constructor1DropDown" name="constructor1" required="required">
-                                    <option value="">First Constructor</option>
+                                    <option value=""><?php echo $constructor1 ?></option>
                                 </select>
                             </div>
                         </div>
@@ -54,7 +67,7 @@ $username = $_SESSION["username"];
                             <label for = "constructor" class = "col-lg-3 control-label">Constructor 2:</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="constructor2DropDown" name="constructor2" required="required" >
-                                    <option value="">Second Constructor</option>
+                                    <option value=""><?php echo $constructor2 ?></option>
                                 </select>
                             </div>
                         </div>
@@ -102,7 +115,7 @@ $username = $_SESSION["username"];
                         </div>
 
                         <div class="form-horizontal">
-                            <a href="index.php" class="btn btn-danger ">Reset Team</a>
+                            <button class="btn btn-danger " onclick="resetTeam()">Reset Team</button>
                             <button class="btn btn-success" id="submitButton" type="submit">Submit Team</button>
                         </div>
 
@@ -193,6 +206,14 @@ $username = $_SESSION["username"];
 
     var firstConstructorSelected = null;
     var secondConstructorSelected = null;
+
+    function resetTeam()
+    {
+        document.getElementById("driver1DropDown").value = '<?php echo $driver1 ;?>';
+        document.getElementById("driver2DropDown").value = '<?php $driver2 ;?>';
+        document.getElementById("constructor1DropDown").value = '<?php $constructor1 ;?>';
+        document.getElementById("constructor2DropDown").value = '<?php $constructor2 ;?>';
+    }
 
     function Update()
     {
