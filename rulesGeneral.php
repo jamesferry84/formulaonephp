@@ -96,7 +96,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                             </table>
                         </div>
                         <div class="clearfix visible-xs-block"></div>
-                        <li>Unspent team budgets from one Race will be rolled over into the next race.</li>
+                        <li>Unspent Team budgets from one Race will be rolled over into the next race.</li>
                         <li>Driver and Constructor prices will be recalculated after each race, based on their performance over a rolling 12 month period. For example, once the Australian G.P. is complete each Driver's and Team's price for the next race will be re-calculated on the Total 2014 season points scored minus the 2015 Australian GP plus the 2016 Australian GP points, and so on after each race.</li>
                         <li>You cannot submit the same Driver or Constructor more than once for a race, e.g. choose Alonso as your Driver twice for any Grand Prix.</li>
                         <li>Driver and Constructor prices will be calculated using the points they have scored in OUR predictor league over the previous 12 months, rather than only the points they have earned in the official F1 championship.</li>
