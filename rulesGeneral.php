@@ -53,7 +53,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                         <h3>HOW TO PLAY</h3>
                     </div>
                     <ol>
-                        <li>Register your intention to join the league by emailing <a href="mailto:f1predictor@virginmedia.com">f1predictor@virginmedia.com</a>.</li>
+                        <li>Register your intention to join the league by emailing f1predictor@virginmedia.com</li>
                         <li>You are allocated an operating budget &pound;55 million for your team line-ups during the season - for each race you recruit two Drivers and two Constructors who each incur a cost.  The current prices going into the 2016 <?php echo $country?> Grand Prix are shown below</li>
 
                         <div class="table-responsive  col-lg-6 col-md-12 col-sm-12 ">
