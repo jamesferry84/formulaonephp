@@ -30,7 +30,7 @@ while($row = mysqli_fetch_assoc($result))
                                     <td><?php echo $teamName?></td>
                                 </tr>
                                 <tr>
-                                    <td class="success">Email:</td>
+                                    <td class="success">Players registered email:</td>
                                     <td><?php echo $emailAddress?></td>
                                 </tr>
                             </table>
