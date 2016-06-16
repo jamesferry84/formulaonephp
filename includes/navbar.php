@@ -29,6 +29,9 @@ while($row = mysqli_fetch_assoc($queryResult))
                 <li <?php if ($active == 'chooseTeam') {echo 'class="active"';} ?>>
                     <a href="chooseteam.php">Choose Team</a>
                 </li>
+                <li <?php if ($active == 'statistics') {echo 'class="active"';} ?>>
+                    <a href="statistics.php">Stats</a>
+                </li>
                 <li <?php if ($active == 'rules') {echo 'class="active"';} ?>>
                     <a href="rules.php">Rules</a>
                 </li>
