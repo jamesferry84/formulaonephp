@@ -21,45 +21,22 @@ while($row = mysqli_fetch_assoc($result))
                 <div class = "panel panel-default">
                     <div class = "panel-body">
                         <div class="page-header">
-                            <h3>Team Name: <?php echo $teamName?></h3>
-                            <h3>Email: <?php echo $emailAddress?></h3>
+                            <h3>Profile</h3>
                         </div>
-<!--                        -->
-<!--                        <div class="table-responsive ">-->
-<!--                            <table class="table table-striped">-->
-<!--                                <thead>-->
-<!--                                <tr>-->
-<!--                                    <th>Race</th>-->
-<!--                                    <th>Driver 1</th>-->
-<!--                                    <th>Driver 2</th>-->
-<!--                                    <th>Constructor 1</th>-->
-<!--                                    <th>Constructor 2</th>-->
-<!--                                    <th>Joker Used</th>-->
-<!--                                </tr>-->
-<!--                                </thead>-->
-<!--                                <tbody>-->
-<!--                                <tr>-->
-<!--                                    --><?php
-//                                    $sql = "select Country, driver1, driver2, constructor1, constructor2, joker from submissions where UserName = '$username' order by date desc  ";
-//                                    $result = $conn->query($sql);
-//                                    while($row = mysqli_fetch_assoc($result))
-//                                    {
-//                                        echo'<tr>' .
-//                                            '<td>' . $row["Country"] . '</td>' .
-//                                            '<td>' . $row["driver1"] . '</td>' .
-//                                            '<td>' . $row["driver2"] . '</td>' .
-//                                            '<td>' . $row["constructor1"] . '</td>' .
-//                                            '<td>' . $row["constructor2"] . '</td>' .
-//                                            '<td>' . $row["joker"] . '</td>' .
-//                                            '</tr>';
-//                                    }
-//                                    ?>
+                        <div class="table-responsive  col-lg-12 col-md-12 col-sm-12 ">
+                            <table class="table table-bordered text-center">
+                                <tr>
+                                    <td class="success">Team Name:</td>
+                                    <td><?php echo $teamName?></td>
+                                </tr>
+                                <tr>
+                                    <td class="success">Email:</td>
+                                    <td><?php echo $emailAddress?></td>
+                                </tr>
+                            </table>
 
-<!--                                </tr>-->
-<!--                                </tbody>-->
-<!--                            </table>-->
-<!--                        </div>-->
-<!--                        -->
+                        </div>
+
                     </div>
                 </div>
             </div>
