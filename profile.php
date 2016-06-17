@@ -23,19 +23,33 @@ while($row = mysqli_fetch_assoc($result))
                         <div class="page-header">
                             <h3>Profile</h3>
                         </div>
-                        <div class="table-responsive  col-lg-12 col-md-12 col-sm-12 ">
-                            <table class="table table-bordered text-center">
-                                <tr>
-                                    <td class="success">Team Name:</td>
-                                    <td><?php echo $teamName?></td>
-                                </tr>
-                                <tr>
-                                    <td class="success">Players registered email:</td>
-                                    <td><?php echo $emailAddress?></td>
-                                </tr>
-                            </table>
-
-                        </div>
+                        <form class="form-horizontal" action="updateEmail.php" method="post" onsubmit='return confirm("This will de-activate the current email address:  <?php echo $emailAddress ?>  and the new address:  " + document.getElementById("email").value + "  will need to be activated");'>
+                            <div class="table-responsive  col-lg-12 col-md-12 col-sm-12 ">
+                                <table class="table table-bordered text-center">
+                                    <tr>
+                                        <td class="success">Team Name:</td>
+                                        <td><?php echo $teamName?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="success">Email:</td>
+                                        <td> <input type="email" class="form-control" name="email" id="email" placeholder="<?php echo $emailAddress?>" required="required"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="form-group">
+                                    <!-- Button -->
+                                    <div class="col-md-offset-9 col-sm-offset-9 col-lg-offset-9col-lg-9 col-md-9 col-sm-9">
+                                        <input type="submit" class="btn btn-success" name="Submit" value="Update Email">
+                                    </div>
+                                </div>
+                                <!--
+<button class="btn btn-success" onclick='alert("Are you sure? \n This will de-activate the current email address <?php echo $emailAddress ?> and the new address " + document.getElementById("email").value + " will need to be activated")'>Update Email</button>
+                            -->
+                            </div>
+                        </form>
 
                     </div>
                 </div>
