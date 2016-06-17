@@ -4,10 +4,17 @@ $active="statistics";
 include 'includes/header.php';
 include 'includes/navbar.php';
 $username = $_SESSION["username"];
+$previousRaceSql = "select * from racecalendar where Date <= CURDATE() ORDER BY date desc LIMIT 0,1;";
+$result = $conn->query($previousRaceSql);
+$row = mysqli_fetch_assoc($result);
+$previousRace = $row["Country"];
 ?>
 
     <div class="container">
         <div class = "row">
+            <div class="page-header">
+                <h3>2016 Current Standings - After <?php echo $previousRace ?> GP</h3>
+            </div>
             <div class="table-responsive  col-lg-12">
                 <table class="table table-bordered text-center">
                     <tr class ="success">
