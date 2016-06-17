@@ -108,7 +108,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                         <div class="table-responsive  col-lg-12 col-md-8 col-sm-8">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
-                                    <td>Date (YYYY-MM-DD)</td>
+                                    <td>Date (DD-MM-YYYY)</td>
                                     <td>Country</td>
                                 </tr>
                                 <?php
@@ -116,8 +116,10 @@ while($row = mysqli_fetch_assoc($queryResult))
                                 $result = $conn->query($sql);
                                 while($row = mysqli_fetch_assoc($result))
                                 {
+                                    $originalDate = $row["Date"];
+                                    $newDate = date("d-m-Y", strtotime($originalDate));
                                     echo'<tr>' .
-                                        '<td>' . $row["Date"] . '</td>' .
+                                        '<td>' . $newDate . '</td>' .
                                         '<td>' . $row["Country"] . '</td>' .
                                         '</tr>';
                                 }

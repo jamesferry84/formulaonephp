@@ -85,8 +85,10 @@ while($row = mysqli_fetch_assoc($queryResult))
                                 $result = $conn->query($sql);
                                 while($row = mysqli_fetch_assoc($result))
                                 {
+                                    $originalDate = $row["Date"];
+                                    $newDate = date("d-m-Y", strtotime($originalDate));
                                     echo'<tr>' .
-                                        '<td>' . $row["Date"] . '</td>' .
+                                        '<td>' . $newDate . '</td>' .
                                         '<td>' . $row["Country"] . '</td>' .
                                         '</tr>';
                                 }
