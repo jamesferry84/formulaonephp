@@ -77,7 +77,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                         <div class="table-responsive  col-lg-12 col-md-8 col-sm-8">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
-                                    <td>Date (YYYY-MM-DD)</td>
+                                    <td>Date (DD-MM-YYYY)</td>
                                     <td>Country</td>
                                 </tr>
                                 <?php
