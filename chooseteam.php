@@ -166,11 +166,45 @@ $constructor2 = $row["constructor2"];
 
 
 
+<div id="nextrace" style="display: none">
+    <?php
+    $today = date("y-m-d");
+    $sql = "select * from racecalendar where Date >= CURDATE() order by date LIMIT 0,1";
+    $queryResult = $conn->query($sql);
+    $numrows=mysqli_num_rows($queryResult);
 
+    while($row = mysqli_fetch_assoc($queryResult))
+    {
+        echo $row["Date"];
+    }
+    ?>
+</div>
 </body>
 
 
 <script>
+
+    $(function() {
+        var div = document.getElementById("nextrace");
+        var timeToNextRace = div.textContent;
+        var date = new Date(timeToNextRace);
+        var todayDate = new Date();
+        date.setDate(date.getDate()-2);
+        var isSubmissionClosed = false;
+
+        if (todayDate >= date) {
+            isSubmissionClosed = true;
+        }
+        alert(date);
+        if (isSubmissionClosed)
+        {
+            $('#submitButton').prop('disabled',true);
+        }
+        else
+        {
+            $('#submitButton').prop('disabled',false);
+        }
+    });
 
     var constructorNames = [];
     var constructorPrices = [];
@@ -218,6 +252,7 @@ $constructor2 = $row["constructor2"];
     function Update()
     {
         var newValue = parseFloat(totalAvailable - selectedPrices[0] - selectedPrices[1] - selectedPrices[2] - selectedPrices[3]).toFixed(2);
+
         document.getElementById("remainingBudget").value = newValue;
 
         if (newValue < 0)
