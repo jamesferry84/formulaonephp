@@ -204,7 +204,7 @@ $constructor2 = $row["constructor2"];
         var todayDate = new Date();
         //date.setDate(date.getDate()-2);
         var isSubmissionClosed = false;
-    alert(date);
+
         if (todayDate >= date) {
             isSubmissionClosed = true;
         }
