@@ -81,9 +81,9 @@ $constructor2 = $row["constructor2"];
                             $row = mysqli_fetch_assoc($queryResult)
 
                             ?>
-                            <label for = "jokerUsed" class = "col-lg-3 control-label">Use Joker? (Jokers available <?php echo $row["jokers"] ?>)</label>
+                            <label for = "jokerUsed" class = "col-lg-3 control-label">Use Joker? (Jokers available <?php echo (5 - $row["jokers"]) ?>)</label>
                             <div class = "col-lg-5">
-                                <select class="form-control" id="jokerUsed" name="jokerUsed" <?php if($row["jokers"] <= 0){echo "disabled";}?>>
+                                <select class="form-control" id="jokerUsed" name="jokerUsed" <?php if($row["jokers"] >= 5){echo "disabled";}?>>
                                     <option value="0">No</option>
                                     <option value="1">Yes</option>
                                 </select>
