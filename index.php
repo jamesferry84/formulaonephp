@@ -74,13 +74,10 @@ include 'includes/navbar.php';
                 ?>
             </table>
         </div>
-        <div class="table-responsive  col-md-12">
+        <div class="table-responsive  col-lg-6 col-md-12 col-sm-12 ">
             <table class="table table-bordered text-center">
                 <tr class ="success">
-
                     <td>Driver</td>
-                    <td>Price</td>
-                    <td>Constructor</td>
                     <td>Price</td>
                 </tr>
                 <?php
@@ -91,14 +88,32 @@ include 'includes/navbar.php';
                     echo'<tr>' .
                         '<td>' . $row["name"] . '</td>' .
                         '<td>' . $row["price"] . '</td>' .
-                        '<td>' . $row["teamname"] . '</td>' .
-                        '<td>' . $row["teamprice"] . '</td>' .
                         '</tr>';
                 }
                 ?>
+            </table>
 
+        </div>
+        <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
+            <table class="table table-bordered text-center">
+                <tr class ="success">
+                    <td>Constructor</td>
+                    <td>Price</td>
+                </tr>
+                <?php
+                $sql = "select Name,Price from team order by Price DESC";
+                $result = $conn->query($sql);
+                while($row = mysqli_fetch_assoc($result))
+                {
+                    echo'<tr>' .
+                        '<td>' . $row["Name"] . '</td>' .
+                        '<td>' . $row["Price"] . '</td>' .
+                        '</tr>';
+                }
+                ?>
             </table>
         </div>
+        <div class="clearfix visible-xs-block"></div>
 
 
 
