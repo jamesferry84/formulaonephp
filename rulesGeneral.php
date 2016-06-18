@@ -2,6 +2,8 @@
 include 'init.php';
 include 'functions/general.php';
 unset($_SESSION["registerErrorMessage"]);
+unset($_SESSION["loginErrorMessage"]);
+unset($_SESSION["registerSuccessMessage"]);
 $sql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
 $queryResult = $conn->query($sql);
 $numrows=mysqli_num_rows($queryResult);
