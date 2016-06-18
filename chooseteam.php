@@ -195,7 +195,7 @@ $constructor2 = $row["constructor2"];
         if (todayDate >= date) {
             isSubmissionClosed = true;
         }
-        alert(date);
+
         if (isSubmissionClosed)
         {
             $('#submitButton').prop('disabled',true);
