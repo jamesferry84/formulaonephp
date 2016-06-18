@@ -179,19 +179,32 @@ $constructor2 = $row["constructor2"];
     }
     ?>
 </div>
+<div id="nextpractice" style="display: none">
+    <?php
+    $today = date("y-m-d");
+    $sql = "select * from racecalendar where Date >= CURDATE() order by date LIMIT 0,1";
+    $queryResult = $conn->query($sql);
+    $numrows=mysqli_num_rows($queryResult);
+
+    while($row = mysqli_fetch_assoc($queryResult))
+    {
+        echo $row["FirstPractice"];
+    }
+    ?>
+</div>
 </body>
 
 
 <script>
 
     $(function() {
-        var div = document.getElementById("nextrace");
-        var timeToNextRace = div.textContent;
-        var date = new Date(timeToNextRace);
+        var div = document.getElementById("nextpractice");
+        var timeToNextPractice = div.textContent;
+        var date = new Date(timeToNextPractice);
         var todayDate = new Date();
-        date.setDate(date.getDate()-2);
+        //date.setDate(date.getDate()-2);
         var isSubmissionClosed = false;
-
+    alert(date);
         if (todayDate >= date) {
             isSubmissionClosed = true;
         }
