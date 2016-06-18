@@ -23,7 +23,10 @@ while($row = mysqli_fetch_assoc($result))
                         <div class="page-header">
                             <h3>Profile</h3>
                         </div>
-                        <form class="form-horizontal" action="updateEmail.php" method="post" onsubmit='return confirm("This will de-activate the current email address:  <?php echo $emailAddress ?>  and the new address:  " + document.getElementById("email").value + "  will need to be activated");'>
+                        <form class="form-horizontal" action="updateEmail.php" method="post" onsubmit='return checkEmail()'>
+<!--                        'return confirm("This will de-activate the current email address:  -->
+<!--                            --><?php //echo $emailAddress ?>
+<!--                             and the new address:  " + document.getElementById("email").value + "  will need to be activated");'>-->
                             <div class="table-responsive  col-lg-12 col-md-12 col-sm-12 ">
                                 <table class="table table-bordered text-center">
                                     <tr>
@@ -56,6 +59,23 @@ while($row = mysqli_fetch_assoc($result))
             </div>
         </div>
     </div>
+
+    <script>
+        function checkEmail() {
+            var currentEmail = "<?php echo $emailAddress?>";
+            var newEmail = document.getElementById("email").value;
+            var lowerNewEmail = newEmail.toLowerCase();
+            var lowerCurrentEmail = currentEmail.toLowerCase();
+
+            if (lowerCurrentEmail == lowerNewEmail)
+            {
+                alert("Cannot use the email address already registered")
+                return false;
+            }
+
+            return confirm("This will update your email to: " + lowerNewEmail + " are you sure?");
+        }
+    </script>
 
 <?php
 include 'includes/footer.php';
