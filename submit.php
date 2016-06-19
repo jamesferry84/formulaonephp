@@ -35,8 +35,8 @@ $active="home";
 
             $balance = $_POST["remainingBudget"];
 
-            $query = "INSERT INTO `submissions` (`UserName`, `driver1`, `driver2`, `constructor1`, `constructor2`, `joker`, `Country`)
-                  VALUES ('$username', '$driver1', '$driver2', '$constructor1', '$constructor2', '$joker', '$country')";
+            $query = "INSERT INTO `submissions` (`UserName`, `driver1`, `driver2`, `constructor1`, `constructor2`, `joker`, `Country`, `BudgetRollover`)
+                  VALUES ('$username', '$driver1', '$driver2', '$constructor1', '$constructor2', '$joker', '$country', '$carryOver')";
 
             $conn->query($query);
 
