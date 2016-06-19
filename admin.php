@@ -97,7 +97,7 @@ else{
                                 <tbody>
                                 <tr>
                                     <?php
-                                    $sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,1";
+                                    $sql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
                                     $queryResult = $conn->query($sql);
                                     $numrows=mysqli_num_rows($queryResult);
 
