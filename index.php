@@ -82,6 +82,7 @@ include 'includes/navbar.php';
         </div>
         <div class="table-responsive  col-lg-6 col-md-12 col-sm-12 ">
             <table class="table table-bordered text-center">
+                <th class="text-center" colspan="2">Current Drivers Prices after <?php echo $previousRace?></th>
                 <tr class ="success">
                     <td>Driver</td>
                     <td>Price (£m)</td>
@@ -102,6 +103,7 @@ include 'includes/navbar.php';
         </div>
         <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
             <table class="table table-bordered text-center">
+                <th class="text-center" colspan="2">Current Constructors Prices after <?php echo $previousRace?></th>
                 <tr class ="success">
                     <td>Constructor</td>
                     <td>Price (£m)</td>
