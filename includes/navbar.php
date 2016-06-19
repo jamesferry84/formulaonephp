@@ -38,8 +38,16 @@ while($row = mysqli_fetch_assoc($queryResult))
                 <li <?php if ($active == 'profile') {echo 'class="active"';} ?>>
                     <a href="profile.php">Profile</a>
                 </li>
+                <?php
+                if ($_SESSION["admin"] == 1)
+                {
+                    echo "<li ";if ($active == 'admin') {echo 'class="active"';};
+                    echo ">";
+                    echo "<a href='admin.php'>Admin</a>";
+                    echo "</li>";
+                }
+                ?>
                 <li>
-
                     <a href="logout.php">Log Out (<?php echo $_SESSION["username"]?>)</a>
                 </li>
             </ul>

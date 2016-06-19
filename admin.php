@@ -1,10 +1,12 @@
 <?php
 include 'init.php';
+$active="admin";
 include 'includes/header.php';
 include 'includes/navbar.php';
+
 if ($_SESSION["admin"] == 1)
 {
-    // DO NOTHING
+
 }
 else{
     header("location:index.php");
