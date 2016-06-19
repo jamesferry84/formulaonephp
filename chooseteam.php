@@ -265,6 +265,10 @@ $constructor2 = $row["constructor2"];
 
     function Update()
     {
+        if (selectedPrices[0] == undefined) { selectedPrices[0] = 0; }
+        if (selectedPrices[1] == undefined) { selectedPrices[1] = 0; }
+        if (selectedPrices[2] == undefined) { selectedPrices[2] = 0; }
+        if (selectedPrices[3] == undefined) { selectedPrices[3] = 0; }
         var newValue = parseFloat(totalAvailable - selectedPrices[0] - selectedPrices[1] - selectedPrices[2] - selectedPrices[3]).toFixed(2);
 
         document.getElementById("remainingBudget").value = newValue;
