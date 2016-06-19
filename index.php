@@ -33,12 +33,10 @@ include 'includes/navbar.php';
 <div class="container">
     <div class="jumbotron text-center container">
         <h1>Welcome to F1 Predictor 2016</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pharetra pretium nisi.
-            Praesent mollis mauris sit amet tristique fermentum. Maecenas at urna sollicitudin, blandit justo vitae, volutpat leo. Nam pellentesque diam sed lorem
-            iaculis aliquet. Sed condimentum, risus vehicula semper blandit, ex purus tincidunt dolor, ut elementum libero augue eget ante. Sed ac arcu sed
-            nibh hendrerit molestie. Vestibulum tempus, neque sit amet congue tincidunt, nunc ante molestie eros, id ultricies eros velit efficitur nisi. Nulla facilisi.
-            Ut tempus semper condimentum. Nullam pharetra euismod odio, ac auctor ante ultricies vitae. Suspendisse pharetra feugiat nisl. Integer sed ante in dui pellentesque ultrices.
-            Aliquam eu odio vulputate, feugiat risus sit amet, tempor massa. Suspendisse sit amet erat mauris. Ut quis nibh in velit molestie pretium. Fusce lorem arcu, consequat et augue at, finibus ultricies ex.</p>
+        <p>If you love Formula 1 or motorsport in general then this is the F1 Predictor league for you!
+            Unlike other F1 Predictor websites, who ask you to predict who will finish on the podium (dull!!), you choose a Team of 2 Drivers and 2 Constructors for each Race weekend and score Points based on how well they perform from First Practice to the chequered flag.
+            This is the fourth year our League has been up and running, and the first year it has been available online.
+            Our Predictor League is a privately run website for Players we know.</p>
 <!--        <p> Next Race: --><?php //echo $country; ?><!--</p>-->
 <!--        <p >Submissions close in: <p id="clock"></p></p>-->
 <!--        <a href="chooseteam.php" class = "btn btn-success" --><?php //if ($alreadySubmitted == 1) echo 'disabled="true"' ?><!-->
