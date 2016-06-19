@@ -11,6 +11,10 @@ if (isset($_SESSION["username"]))
 else{
     header("location:login.php");
 }
+$previousRaceSql = "select * from racecalendar where Date <= CURDATE() ORDER BY date desc LIMIT 0,1;";
+$result = $conn->query($previousRaceSql);
+$prevracesql = mysqli_fetch_assoc($result);
+$previousRace = $prevracesql["Country"];
 $sql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
 $queryResult = $conn->query($sql);
 $numrows=mysqli_num_rows($queryResult);
@@ -44,7 +48,9 @@ include 'includes/navbar.php';
 
 <div class = "container">
     <div class="row">
-
+        <div class="page-header text-center">
+            <h3>Overall League Standings - After <?php echo $previousRace ?> GP</h3>
+        </div>
         <div class="table-responsive  col-lg-12">
             <table class="table table-bordered text-center">
                 <tr class ="success">
@@ -52,7 +58,7 @@ include 'includes/navbar.php';
                 </tr>
                 <?php
                 $today = date("y-m-d");
-                $sql = "select * from users order by points desc LIMIT 0,3";
+                $sql = "select * from users order by points desc";
                 $queryResult = $conn->query($sql);
                 $numrows=mysqli_num_rows($queryResult);
                 $rank = 0;
