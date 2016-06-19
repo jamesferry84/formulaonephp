@@ -236,17 +236,18 @@ $constructor2 = $row["constructor2"];
     var elem = document.getElementById("remainingBudget");
     var totalAvailable;
 
-    if (carryOver < startingWeeklyBudget)
-    {
-        elem.value = (startingWeeklyBudget + carryOver * 1); // multiply used to force integer addition instead of concatenation
-        totalAvailable = elem.value;
-    }
-    else
-    {
-        elem.value = carryOver;
-        totalAvailable = carryOver;
-    }
-
+//    if (carryOver < startingWeeklyBudget)
+//    {
+//        elem.value = (startingWeeklyBudget + carryOver * 1); // multiply used to force integer addition instead of concatenation
+//        totalAvailable = elem.value;
+//    }
+//    else
+//    {
+//        elem.value = carryOver;
+//        totalAvailable = carryOver;
+//    }
+    elem.value = (startingWeeklyBudget + carryOver * 1); // multiply used to force integer addition instead of concatenation
+    totalAvailable = elem.value;
 
     var firstSelected = null;
     var secondSelected = null;
