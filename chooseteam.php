@@ -116,7 +116,7 @@ $constructor2 = $row["constructor2"];
                         </div>
 
                         <div class="form-horizontal">
-                            <button class="btn btn-danger " onclick="resetTeam()">Reset Team</button>
+                            <button class="btn btn-danger " id="resetButton" onclick="resetTeam()">Reset Team</button>
                             <button class="btn btn-success" id="submitButton" type="submit">Submit Team</button>
                         </div>
 
@@ -213,10 +213,12 @@ $constructor2 = $row["constructor2"];
         if (isSubmissionClosed)
         {
             $('#submitButton').prop('disabled',true);
+            $('#resetButton').prop('disabled',true);
         }
         else
         {
             $('#submitButton').prop('disabled',false);
+            $('#resetButton').prop('disabled',false);
         }
     });
 
