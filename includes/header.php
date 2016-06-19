@@ -1,3 +1,13 @@
+<?php
+if (isset($_SESSION["username"]))
+{
+    // DO NOTHING
+}
+else{
+    header("location:login.php");
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
