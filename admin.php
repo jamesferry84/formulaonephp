@@ -127,8 +127,64 @@ else{
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
+
+    <form class="form-horizontal" action="updateDriverPrices.php" method="post">
+        <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
+            <table class="table table-bordered text-center">
+                <th class="text-center" colspan="2">Current Driver Prices</th>
+                <tr class ="success">
+                    <td>Driver</td>
+                    <td>Price (£m)</td>
+                </tr>
+                <?php
+                $sql = "select Name,Price from driver order by Price DESC";
+                $result = $conn->query($sql);
+                while($row = mysqli_fetch_assoc($result))
+                {
+                    echo'<tr>' .
+                        '<td>' . '<input name="driverName[]" value="' . $row["Name"] .'" readonly>' . '</td>' .
+                        '<td>' . '<input id="driverPrices" name="driverPrices[]" type="text" value="' . $row["Price"] . '">' . '</td>' .
+                        '</tr>';
+                }
+                ?>
+            </table>
+            <button class="btn btn-success" name="submitDriverButton" type="submit">Update Driver Prices</button>
+        </div>
+    </form>
+
+
+
+    <form class="form-horizontal" action="updateConstructorPrices.php" method="post">
+        <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
+            <table class="table table-bordered text-center">
+                <th class="text-center" colspan="2">Current Constructors Prices</th>
+                <tr class ="success">
+                    <td>Constructor</td>
+                    <td>Price (£m)</td>
+                </tr>
+                <?php
+                $sql = "select Name,Price from team order by Price DESC";
+                $result = $conn->query($sql);
+                while($row = mysqli_fetch_assoc($result))
+                {
+                    echo'<tr>' .
+                        '<td>' . '<input name="constructorName[]" value="' . $row["Name"] .'" readonly>' . '</td>' .
+                        '<td>' . '<input id="constructorPrices" name="constructorPrices[]" type="text" value="' . $row["Price"] . '">' . '</td>' .
+                        '</tr>';
+                }
+                ?>
+            </table>
+            <button class="btn btn-success" name="submitConstructorButton" type="submit">Update Constructor Prices</button>
+        </div>
+    </form>
+
+
+
+
 </div>
 
 <?php
