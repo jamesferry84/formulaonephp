@@ -18,7 +18,7 @@ $previousRace = $row["Country"];
             <div class="table-responsive  col-lg-12">
                 <table class="table table-bordered text-center">
                     <tr class ="success">
-                        <td>+/-</td><td>Rank</td><td>Player Name</td><td>Team Name</td><td>Player Score</td><td>Jokers Played</td><td>Budget Rollover</td>
+                        <td>+/-</td><td>Rank</td><td>Player Name</td><td>Team Name</td><td>Player Score</td><td>Jokers Played</td><td>Budget Rollover (£m)</td>
                     </tr>
                     <?php
                     $today = date("y-m-d");
