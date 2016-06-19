@@ -70,14 +70,15 @@ else{
                 <div class = "panel-body">
                     <div class="page-header">
                         <?php
-                            $sql = "select * from racecalendar where Date >= CURDATE() LIMIT 0,1";
-                            $queryResult = $conn->query($sql);
-                            $numrows=mysqli_num_rows($queryResult);
+                        $sql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
+                        $queryResult = $conn->query($sql);
+                        $numrows=mysqli_num_rows($queryResult);
 
-                            while($row = mysqli_fetch_assoc($queryResult))
-                            {
+                        while($row = mysqli_fetch_assoc($queryResult))
+                        {
                             $country =  $row["Country"];
-                            }
+                        }
+
                         ?>
                         <h3>Submissions for -  <?php echo $country ?> </h3>
                     </div>
