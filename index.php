@@ -28,7 +28,7 @@ include 'includes/navbar.php';
 
 <div class="container">
     <div class="jumbotron text-center container">
-        <h1>Welcome to the F1 Predictor</h1>
+        <h1>Welcome to the F1 Predictor 2016</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pharetra pretium nisi.
             Praesent mollis mauris sit amet tristique fermentum. Maecenas at urna sollicitudin, blandit justo vitae, volutpat leo. Nam pellentesque diam sed lorem
             iaculis aliquet. Sed condimentum, risus vehicula semper blandit, ex purus tincidunt dolor, ut elementum libero augue eget ante. Sed ac arcu sed
@@ -48,7 +48,7 @@ include 'includes/navbar.php';
         <div class="table-responsive  col-lg-12">
             <table class="table table-bordered text-center">
                 <tr class ="success">
-                    <td>+/-</td><td>Rank</td><td>Player Name</td><td>Team Name</td><td>Player Score</td><td>Jokers Played</td><td>Budget Rollover</td>
+                    <td>+/-</td><td>Rank</td><td>Player Name</td><td>Team Name</td><td>Player Score</td><td>Jokers Played</td><td>Budget Rollover (£m)</td>
                 </tr>
                 <?php
                 $today = date("y-m-d");
@@ -78,7 +78,7 @@ include 'includes/navbar.php';
             <table class="table table-bordered text-center">
                 <tr class ="success">
                     <td>Driver</td>
-                    <td>Price</td>
+                    <td>Price (£m)</td>
                 </tr>
                 <?php
                 $sql = "select d.name,d.price,t.name as teamname,t.price as teamprice from driver d join team t on d.team = t.name order by d.price DESC";
@@ -98,7 +98,7 @@ include 'includes/navbar.php';
             <table class="table table-bordered text-center">
                 <tr class ="success">
                     <td>Constructor</td>
-                    <td>Price</td>
+                    <td>Price (£m)</td>
                 </tr>
                 <?php
                 $sql = "select Name,Price from team order by Price DESC";
