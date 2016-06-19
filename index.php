@@ -28,7 +28,7 @@ include 'includes/navbar.php';
 
 <div class="container">
     <div class="jumbotron text-center container">
-        <h1>Welcome to the F1 Predictor 2016</h1>
+        <h1>Welcome to F1 Predictor 2016</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pharetra pretium nisi.
             Praesent mollis mauris sit amet tristique fermentum. Maecenas at urna sollicitudin, blandit justo vitae, volutpat leo. Nam pellentesque diam sed lorem
             iaculis aliquet. Sed condimentum, risus vehicula semper blandit, ex purus tincidunt dolor, ut elementum libero augue eget ante. Sed ac arcu sed
