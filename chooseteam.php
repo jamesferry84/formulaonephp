@@ -12,10 +12,10 @@ $previousRace = $row["Country"];
 $sql = "select * from submissions where Country = '$previousRace'  and UserName = '{$_SESSION['username']}'";
 $queryResult = $conn->query($sql);
 $row = mysqli_fetch_assoc($queryResult);
-$driver1 = $row["driver1"];
-$driver2 = $row["driver2"];
-$constructor1 = $row["constructor1"];
-$constructor2 = $row["constructor2"];
+$driver1 = $row["Driver1"];
+$driver2 = $row["Driver2"];
+$constructor1 = $row["Constructor1"];
+$constructor2 = $row["Constructor2"];
 
 ?>
 
