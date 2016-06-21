@@ -16,6 +16,16 @@ $active="home";
         $joker = $_POST["jokerUsed"];
         $carryOver = $_POST["remainingBudget"];
 
+        $driver1parts = explode(',', $driver1);
+        $driver2parts = explode(',', $driver2);
+        $constructor1parts = explode(',', $constructor1);
+        $constructor2parts = explode(',', $constructor2);
+
+        $driver1 = $driver1parts[0];
+        $driver2 = $driver2parts[0];
+        $constructor1 = $constructor1parts[0];
+        $constructor2 = $constructor2parts[0];
+
         unset($_SESSION["submitErrorMessage"]);
 
         if (empty($driver1) === true || empty($driver2) === true || empty($constructor1) === true || empty($constructor2) === true) {
