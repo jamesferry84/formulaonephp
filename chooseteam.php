@@ -249,7 +249,7 @@ $constructor2 = $row["constructor2"];
 //        elem.value = carryOver;
 //        totalAvailable = carryOver;
 //    }
-    elem.value = (startingWeeklyBudget + carryOver * 1); // multiply used to force integer addition instead of concatenation
+    elem.value = (startingWeeklyBudget + carryOver * 1).toFixed(2); // multiply used to force integer addition instead of concatenation
     totalAvailable = elem.value;
 
     var firstSelected = null;
