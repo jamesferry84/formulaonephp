@@ -17,6 +17,25 @@ $driver2 = $row["Driver2"];
 $constructor1 = $row["Constructor1"];
 $constructor2 = $row["Constructor2"];
 
+$driver1priceSql = "select * from driver where Name = '$driver1'";
+$queryResult = $conn->query($driver1priceSql);
+$driver1PriceRow = mysqli_fetch_assoc($queryResult);
+$driver1Price = $driver1PriceRow["Price"];
+
+$driver2priceSql = "select * from driver where Name = '$driver2'";
+$queryResult = $conn->query($driver2priceSql);
+$driver2PriceRow = mysqli_fetch_assoc($queryResult);
+$driver2Price = $driver2PriceRow["Price"];
+
+$constructor1priceSql = "select * from team where Name = '$constructor1'";
+$queryResult = $conn->query($constructor1priceSql);
+$constructor1PriceRow = mysqli_fetch_assoc($queryResult);
+$constructor1Price = $constructor1PriceRow["Price"];
+
+$constructor2priceSql = "select * from team where Name = '$constructor2'";
+$queryResult = $conn->query($constructor2priceSql);
+$constructor2PriceRow = mysqli_fetch_assoc($queryResult);
+$constructor2Price = $constructor2PriceRow["Price"];
 ?>
 
 <div class="container">
@@ -41,7 +60,7 @@ $constructor2 = $row["Constructor2"];
                             <label for = "driver" class = "col-lg-3 control-label">Driver 1:</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="driver1DropDown" name="driver1" required="required" >
-                                    <option value=""><?php echo $driver1 ?></option>
+                                    <option value="<?php echo $driver1 . " " . $driver1Price ?>"><?php echo $driver1 . " £" . $driver1Price ?></option>
                                 </select>
                             </div>
                         </div>
@@ -50,7 +69,7 @@ $constructor2 = $row["Constructor2"];
                             <label for = "driver" class = "col-lg-3 control-label">Driver 2:</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="driver2DropDown" name="driver2" required="required">
-                                    <option value=""><?php echo $driver2 ?></option>
+                                    <option value="<?php echo $driver2 . " " . $driver2Price ?>"><?php echo $driver2 . " £" . $driver2Price ?></option>
                                 </select>
                             </div>
                         </div>
@@ -59,7 +78,7 @@ $constructor2 = $row["Constructor2"];
                             <label for = "constructor" class = "col-lg-3 control-label">Constructor 1:</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="constructor1DropDown" name="constructor1" required="required">
-                                    <option value=""><?php echo $constructor1 ?></option>
+                                    <option value="<?php echo $constructor1 . " " . $constructor1Price ?>"><?php echo $constructor1 . " £" . $constructor1Price ?></option>
                                 </select>
                             </div>
                         </div>
@@ -68,7 +87,7 @@ $constructor2 = $row["Constructor2"];
                             <label for = "constructor" class = "col-lg-3 control-label">Constructor 2:</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="constructor2DropDown" name="constructor2" required="required" >
-                                    <option value=""><?php echo $constructor2 ?></option>
+                                    <option value="<?php echo $constructor2 . " " . $constructor2Price ?>"><?php echo $constructor2 . " £" . $constructor2Price ?></option>
                                 </select>
                             </div>
                         </div>
@@ -116,7 +135,7 @@ $constructor2 = $row["Constructor2"];
                         </div>
 
                         <div class="form-horizontal">
-                            <button class="btn btn-danger " id="resetButton" onclick="resetTeam()">Reset Team</button>
+                            <button type="button" class="btn btn-danger " id="resetButton" onclick="resetTeam()">Reset Team</button>
                             <button class="btn btn-success" id="submitButton" type="submit">Submit Team</button>
                         </div>
 
@@ -228,10 +247,10 @@ $constructor2 = $row["Constructor2"];
     var driverNames = [];
 
     var selectedPrices = [];
-    selectedPrices[0] = 0;
-    selectedPrices[1] = 0;
-    selectedPrices[2] = 0;
-    selectedPrices[3] = 0;
+    selectedPrices[0] = <?php echo $driver1Price ?>;
+    selectedPrices[1] = <?php echo $driver2Price ?>;
+    selectedPrices[2] = <?php echo $constructor1Price ?>;
+    selectedPrices[3] = <?php echo $constructor2Price ?>;
 
     var startingWeeklyBudget = 55.00;
 
@@ -258,12 +277,11 @@ $constructor2 = $row["Constructor2"];
     var firstConstructorSelected = null;
     var secondConstructorSelected = null;
 
+    Update();
+
     function resetTeam()
     {
-        document.getElementById("driver1DropDown").value = '<?php echo $driver1 ;?>';
-        document.getElementById("driver2DropDown").value = '<?php $driver2 ;?>';
-        document.getElementById("constructor1DropDown").value = '<?php $constructor1 ;?>';
-        document.getElementById("constructor2DropDown").value = '<?php $constructor2 ;?>';
+
     }
 
     function Update()
