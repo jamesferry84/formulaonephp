@@ -221,24 +221,38 @@ $constructor2Price = $constructor2PriceRow["Price"];
         var div = document.getElementById("nextpractice");
         var timeToNextPractice = div.textContent;
         var date = new Date(timeToNextPractice);
-        var todayDate = new Date();
-        //date.setDate(date.getDate()-2);
-        var isSubmissionClosed = false;
 
-        if (todayDate >= date) {
-            isSubmissionClosed = true;
-        }
+        $.ajax({
+            url : "textdata/admin.txt",
+            dataType: "text",
+            success : function (result) {
+                hasAdminOpenedSubmissions = result;
+                var todayDate = new Date();
+                var isSubmissionClosed = false;
 
-        if (isSubmissionClosed)
-        {
-            $('#submitButton').prop('disabled',true);
-            $('#resetButton').prop('disabled',true);
-        }
-        else
-        {
-            $('#submitButton').prop('disabled',false);
-            $('#resetButton').prop('disabled',false);
-        }
+                if (hasAdminOpenedSubmissions == 1) {
+                    isSubmissionClosed = false;
+                }
+
+                if (todayDate >= date || hasAdminOpenedSubmissions == 0) {
+                    isSubmissionClosed = true;
+                }
+
+                if (isSubmissionClosed)
+                {
+                    $('#submitButton').prop('disabled',true);
+                    $('#resetButton').prop('disabled',true);
+                }
+                else
+                {
+                    $('#submitButton').prop('disabled',false);
+                    $('#resetButton').prop('disabled',false);
+                }
+
+            }
+        });
+
+
     });
 
     var constructorNames = [];

@@ -71,28 +71,42 @@ while($row = mysqli_fetch_assoc($queryResult))
     var div = document.getElementById("nextrace");
     var timeToNextRace = div.textContent;
     var date = new Date(timeToNextRace);
+    var hasAdminOpenedSubmissions;
     date.setDate(date.getDate()-2);
+
     $(function() {
-        var todayDate = new Date();
-        //date.setDate(date.getDate()-2);
-        var isSubmissionClosed = false;
+        $.ajax({
+            url : "textdata/admin.txt",
+            dataType: "text",
+            success : function (result) {
+                hasAdminOpenedSubmissions = result;
+                var todayDate = new Date();
+                //date.setDate(date.getDate()-2);
+                var isSubmissionClosed = false;
 
-        if (todayDate >= date) {
-            isSubmissionClosed = true;
-        }
+                if (hasAdminOpenedSubmissions == 1) {
+                    isSubmissionClosed = false;
+                }
 
-        if (isSubmissionClosed)
-        {
-            $('#preText').html("Current Race: ");
-            $('#clock').html(" | Submissions CLOSED");
-        }
-        else
-        {
-            $('#clock').countdown(date, function(event) {
-                $('#preText').html("Next Race: ");
-                $(this).html(" | Submit Team by: " + event.strftime('%D days %H:%M:%S'));
-            });
-        }
+                if (todayDate >= date || hasAdminOpenedSubmissions == 0) {
+                    isSubmissionClosed = true;
+                }
+
+
+                if (isSubmissionClosed)
+                {
+                    $('#preText').html("Current Race: ");
+                    $('#clock').html(" | Submissions CLOSED");
+                }
+                else
+                {
+                    $('#clock').countdown(date, function(event) {
+                        $('#preText').html("Next Race: ");
+                        $(this).html(" | Submit Team by: " + event.strftime('%D days %H:%M:%S'));
+                    });
+                }
+            }
+        });
     });
 
 
