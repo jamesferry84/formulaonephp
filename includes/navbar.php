@@ -13,7 +13,7 @@ while($row = mysqli_fetch_assoc($queryResult))
 
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container">
-        <a href="index.php" class="navbar-brand">Next Race: <?php echo $country; ?> | Submit Team by:  <span id="clock"></span></a>
+        <a href="index.php" class="navbar-brand"><span id="preText"></span><?php echo $country ?><span id="clock"></span></a>
 
         <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
             <span class = "icon-bar"></span>
@@ -68,14 +68,34 @@ while($row = mysqli_fetch_assoc($queryResult))
     ?>
 </div>
 <script>
-
     var div = document.getElementById("nextrace");
     var timeToNextRace = div.textContent;
     var date = new Date(timeToNextRace);
     date.setDate(date.getDate()-2);
-    $('#clock').countdown(date, function(event) {
-        $(this).html(event.strftime('%D days %H:%M:%S'));
-        // var totalHours = event.offset.totalDays * 24 + event.offset.hours;
-        // $(this).html(event.strftime(totalHours + ' hr %M min %S sec'));
+    $(function() {
+        var todayDate = new Date();
+        //date.setDate(date.getDate()-2);
+        var isSubmissionClosed = false;
+
+        if (todayDate >= date) {
+            isSubmissionClosed = true;
+        }
+
+        if (isSubmissionClosed)
+        {
+            $('#preText').html("Current Race: ");
+            $('#clock').html(" | Submissions CLOSED");
+        }
+        else
+        {
+            $('#clock').countdown(date, function(event) {
+                $('#preText').html("Next Race: ");
+                $(this).html(" | Submit Team by: " + event.strftime('%D days %H:%M:%S'));
+            });
+        }
     });
+
+
+
+
 </script>
