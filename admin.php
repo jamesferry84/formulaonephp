@@ -1,9 +1,9 @@
 <?php
-include 'init.php';
 $active="admin";
 $adminfile = 'textdata/admin.txt';
 $handle = fopen($adminfile, 'r');
 $data = fread($handle,filesize($adminfile));
+include 'init.php';
 include 'includes/header.php';
 include 'includes/navbar.php';
 
