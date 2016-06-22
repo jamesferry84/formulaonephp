@@ -1,11 +1,15 @@
 <?php
 include 'init.php';
 $active="admin";
+$adminfile = 'textdata/admin.txt';
+$handle = fopen($adminfile, 'r');
+$data = fread($handle,filesize($adminfile));
 include 'includes/header.php';
 include 'includes/navbar.php';
 
 if ($_SESSION["admin"] == 1)
 {
+
 
 }
 else{
@@ -14,6 +18,7 @@ else{
 ?>
 
 <div class="container">
+
     <div class = "row">
         <div class = "col-lg-12 col-md-12 col-sm-12">
             <div class = "panel panel-default">
@@ -131,58 +136,77 @@ else{
 
         </div>
     </div>
-
-    <form class="form-horizontal" action="updateDriverPrices.php" method="post">
-        <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
-            <table class="table table-bordered text-center">
-                <th class="text-center" colspan="2">Current Driver Prices</th>
-                <tr class ="success">
-                    <td>Driver</td>
-                    <td>Price (£m)</td>
-                </tr>
-                <?php
-                $sql = "select Name,Price from driver order by Price DESC";
-                $result = $conn->query($sql);
-                while($row = mysqli_fetch_assoc($result))
-                {
-                    echo'<tr>' .
-                        '<td>' . '<input name="driverName[]" value="' . $row["Name"] .'" readonly>' . '</td>' .
-                        '<td>' . '<input id="driverPrices" name="driverPrices[]" type="text" value="' . $row["Price"] . '">' . '</td>' .
-                        '</tr>';
-                }
-                ?>
-            </table>
-            <button class="btn btn-success" name="submitDriverButton" type="submit">Update Driver Prices</button>
-        </div>
-    </form>
-
-
-
-    <form class="form-horizontal" action="updateConstructorPrices.php" method="post">
-        <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
-            <table class="table table-bordered text-center">
-                <th class="text-center" colspan="2">Current Constructors Prices</th>
-                <tr class ="success">
-                    <td>Constructor</td>
-                    <td>Price (£m)</td>
-                </tr>
-                <?php
-                $sql = "select Name,Price from team order by Price DESC";
-                $result = $conn->query($sql);
-                while($row = mysqli_fetch_assoc($result))
-                {
-                    echo'<tr>' .
-                        '<td>' . '<input name="constructorName[]" value="' . $row["Name"] .'" readonly>' . '</td>' .
-                        '<td>' . '<input id="constructorPrices" name="constructorPrices[]" type="text" value="' . $row["Price"] . '">' . '</td>' .
-                        '</tr>';
-                }
-                ?>
-            </table>
-            <button class="btn btn-success" name="submitConstructorButton" type="submit">Update Constructor Prices</button>
-        </div>
-    </form>
+    <div class="row">
+        <form class="form-horizontal" action="updateDriverPrices.php" method="post">
+            <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
+                <table class="table table-bordered text-center">
+                    <th class="text-center" colspan="2">Current Driver Prices</th>
+                    <tr class ="success">
+                        <td>Driver</td>
+                        <td>Price (£m)</td>
+                    </tr>
+                    <?php
+                    $sql = "select Name,Price from driver order by Price DESC";
+                    $result = $conn->query($sql);
+                    while($row = mysqli_fetch_assoc($result))
+                    {
+                        echo'<tr>' .
+                            '<td>' . '<input name="driverName[]" value="' . $row["Name"] .'" readonly>' . '</td>' .
+                            '<td>' . '<input id="driverPrices" name="driverPrices[]" type="text" value="' . $row["Price"] . '">' . '</td>' .
+                            '</tr>';
+                    }
+                    ?>
+                </table>
+                <button class="btn btn-success" name="submitDriverButton" type="submit">Update Driver Prices</button>
+            </div>
+        </form>
 
 
+
+        <form class="form-horizontal" action="updateConstructorPrices.php" method="post">
+            <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
+                <table class="table table-bordered text-center">
+                    <th class="text-center" colspan="2">Current Constructors Prices</th>
+                    <tr class ="success">
+                        <td>Constructor</td>
+                        <td>Price (£m)</td>
+                    </tr>
+                    <?php
+                    $sql = "select Name,Price from team order by Price DESC";
+                    $result = $conn->query($sql);
+                    while($row = mysqli_fetch_assoc($result))
+                    {
+                        echo'<tr>' .
+                            '<td>' . '<input name="constructorName[]" value="' . $row["Name"] .'" readonly>' . '</td>' .
+                            '<td>' . '<input id="constructorPrices" name="constructorPrices[]" type="text" value="' . $row["Price"] . '">' . '</td>' .
+                            '</tr>';
+                    }
+                    ?>
+                </table>
+                <button class="btn btn-success" name="submitConstructorButton" type="submit">Update Constructor Prices</button>
+            </div>
+        </form>
+    </div>
+    <div class="clearfix visible-xs-block"></div>
+
+    <div class="row">
+        <form class="form-horizontal" action="updateAdminText.php" method="post">
+            <input type="hidden" name="data" value="<?php echo $data ?>">
+            <div class="table-responsive  col-lg-12 col-md-12 col-sm-12">
+                <table class="table table-bordered text-center">
+                    <th class="text-center" colspan="2">Submissions</th>
+                    <?php if ($data == 0) {
+                        echo '<td>' .
+                        '<button class="btn btn-success" name="submitConstructorButton" type="submit">Open Submissions</button></td>';
+                    };?>
+                    <?php if ($data == 1) {
+                        echo '<td>' .
+                            '<button class="btn btn-danger" name="submitConstructorButton" type="submit">Close Submissions</button></td>';
+                    };?>
+                </table>
+            </div>
+        </form>
+    </div>
 
 
 </div>
