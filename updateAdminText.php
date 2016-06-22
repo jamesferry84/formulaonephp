@@ -13,4 +13,4 @@ else {
 
 fwrite($handle, $data);
 fclose($handle);
-header("location:admin.php?");
+header("Refresh:0; url=admin.php");
