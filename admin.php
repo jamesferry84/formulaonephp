@@ -189,6 +189,7 @@ else{
             </div>
         </form>
     </div>
+    <br />
     <div class="clearfix visible-xs-block"></div>
 
     <div class="row">
