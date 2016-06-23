@@ -57,8 +57,9 @@ while($row = mysqli_fetch_assoc($queryResult))
                     </div>
                     <ol>
                         <li>Register your intention to join the league by emailing f1predictor@virginmedia.com</li>
-                        <li>You are allocated an operating budget &pound;55 million for your team line-ups during the season - for each race you recruit two Drivers and two Constructors who each incur a cost.  The current prices going into the 2016 <?php echo $country?> Grand Prix are shown below</li>
-
+                        <li>You are allocated an operating budget &pound;55 million for your team line-ups during the season - for each race you recruit two Drivers and two Constructors who each incur a cost.  The current prices going into the 2016 <?php echo $country?> Grand Prix are shown below: </li>
+                        <div class="clearfix visible-xs-block"></div>
+                        <br />
                         <div class="table-responsive  col-lg-6 col-md-12 col-sm-12 ">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
@@ -79,6 +80,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                             </table>
 
                         </div>
+                        <br />
                         <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
@@ -105,8 +107,9 @@ while($row = mysqli_fetch_assoc($queryResult))
                         <li>Driver and Constructor prices will be calculated using the points they have scored in OUR predictor league over the previous 12 months, rather than only the points they have earned in the official F1 championship.</li>
                         <li>Each team will be given 5 'Jokers' to play on any race over the season. A Joker played before a race weekend starts will double the points scored by your team over the weekend.</li>
                         <li>Your Team can be altered between Grand Prixs but not during a Grand Prix weekend, which runs from the start of the First Practice session until the end of the Race itself during each Grand Prix weekend.</li>
-                        <li>Each entry and alteration made to your team will only be accepted by email - no verbal changes will be acceptes. This is to maintain a timestamp on entries to ensure that they have been made within the time windows described in point 8 above.</li>
+
                         <li>The current<sup>1</sup> race calendar is:</li>
+                        <br />
                         <div class="table-responsive  col-lg-12 col-md-8 col-sm-8">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
@@ -129,10 +132,11 @@ while($row = mysqli_fetch_assoc($queryResult))
                             </table>
                         </div>
                         <div class="clearfix visible-xs-block"></div>
-                        <li>If you fail to submit your team for a race on time , your submission for the previous race will be used. This will prevent anyone being excessively penalised for late or no submission of a team.</li>
+                        <li>If you fail to submit your Team for a Race before First Practice begins, your submission for the previous Race will be used provided it will be within your current Race Budget (see Rule 11). This will prevent any Team from being excessively penalised for late or no submission of a Team line-up.</li>
                         <li>If your team has been rolled over unchanged from one race to the next, and your Team's value is above your current rolling Budget, then the MOST EXPENSIVE component of your Team will be dropped from your Line-up. This will bring your Budget spend for the Race within your current Budget allowance. However you will also be fined £10 million for the CURRENT Race weekend, as you should not be intentionally or unintentionally spending more than your current Budget. This would potentially result in you losing the SECOND MOST EXPENSIVE component of your Team for the CURRENT Race. If you have some unspent Budget left (after the Fine and dropping Team components) then this will be rolled over into the following Race's unspent Budget value.</li>
                         <li>There are a number of ways in which your Drivers and Constructors can score Points (see below for an example). </li>
                         <div class="clearfix visible-xs-block"></div>
+                        <br />
                         <div class="table-responsive  col-lg-12">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
@@ -185,6 +189,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                         <div class="clearfix visible-xs-block"></div>
                         <li>Here is an example of the scoring system using results from the Australian Grand Prix in Melbourne in 2013 with a team comprised of :</li>
                         <div class="clearfix visible-xs-block"></div>
+                        <br />
                         <div class="table-responsive  col-lg-12">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
