@@ -64,7 +64,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
                                     <td>Driver</td>
-                                    <td>Price</td>
+                                    <td>Price (£m)</td>
                                 </tr>
                                 <?php
                                 $sql = "select d.name,d.price,t.name as teamname,t.price as teamprice from driver d join team t on d.team = t.name order by d.price DESC";
@@ -85,7 +85,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
                                     <td>Constructor</td>
-                                    <td>Price</td>
+                                    <td>Price (£m)</td>
                                 </tr>
                                 <?php
                                 $sql = "select Name,Price from team order by Price DESC";
