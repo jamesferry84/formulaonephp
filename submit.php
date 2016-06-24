@@ -46,7 +46,11 @@ $active="home";
             $balance = $_POST["remainingBudget"];
 
             $query = "INSERT INTO `submissions` (`UserName`, `driver1`, `driver2`, `constructor1`, `constructor2`, `joker`, `Country`, `BudgetRollover`)
-                  VALUES ('$username', '$driver1', '$driver2', '$constructor1', '$constructor2', '$joker', '$country', '$carryOver')";
+                  VALUES ('$username', '$driver1', '$driver2', '$constructor1', '$constructor2', '$joker', '$country', '$carryOver') ON DUPLICATE KEY UPDATE
+                  driver1 = VALUES(driver1),
+                  driver2 = VALUES(driver2),
+                  constructor1 = VALUES(constructor1),
+                  constructor2 = VALUES(constructor2)";
 
             $conn->query($query);
 
