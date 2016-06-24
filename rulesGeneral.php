@@ -80,7 +80,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                             </table>
 
                         </div>
-                        <br />
+
                         <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
                             <table class="table table-bordered text-center">
                                 <tr class ="success">
