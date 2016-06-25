@@ -16,6 +16,23 @@ while($row = mysqli_fetch_assoc($result))
 ?>
 
     <div class="container">
+        <div class=" col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 alert-danger">
+            <?php
+
+            if (empty($_SESSION['passwordErrorMessage']) == false) {
+                echo $_SESSION["passwordErrorMessage"];
+            }
+            ?>
+        </div>
+        <div class=" col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 alert-success">
+            <?php
+
+            if (empty($_SESSION['passwordSuccessMessage']) == false) {
+                echo $_SESSION["passwordSuccessMessage"];
+            }
+
+            ?>
+        </div>
         <div class = "row">
             <div class = "col-lg-12 col-md-12 col-sm-12">
                 <div class = "panel panel-default">
@@ -50,7 +67,7 @@ while($row = mysqli_fetch_assoc($result))
                             </div>
                         </form>
 
-                        <form class="form-horizontal" action="updatePassword.php" method="post">
+                        <form class="form-horizontal" action="updatePassword.php" method="post" onsubmit='return checkPassword()'>
                             <div class="table-responsive  col-lg-12 col-md-12 col-sm-12 ">
                                 <table class="table table-bordered text-center">
                                     <tr>
@@ -60,6 +77,10 @@ while($row = mysqli_fetch_assoc($result))
                                     <tr>
                                         <td class="success">New Password:</td>
                                         <td> <input type="password" class="form-control" name="newPassword" id="newPassword"  required="required"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="success">Confirm New Password:</td>
+                                        <td> <input type="password" class="form-control" name="confirmNewPassword" id="confirmNewPassword"  required="required"></td>
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -96,6 +117,17 @@ while($row = mysqli_fetch_assoc($result))
             }
 
             return confirm("This will update your email to: " + lowerNewEmail + " are you sure?");
+        }
+
+        function checkPassword() {
+            var newPassword = document.getElementById("newPassword").value;
+            var confirmNewPassword = document.getElementById("confirmNewPassword").value;
+
+            if (newPassword == confirmNewPassword)
+                return true;
+
+            alert("New Password and Confirm New Password do not match. Password not updated");
+            return false;
         }
 
 

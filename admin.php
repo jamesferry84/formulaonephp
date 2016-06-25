@@ -6,6 +6,8 @@ $data = fread($handle,filesize($adminfile));
 include 'init.php';
 include 'includes/header.php';
 include 'includes/navbar.php';
+unset($_SESSION["passwordErrorMessage"]);
+unset($_SESSION["passwordSuccessMessage"]);
 
 if ($_SESSION["admin"] == 1)
 {

@@ -4,6 +4,8 @@ include 'init.php';
 include 'functions/general.php';
 $active="home";
 include 'includes/header.php';
+unset($_SESSION["passwordErrorMessage"]);
+unset($_SESSION["passwordSuccessMessage"]);
 if (isset($_SESSION["username"]))
 {
     // DO NOTHING

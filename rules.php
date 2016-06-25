@@ -4,6 +4,8 @@ $active="rules";
 include 'includes/header.php';
 include 'includes/navbar.php';
 include 'functions/general.php';
+unset($_SESSION["passwordErrorMessage"]);
+unset($_SESSION["passwordSuccessMessage"]);
 $sql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
 $queryResult = $conn->query($sql);
 $numrows=mysqli_num_rows($queryResult);

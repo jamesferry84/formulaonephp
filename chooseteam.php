@@ -3,6 +3,8 @@ include 'init.php';
 $active="chooseTeam";
 include 'includes/header.php';
 include 'includes/navbar.php';
+unset($_SESSION["passwordErrorMessage"]);
+unset($_SESSION["passwordSuccessMessage"]);
 $username = $_SESSION["username"];
 $previousRaceSql = "select * from racecalendar where Date <= CURDATE() ORDER BY date desc LIMIT 0,1;";
 $result = $conn->query($previousRaceSql);
