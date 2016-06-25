@@ -17,7 +17,11 @@ if (empty($_POST) === false) {
 
     if (empty($email) === true || empty($password) === true || empty($firstname) === true || empty($lastname) === true || empty($teamname) === true) {
         $errors[] = "Register Error: All fields not filled out";
-    } else if (user_exists($email) === true) {
+    }
+    else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Register Error: That email address is not a valid format";
+    }
+    else if (user_exists($email) === true) {
         $errors[] = "Register Error: That email has already been registered";
     } else {
         $encryptedPass = md5($password);
