@@ -70,6 +70,7 @@ while($row = mysqli_fetch_assoc($queryResult))
 <script>
     var div = document.getElementById("nextrace");
     var timeToNextRace = div.textContent;
+    var nowDate = new Date();
     var date = new Date(timeToNextRace);
     var hasAdminOpenedSubmissions;
     date.setDate(date.getDate()-2);
@@ -102,7 +103,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                 {
                     $('#clock').countdown(date, function(event) {
                         $('#preText').html("Next Race: ");
-                        $(this).html(" | Submit Team by: " + event.strftime('%D days %H:%M:%S'));
+                        $(this).html(" | Submit Team before: " + event.strftime('%D days %H:%M:%S'));
                     });
                 }
             }
