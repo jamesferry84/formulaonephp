@@ -7,14 +7,14 @@ unset($_SESSION["passwordSuccessMessage"]);
 $username = $_SESSION["username"];
 $newEmail = $_POST["email"];
 
-if (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
-    $_SESSION["passwordErrorMessage"] = "Email Update Error: That email address is not a valid format";
+if (empty($username) === true || empty($newEmail) === true ) {
+    $_SESSION["passwordErrorMessage"] = "Email Update Error: All fields are not filled out";
     header("location:profile.php?");
     die();
 }
 
-if (empty($username) === true || empty($newEmail) === true ) {
-    $_SESSION["passwordErrorMessage"] = "Email Update Error: All fields are not filled out";
+if (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
+    $_SESSION["passwordErrorMessage"] = "Email Update Error: That email address is not a valid format";
     header("location:profile.php?");
     die();
 }
