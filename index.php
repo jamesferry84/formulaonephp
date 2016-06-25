@@ -78,7 +78,7 @@ include 'includes/navbar.php';
                 ?>
             </table>
         </div>
-        <div class="table-responsive  col-lg-6 col-md-12 col-sm-12 ">
+        <div id="driverPrices" class="table-responsive  col-lg-6 col-md-12 col-sm-12 ">
             <table class="table table-bordered text-center">
                 <th class="text-center" colspan="2">Current Drivers Prices after <?php echo $previousRace?> GP</th>
                 <tr class ="success">

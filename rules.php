@@ -24,50 +24,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                     </div>
                     <ol>
                         <li>Register your intention to join the league by emailing f1predictor@virginmedia.com</li>
-                        <li>You are allocated an operating budget &pound;55 million for your team line-ups during the season - for each race you recruit two Drivers and two Constructors who each incur a cost.  The current prices going into the 2016 <?php echo $country?> Grand Prix are shown below: </li>
-                        <div class="clearfix visible-xs-block"></div>
-                        <br />
-                        <div class="table-responsive  col-lg-6 col-md-12 col-sm-12 ">
-                            <table class="table table-bordered text-center">
-                                <tr class ="success">
-                                    <td>Driver</td>
-                                    <td>Price (£m)</td>
-                                </tr>
-                                <?php
-                                $sql = "select d.name,d.price,t.name as teamname,t.price as teamprice from driver d join team t on d.team = t.name order by d.price DESC";
-                                $result = $conn->query($sql);
-                                while($row = mysqli_fetch_assoc($result))
-                                {
-                                    echo'<tr>' .
-                                        '<td>' . $row["name"] . '</td>' .
-                                        '<td>' . $row["price"] . '</td>' .
-                                        '</tr>';
-                                }
-                                ?>
-                            </table>
-
-                        </div>
-
-                        <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
-                            <table class="table table-bordered text-center">
-                                <tr class ="success">
-                                    <td>Constructor</td>
-                                    <td>Price (£m)</td>
-                                </tr>
-                                <?php
-                                $sql = "select Name,Price from team order by Price DESC";
-                                $result = $conn->query($sql);
-                                while($row = mysqli_fetch_assoc($result))
-                                {
-                                    echo'<tr>' .
-                                        '<td>' . $row["Name"] . '</td>' .
-                                        '<td>' . $row["Price"] . '</td>' .
-                                        '</tr>';
-                                }
-                                ?>
-                            </table>
-                        </div>
-                        <div class="clearfix visible-xs-block"></div>
+                        <li>You are allocated an operating budget &pound;55 million for your team line-ups during the season - for each race you recruit two Drivers and two Constructors who each incur a cost.  The current prices going into the 2016 <?php echo $country?> Grand Prix are shown <a href="index.php#driverPrices">here</a> </li>
                         <li>Unspent Team budgets from one Race will be rolled over into the next race.</li>
                         <li>Driver and Constructor prices will be recalculated after each race, based on their performance over a rolling 12 month period. For example, once the Australian G.P. is complete each Driver's and Team's price for the next race will be re-calculated on the Total 2014 season points scored minus the 2015 Australian GP plus the 2016 Australian GP points, and so on after each race.</li>
                         <li>You cannot submit the same Driver or Constructor more than once for a race, e.g. choose Alonso as your Driver twice for any Grand Prix.</li>
