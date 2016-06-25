@@ -147,9 +147,11 @@ if ($numberofrows > 0) {
                             </div>
                         </div>
 
-                        <div class="form-horizontal">
-                            <button type="button" class="btn btn-danger " id="resetButton" onclick="resetTeam()">Reset Team</button>
-                            <button class="btn btn-success" id="submitButton" type="submit">Submit Team</button>
+                        <div class="form-group">
+                            <div class="col-md-offset-3 col-md-9 col-sm-offset-3 col-sm-9">
+                                <button type="button" class="btn btn-danger " id="resetButton" onclick="resetTeam()">Reset Team</button>
+                                <button class="btn btn-success" id="submitButton" type="submit">Submit Team</button>
+                            </div>
                         </div>
 
                     </form>

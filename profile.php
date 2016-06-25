@@ -82,7 +82,7 @@ while($row = mysqli_fetch_assoc($result))
 
 
                             <div class="panel-body" >
-                                <form id="passwordUpdateForm" class="form-horizontal" action="updatePAssword.php" method="post" onsubmit='return checkPassword()'>
+                                <form id="passwordUpdateForm" class="form-horizontal" action="updatePassword.php" method="post" onsubmit='return checkPassword()'>
 
                                     <div class="form-group" style="margin-top:20px;">
                                         <label for="currentPassword" class="col-md-3 control-label">Current Password:</label>

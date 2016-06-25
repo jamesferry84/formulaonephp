@@ -13,6 +13,12 @@ $getUserSql = "SELECT * from users WHERE UserName='$username'";
 $queryResult = $conn->query($getUserSql);
 $row = mysqli_fetch_assoc($queryResult);
 
+if (empty($oldPassword) === true || empty($password) === true ) {
+    $_SESSION["passwordErrorMessage"] = "Password Update Error: All fields are not filled out";
+    header("location:profile.php?");
+    die();
+}
+
 if ($encryptedOldPass == $row["Password"]) {
     if ($encryptedPass != $row["Password"]) {
         $sql = "UPDATE users SET Password='$encryptedPass' WHERE UserName='$username'";
@@ -26,6 +32,7 @@ if ($encryptedOldPass == $row["Password"]) {
 else {
     $_SESSION["passwordErrorMessage"] = "'Current Password' does not match our records";
     header("location:profile.php?");
+    die();
 }
 
 
