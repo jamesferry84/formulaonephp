@@ -40,10 +40,10 @@ while($row = mysqli_fetch_assoc($result))
                         <h3>Profile</h3>
                     </div>
 
-                    <div id="emailBox" style="margin-top:50px;" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div id="emailBox" style="margin-top:50px;" class="col-md-6 ">
                         <div class="panel panel-success" >
                             <div class="panel-heading">
-                                <div class="panel-title">Team Details</div>
+                                <div class="panel-title">Update Email Form</div>
                             </div>
 
                             <div class="panel-body" >
@@ -71,6 +71,15 @@ while($row = mysqli_fetch_assoc($result))
                                     </div>
                                 </form>
                             </div>
+
+                        </div>
+                    </div>
+                    <div id="passwordBox" style="margin-top:50px;" class="col-md-6 ">
+                        <div class="panel panel-success" >
+                            <div class="panel-heading">
+                                <div class="panel-title">Password Update Form</div>
+                            </div>
+
 
                             <div class="panel-body" >
                                 <form id="passwordUpdateForm" class="form-horizontal" action="updatePAssword.php" method="post" onsubmit='return checkPassword()'>
