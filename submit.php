@@ -50,7 +50,8 @@ $active="home";
                   driver1 = VALUES(driver1),
                   driver2 = VALUES(driver2),
                   constructor1 = VALUES(constructor1),
-                  constructor2 = VALUES(constructor2)";
+                  constructor2 = VALUES(constructor2),
+                  joker = VALUES(joker)";
 
             $conn->query($query);
 
