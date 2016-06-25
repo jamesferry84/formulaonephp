@@ -9,6 +9,8 @@ $newEmail = $_POST["email"];
 
 if (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
     $_SESSION["passwordErrorMessage"] = "Email Update Error: That email address is not a valid format";
+    header("location:profile.php?");
+    die();
 }
 
 if (empty($username) === true || empty($newEmail) === true ) {
