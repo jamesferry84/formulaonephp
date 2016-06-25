@@ -24,9 +24,7 @@ while($row = mysqli_fetch_assoc($result))
                             <h3>Profile</h3>
                         </div>
                         <form class="form-horizontal" action="updateEmail.php" method="post" onsubmit='return checkEmail()'>
-<!--                        'return confirm("This will de-activate the current email address:  -->
-<!--                            --><?php //echo $emailAddress ?>
-<!--                             and the new address:  " + document.getElementById("email").value + "  will need to be activated");'>-->
+
                             <div class="table-responsive  col-lg-12 col-md-12 col-sm-12 ">
                                 <table class="table table-bordered text-center">
                                     <tr>
@@ -48,9 +46,33 @@ while($row = mysqli_fetch_assoc($result))
                                         <input type="submit" class="btn btn-success" name="Submit" value="Update Email">
                                     </div>
                                 </div>
-                                <!--
-<button class="btn btn-success" onclick='alert("Are you sure? \n This will de-activate the current email address <?php echo $emailAddress ?> and the new address " + document.getElementById("email").value + " will need to be activated")'>Update Email</button>
-                            -->
+
+                            </div>
+                        </form>
+
+                        <form class="form-horizontal" action="updatePassword.php" method="post">
+                            <div class="table-responsive  col-lg-12 col-md-12 col-sm-12 ">
+                                <table class="table table-bordered text-center">
+                                    <tr>
+                                        <td class="success">Current Password:</td>
+                                        <td><input type="password" class="form-control" name="currentPassword" id="currentPassword" required="required"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="success">New Password:</td>
+                                        <td> <input type="password" class="form-control" name="newPassword" id="newPassword"  required="required"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="form-group">
+                                    <!-- Button -->
+                                    <div class="col-md-offset-9 col-sm-offset-9 col-lg-offset-9col-lg-9 col-md-9 col-sm-9">
+                                        <input type="submit" class="btn btn-success" name="Submit" value="Update Password">
+                                    </div>
+                                </div>
+
                             </div>
                         </form>
 
@@ -75,6 +97,8 @@ while($row = mysqli_fetch_assoc($result))
 
             return confirm("This will update your email to: " + lowerNewEmail + " are you sure?");
         }
+
+
     </script>
 
 <?php
