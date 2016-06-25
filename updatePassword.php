@@ -1,6 +1,5 @@
 <?php
-include 'includes/header.php';
-include 'includes/navbar.php';
+include 'init.php';
 $username = $_SESSION["username"];
 $oldPassword = $_POST['currentPassword'];
 $password =$_POST['newPassword'];
