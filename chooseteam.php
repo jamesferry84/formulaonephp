@@ -136,14 +136,14 @@ if ($numberofrows > 0) {
                             ?>
                             <label for = "carriedOver" class = "col-lg-3 control-label">Carried Over:</label>
                             <div class = "col-lg-5">
-                                <input type = "text" class="form-control" id="carriedOver" name="carriedOver" placeholder="Hint Text" readonly value=<?php echo $row["budget"] ?>  />
+                                <input type = "text" class="form-control" id="carriedOver" name="carriedOver" readonly value=<?php echo $row["budget"] ?>  />
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for = "remainingBudget" class = "col-lg-3 control-label">Remaining Budget:</label>
                             <div class = "col-lg-5">
-                                <input type = "text" class="form-control" id="remainingBudget" name="remainingBudget" placeholder="Hint Text" readonly />
+                                <input type = "text" class="form-control" id="remainingBudget" name="remainingBudget" disabled="disabled" />
                             </div>
                         </div>
 
@@ -322,11 +322,26 @@ if ($numberofrows > 0) {
 
     function resetTeam()
     {
+        document.getElementById("constructor1DropDown").value = "";
+        document.getElementById("constructor2DropDown").value = "";
+        document.getElementById("driver1DropDown").value = "";
+        document.getElementById("driver2DropDown").value = "";
+        selectedPrices[0] = 0;
+        selectedPrices[1] = 0;
+        selectedPrices[2] = 0;
+        selectedPrices[3] = 0;
+        if (alreadySubmitted) {
+            startingWeeklyBudget = driver1Price + driver2Price + constructor1Price + constructor2Price;
+        }
+        else
+            startingWeeklyBudget = 55.00;
 
+        elem.value = (startingWeeklyBudget + carryOver * 1).toFixed(2);
     }
 
     function Update()
     {
+
         if (selectedPrices[0] == undefined) { selectedPrices[0] = 0; }
         if (selectedPrices[1] == undefined) { selectedPrices[1] = 0; }
         if (selectedPrices[2] == undefined) { selectedPrices[2] = 0; }
