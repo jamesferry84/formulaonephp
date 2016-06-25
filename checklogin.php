@@ -1,7 +1,5 @@
 <?php
 include 'init.php';
-include 'includes/header.php';
-include 'includes/navbar.php';
 include 'functions/general.php';
 
 if (empty($_POST) === false) {
