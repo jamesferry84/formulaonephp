@@ -64,7 +64,7 @@ while($row = mysqli_fetch_assoc($queryResult))
     while($row = mysqli_fetch_assoc($queryResult))
     {
         $originalDate = $row["Date"];
-        $newDate = date("Y/m/d", strtotime($originalDate));
+        $newDate = date("Y/m/d H:i:s", strtotime($originalDate));
         //echo $row["Date"];
         echo $newDate;
     }
@@ -97,7 +97,6 @@ while($row = mysqli_fetch_assoc($queryResult))
                 if (todayDate >= date || hasAdminOpenedSubmissions == 0) {
                     isSubmissionClosed = true;
                 }
-
 
                 if (isSubmissionClosed)
                 {
