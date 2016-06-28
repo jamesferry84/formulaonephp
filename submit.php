@@ -55,6 +55,7 @@ $active="home";
 
             $conn->query($query);
 
+
             if ($joker == 1)
             {
                 $sql="SELECT * FROM users WHERE UserName='$username'";
@@ -63,15 +64,15 @@ $active="home";
 
                 if($result->num_rows == 1) {
                     $row = $result->fetch_assoc();
-                    $numJokers = $row["jokers"] - 1;
+                    $numJokers = $row["jokers"] + 1;
 
-                    $query = "UPDATE `users` SET `jokers`='$numJokers',`budget`='$carryOver' WHERE `UserName`='$username'";
+                    $query = "UPDATE `users` SET `jokers`='$numJokers',`carryover`='$carryOver' WHERE `UserName`='$username'";
                     $conn->query($query);
                 }
             }
             else
             {
-                $query = "UPDATE `users` SET budget='$carryOver' WHERE `UserName`='$username'";
+                $query = "UPDATE `users` SET carryover='$carryOver' WHERE `UserName`='$username'";
                 $conn->query($query);
             }
         }

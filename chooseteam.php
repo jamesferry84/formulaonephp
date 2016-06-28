@@ -14,7 +14,10 @@ $previousRace = $row["Country"];
 $sql = "select * from submissions where Country = '$country'  and UserName = '{$_SESSION['username']}'";
 $queryResult = $conn->query($sql);
 $numberofrows = mysqli_num_rows($queryResult);
-
+$driver1Price = 0;
+$driver2Price = 0;
+$constructor1Price = 0;
+$constructor2Price = 0;
 
 if ($numberofrows > 0) {
     $sql = "select * from submissions where Country = '$country'  and UserName = '{$_SESSION['username']}'";
@@ -136,14 +139,14 @@ if ($numberofrows > 0) {
                             ?>
                             <label for = "carriedOver" class = "col-lg-3 control-label">Carried Over:</label>
                             <div class = "col-lg-5">
-                                <input type = "text" class="form-control" id="carriedOver" name="carriedOver" readonly value=<?php echo $row["budget"] ?>  />
+                                <input type = "text" class="form-control" id="carriedOver" name="carriedOver" readonly value=<?php echo $row["carryover"] ?>  />
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for = "remainingBudget" class = "col-lg-3 control-label">Remaining Budget:</label>
                             <div class = "col-lg-5">
-                                <input type = "text" class="form-control" id="remainingBudget" name="remainingBudget" disabled="disabled" />
+                                <input type = "text" class="form-control" id="remainingBudget" name="remainingBudget" readonly />
                             </div>
                         </div>
 
