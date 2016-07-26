@@ -63,7 +63,7 @@ while($row = mysqli_fetch_assoc($queryResult))
 
     while($row = mysqli_fetch_assoc($queryResult))
     {
-        $originalDate = $row["Date"];
+        $originalDate = $row["FirstPractice"];
         $newDate = date("Y/m/d H:i:s", strtotime($originalDate));
         //echo $row["Date"];
         echo $newDate;
@@ -78,7 +78,7 @@ while($row = mysqli_fetch_assoc($queryResult))
     var nowDate = new Date();
     var date = new Date(timeToNextRace);
     var hasAdminOpenedSubmissions;
-    date.setDate(date.getDate()-2);
+    date.setDate(date.getDate());
 
     $(function() {
         $.ajax({
