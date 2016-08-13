@@ -8,6 +8,49 @@ include 'includes/header.php';
 include 'includes/navbar.php';
 unset($_SESSION["passwordErrorMessage"]);
 unset($_SESSION["passwordSuccessMessage"]);
+$previousRaceSql = "select * from racecalendar where Date <= CURDATE() ORDER BY date desc LIMIT 0,1;";
+$result = $conn->query($previousRaceSql);
+$row = mysqli_fetch_assoc($result);
+$previousRace = $row["Country"];
+
+$sql = "select * from submissions where Country = '$country'  and UserName = '{$_SESSION['username']}'";
+$queryResult = $conn->query($sql);
+$numberofrows = mysqli_num_rows($queryResult);
+$driver1Price = 0;
+$driver2Price = 0;
+$constructor1Price = 0;
+$constructor2Price = 0;
+
+if ($numberofrows > 0) {
+    $sql = "select * from submissions where Country = '$country'  and UserName = '{$_SESSION['username']}'";
+    $queryResult = $conn->query($sql);
+    $row = mysqli_fetch_assoc($queryResult);
+    $driver1 = $row["Driver1"];
+    $driver2 = $row["Driver2"];
+    $constructor1 = $row["Constructor1"];
+    $constructor2 = $row["Constructor2"];
+
+    $driver1priceSql = "select * from driver where Name = '$driver1'";
+    $queryResult = $conn->query($driver1priceSql);
+    $driver1PriceRow = mysqli_fetch_assoc($queryResult);
+    $driver1Price = $driver1PriceRow["Price"];
+
+    $driver2priceSql = "select * from driver where Name = '$driver2'";
+    $queryResult = $conn->query($driver2priceSql);
+    $driver2PriceRow = mysqli_fetch_assoc($queryResult);
+    $driver2Price = $driver2PriceRow["Price"];
+
+    $constructor1priceSql = "select * from team where Name = '$constructor1'";
+    $queryResult = $conn->query($constructor1priceSql);
+    $constructor1PriceRow = mysqli_fetch_assoc($queryResult);
+    $constructor1Price = $constructor1PriceRow["Price"];
+
+
+    $constructor2priceSql = "select * from team where Name = '$constructor2'";
+    $queryResult = $conn->query($constructor2priceSql);
+    $constructor2PriceRow = mysqli_fetch_assoc($queryResult);
+    $constructor2Price = $constructor2PriceRow["Price"];
+}
 
 if ($_SESSION["admin"] == 1)
 {
@@ -20,126 +63,180 @@ else{
 ?>
 
 <div class="container">
+    <div class = "col-lg-12 col-md-12 col-sm-12">
+        <div class = "panel panel-default">
+            <div class = "panel-body">
+                <div class="page-header">
+                    <h3>Profile</h3>
+                </div>
 
-    <div class = "row">
-        <div class = "col-lg-12 col-md-12 col-sm-12">
-            <div class = "panel panel-default">
-                <div class = "panel-body">
-                    <div class="page-header">
-                        <h3>New User Approvals</h3>
-                    </div>
-                    <div class="table-responsive ">
-                        <form action="submitApprovals.php" method="post">
-                            <table class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Team Name</th>
-                                    <th>Approve?</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <?php
-                                    $sql = "select UserName, Email, teamname from users where Activated = 0";
-                                    $result = $conn->query($sql);
-                                    while($row = mysqli_fetch_assoc($result))
-                                    {
-                                        echo'<tr>' .
-                                                '<td>' . $row["UserName"] . '</td>' .
-                                                '<td>' . '<input name="email[]" value="' . $row["Email"] .'" readonly>' . '</td>' .
-                                                '<td>' . $row["teamname"] . '</td>' .
-                                                '<td>
+                <div id="newUserApproval" style="margin-top:50px;" class="col-lg-12 col-md-12 ">
+                    <div class="panel panel-success" >
+                        <div class="panel-heading">
+                            <div class="panel-title">New User Approvals</div>
+                        </div>
+
+                        <div class="panel-body" >
+                            <form action="submitApprovals.php" method="post">
+
+                                <div class="form-group" style="margin-top:20px;">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>Team Name</th>
+                                            <th>Approve?</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <?php
+                                            $sql = "select UserName, Email, teamname from users where Activated = 0";
+                                            $result = $conn->query($sql);
+                                            while($row = mysqli_fetch_assoc($result))
+                                            {
+                                                echo'<tr>' .
+                                                    '<td>' . $row["UserName"] . '</td>' .
+                                                    '<td>' . '<input name="email[]" value="' . $row["Email"] .'" readonly>' . '</td>' .
+                                                    '<td>' . $row["teamname"] . '</td>' .
+                                                    '<td>
                                                     <select class="form-control" id="approve" name="approve[]">
                                                         <option value="0">No</option>
                                                         <option value="1">Yes</option>
                                                     </select>
                                                 </td>' .
-                                            '</tr>';
-                                    }
-                                    ?>
-                                </tr>
-                                </tbody>
+                                                    '</tr>';
+                                            }
+                                            ?>
+                                        </tr>
+                                        </tbody>
 
-                            </table>
-                            <button class="btn btn-success" name="submitButton" type="submit">Submit Selections</button>
-                        </form>
+                                    </table>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-10 col-md-9">
+                                        <button class="btn btn-success" name="submitButton" type="submit">Submit Selections</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
                     </div>
                 </div>
+
+                <div id="submissions" style="margin-top:50px;" class="col-lg-12 col-md-12 ">
+                    <?php
+                    $sql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
+                    $queryResult = $conn->query($sql);
+                    $numrows=mysqli_num_rows($queryResult);
+
+                    while($row = mysqli_fetch_assoc($queryResult))
+                    {
+                        $country =  $row["Country"];
+                    }
+
+                    ?>
+                    <div class="panel panel-success" >
+                        <div class="panel-heading">
+                            <div class="panel-title">Submissions for -  <?php echo $country ?></div>
+                        </div>
+
+                        <div class="panel-body" >
+                            <form action="" method="post">
+
+                                <div class="form-group" style="margin-top:20px;">
+                                    <div class="table-responsive ">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>Team</th>
+                                                <th>Driver 1</th>
+                                                <th>Driver 2</th>
+                                                <th>Constructor 1</th>
+                                                <th>Constructor 2</th>
+                                                <th>Joker?</th>
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <?php
+                                                $sql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
+                                                $queryResult = $conn->query($sql);
+                                                $numrows=mysqli_num_rows($queryResult);
+
+                                                while($row = mysqli_fetch_assoc($queryResult))
+                                                {
+                                                    $country =  $row["Country"];
+                                                }
+
+                                                $query = "SELECT u.teamname, s.Driver1, s.Driver2, s.Constructor1,s.Constructor2, s.joker FROM `users` u left join `submissions` s on u.username = s.username  AND s.country = '$country'";
+                                                // $query = "SELECT teamname, driver1, driver2, constructor1,constructor2 FROM `submissions` s join `users` u on u.username = s.username  AND s.country = '$country'";
+                                                $usersNotSubmitted = $conn->query($query);
+                                                while($row = mysqli_fetch_assoc($usersNotSubmitted))
+                                                {
+                                                    echo'<tr>' .
+                                                        '<td>' . $row["teamname"] . '</td>' .
+                                                        '<td>' . $row["Driver1"] . '</td>' .
+                                                        '<td>' . $row["Driver2"] . '</td>' .
+                                                        '<td>' . $row["Constructor1"] . '</td>' .
+                                                        '<td>' . $row["Constructor2"] . '</td>' .
+                                                        '<td>';  if ($row["joker"] == 1) {echo "Y";} else {echo "N";} echo '</td>' .
+                                                    '</tr>';
+                                                }
+                                                ?>
+                                            </tr>
+                                            </tbody>
+
+                                        </table>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="raceResults" style="margin-top:50px;" class="col-md-6 ">
+                    <div class="panel panel-success" >
+                        <div class="panel-heading">
+                            <div class="panel-title">Race Results Form</div>
+                        </div>
+
+                        <div class="panel-body" >
+                            <form id="emailUpdateForm" class="form-horizontal" action="tbd.php" method="post">
+
+                                <div class="form-group" style="margin-top:20px;">
+                                    <label for="teamname" class="col-md-3 control-label">Fastest Lap:</label>
+                                    <div class="col-md-9">
+                                        <input id="login-username" type="email" class="form-control" name="teamname" placeholder="<?php echo $teamName?>" disabled="disabled"  >
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="margin-top:20px;">
+                                    <label for="email" class="col-md-3 control-label">Email:</label>
+                                    <div class="col-md-9">
+                                        <input id="email" type="email" class="form-control" name="email" placeholder="<?php echo $emailAddress?>"   >
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" class="btn btn-success" name="updateEmail" value="Update Email">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
 
-    <div class = "row">
-        <div class = "col-lg-12 col-md-12 col-sm-12">
-            <div class = "panel panel-default">
-                <div class = "panel-body">
-                    <div class="page-header">
-                        <?php
-                        $sql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
-                        $queryResult = $conn->query($sql);
-                        $numrows=mysqli_num_rows($queryResult);
-
-                        while($row = mysqli_fetch_assoc($queryResult))
-                        {
-                            $country =  $row["Country"];
-                        }
-
-                        ?>
-                        <h3>Submissions for -  <?php echo $country ?> </h3>
-                    </div>
-                    <div class="table-responsive ">
-                            <table class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Team</th>
-                                    <th>Driver 1</th>
-                                    <th>Driver 2</th>
-                                    <th>Constructor 1</th>
-                                    <th>Constructor 2</th>
-                                    <th>Joker?</th>
-
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <?php
-                                    $sql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
-                                    $queryResult = $conn->query($sql);
-                                    $numrows=mysqli_num_rows($queryResult);
-
-                                    while($row = mysqli_fetch_assoc($queryResult))
-                                    {
-                                        $country =  $row["Country"];
-                                    }
-
-                                   $query = "SELECT u.teamname, s.Driver1, s.Driver2, s.Constructor1,s.Constructor2, s.joker FROM `users` u left join `submissions` s on u.username = s.username  AND s.country = '$country'";
-                                   // $query = "SELECT teamname, driver1, driver2, constructor1,constructor2 FROM `submissions` s join `users` u on u.username = s.username  AND s.country = '$country'";
-                                    $usersNotSubmitted = $conn->query($query);
-                                    while($row = mysqli_fetch_assoc($usersNotSubmitted))
-                                    {
-                                        echo'<tr>' .
-                                            '<td>' . $row["teamname"] . '</td>' .
-                                            '<td>' . $row["Driver1"] . '</td>' .
-                                            '<td>' . $row["Driver2"] . '</td>' .
-                                            '<td>' . $row["Constructor1"] . '</td>' .
-                                            '<td>' . $row["Constructor2"] . '</td>' .
-                                            '<td>';  if ($row["joker"] == 1) {echo "Y";} else {echo "N";} echo '</td>' .
-                                            '</tr>';
-                                    }
-                                    ?>
-                                </tr>
-                                </tbody>
-
-                            </table>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
     <div class="row">
         <form class="form-horizontal" action="updateDriverPrices.php" method="post">
             <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
@@ -214,7 +311,455 @@ else{
     </div>
 
 
+    <!--
+    SUBMISSIONS
+
+    -->
+
+
+    <div class = "col-lg-12 col-md-8 col-sm-8">
+        <div class = "panel panel-default">
+            <div class = "panel-body">
+                <div class="page-header">
+                    <h3>Team Choices for <?php echo $country ?></h3>
+                    <div class="well">
+                        <div class="alert-danger">
+                            <?php
+
+                            if (empty($_SESSION['submitErrorMessage']) == false) {
+                                echo $_SESSION["submitErrorMessage"];
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <form class="form-horizontal" action="submit.php" method="post" onsubmit="return confirm('Are you sure you want to submit this team?');">
+
+                        <div class="form-group">
+                            <label for = "user" class = "col-lg-3 control-label">Team Name:</label>
+                            <div class = "col-lg-5">
+                                <select class="form-control" id="teamnameDropDown" name="teamname" required="required" onchange="getTeamSubmissions()" >
+                                    <option value=""></option>
+                                </select>
+                                <input type="text" hidden="hidden" value="$country" name="country">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for = "driver" class = "col-lg-3 control-label">Driver 1:</label>
+                            <div class = "col-lg-5">
+                                <select class="form-control" id="driver1DropDown" name="driver1" required="required" >
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for = "driver" class = "col-lg-3 control-label">Driver 2:</label>
+                            <div class = "col-lg-5">
+                                <select class="form-control" id="driver2DropDown" name="driver2" required="required">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for = "constructor" class = "col-lg-3 control-label">Constructor 1:</label>
+                            <div class = "col-lg-5">
+                                <select class="form-control" id="constructor1DropDown" name="constructor1" required="required">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for = "constructor" class = "col-lg-3 control-label">Constructor 2:</label>
+                            <div class = "col-lg-5">
+                                <select class="form-control" id="constructor2DropDown" name="constructor2" required="required" >
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <?php
+                            $sql = "select * from users where username = '{$_SESSION['username']}'";
+                            $queryResult = $conn->query($sql);
+                            $numrows=mysqli_num_rows($queryResult);
+
+                            $row = mysqli_fetch_assoc($queryResult)
+
+                            ?>
+                            <label for = "jokerUsed" class = "col-lg-3 control-label">Use Joker? (Jokers available <?php echo (5 - $row["jokers"]) ?>)</label>
+                            <div class = "col-lg-5">
+                                <select class="form-control" id="jokerUsed" name="jokerUsed" >
+                                    <option selected value="0">No</option>
+                                    <?php if($row["jokers"] < 5){echo '<option value="1">Yes</option>';}?>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <?php
+                            $sql = "select * from users where username = '{$_SESSION['username']}'";
+                            $queryResult = $conn->query($sql);
+                            $numrows=mysqli_num_rows($queryResult);
+
+                            $row = mysqli_fetch_assoc($queryResult)
+
+                            ?>
+                            <label for = "carriedOver" class = "col-lg-3 control-label">Carried Over:</label>
+                            <div class = "col-lg-5">
+                                <input type = "text" class="form-control" id="carriedOver" name="carriedOver"  value=<?php echo $row["carryover"] ?>  />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for = "remainingBudget" class = "col-lg-3 control-label">Remaining Budget:</label>
+                            <div class = "col-lg-5">
+                                <input type = "text" class="form-control" id="remainingBudget" name="remainingBudget"  />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-3 col-md-9 col-sm-offset-3 col-sm-9">
+                                <button type="button" class="btn btn-danger " id="resetButton" onclick="resetTeam()">Reset Team</button>
+<!--                                <button class="btn btn-success" id="submitButton" type="submit">Submit Team</button>-->
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- SUBMISSIONS ENDS-->
+
+
+    <div id="raceResults" style="margin-top:50px;" class="col-lg-12 col-md-12 ">
+        <div class="panel panel-success" >
+            <div class="panel-heading">
+                <div class="panel-title">Race Results</div>
+            </div>
+
+            <div class="panel-body" >
+                <form action="submitResults.php" method="post">
+
+                    <div class="form-group" style="margin-top:20px;">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Driver</th>
+                                <th>Constructor</th>
+                                <th>Position</th>
+                                <th>Fastest Lap?</th>
+                                <th>Fastest Pit?</th>
+                                <th>Pole?</th>
+                                <th>Complete Race?</th>
+                                <th>Best Combined Qualifying?</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <?php
+                                $sql = "select Name, Team from driver";
+                                $result = $conn->query($sql);
+                                while($row = mysqli_fetch_assoc($result))
+                                {
+                                    echo'<tr>' .
+                                        '<td>' . $row["Name"] . '</td>' .
+                                        '<td>' . $row["Team"] . '</td>' .
+                                        '<td>
+                                                    <select class="form-control" id="position" name="position[]">
+                                                        <option value="0">NA</option>
+                                                        <option value="1">1st</option>
+                                                        <option value="2">2nd</option>
+                                                        <option value="3">3rd</option>
+                                                        <option value="4">4th</option>
+                                                        <option value="5">5th</option>
+                                                        <option value="6">6th</option>
+                                                        <option value="7">7th</option>
+                                                        <option value="8">8th</option>
+                                                        <option value="9">9th</option>
+                                                        <option value="10">10th</option>
+                                                    </select>
+                                                </td>' .
+                                        '<td>
+                                                    <select class="form-control" id="fastestLap" name="fastestLap[]">
+                                                        <option value="0">No</option>
+                                                        <option value="1">Yes</option>
+                                                    </select>
+                                                </td>' .
+                                        '<td>
+                                                    <select class="form-control" id="fastestPit" name="fastestPit[]">
+                                                        <option value="0">No</option>
+                                                        <option value="1">Yes</option>
+                                                    </select>
+                                                </td>' .
+                                        '<td>
+                                                    <select class="form-control" id="pole" name="pole[]">
+                                                        <option value="0">No</option>
+                                                        <option value="1">Yes</option>
+                                                    </select>
+                                                </td>' .
+                                        '<td>
+                                                    <select class="form-control" id="completeRace" name="completeRace[]">
+                                                        <option value="0">No</option>
+                                                        <option value="1">Yes</option>
+                                                    </select>
+                                                </td>' .
+                                        '<td>
+                                                    <select class="form-control" id="bestCombined" name="bestCombined[]">
+                                                        <option value="0">No</option>
+                                                        <option value="1">Yes</option>
+                                                    </select>
+                                                </td>' .
+                                        '</tr>';
+                                }
+                                ?>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-10 col-md-9">
+<!--                            <button class="btn btn-success" name="submitButton" type="submit" disabled="disabled">Submit Selections</button>-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
 </div>
+
+
+<script>
+    var alreadySubmitted = <?php echo $numberofrows ?>;
+    var driver1Price = <?php echo $driver1Price ?>;
+    var driver2Price = <?php echo $driver2Price ?>;
+    var constructor1Price = <?php echo $constructor1Price ?>;
+    var constructor2Price = <?php echo $constructor2Price ?>;
+
+    var teamnames = [];
+    var selectedTeam = "";
+    var selectedTeamsCarryOver = 0;
+
+    var constructorNames = [];
+    var constructorPrices = [];
+    var driverPrices = [];
+    var driverNames = [];
+
+    var selectedPrices = [];
+    selectedPrices[0] = 0;
+    selectedPrices[1] = 0;
+    selectedPrices[2] = 0;
+    selectedPrices[3] = 0;
+
+    var startingWeeklyBudget;
+    if (alreadySubmitted) {
+        startingWeeklyBudget = driver1Price + driver2Price + constructor1Price + constructor2Price;
+    }
+    else
+        startingWeeklyBudget = 55.00;
+
+
+    var carryOver = document.getElementById('carriedOver').value;
+    var elem = document.getElementById("remainingBudget");
+    var totalAvailable;
+    elem.value = (startingWeeklyBudget + carryOver * 1).toFixed(2); // multiply used to force integer addition instead of concatenation
+    totalAvailable = elem.value;
+
+    var firstSelected = null;
+    var secondSelected = null;
+
+    var firstConstructorSelected = null;
+    var secondConstructorSelected = null;
+
+    Update();
+
+    function resetTeam()
+    {
+        document.getElementById("constructor1DropDown").value = "";
+        document.getElementById("constructor2DropDown").value = "";
+        document.getElementById("driver1DropDown").value = "";
+        document.getElementById("driver2DropDown").value = "";
+        selectedPrices[0] = 0;
+        selectedPrices[1] = 0;
+        selectedPrices[2] = 0;
+        selectedPrices[3] = 0;
+        if (alreadySubmitted) {
+            startingWeeklyBudget = driver1Price + driver2Price + constructor1Price + constructor2Price;
+        }
+        else
+            startingWeeklyBudget = 55.00;
+
+        elem.value = (startingWeeklyBudget + carryOver * 1).toFixed(2);
+    }
+
+    function Update()
+    {
+
+        if (selectedPrices[0] == undefined) { selectedPrices[0] = 0; }
+        if (selectedPrices[1] == undefined) { selectedPrices[1] = 0; }
+        if (selectedPrices[2] == undefined) { selectedPrices[2] = 0; }
+        if (selectedPrices[3] == undefined) { selectedPrices[3] = 0; }
+        var newValue = parseFloat(totalAvailable - selectedPrices[0] - selectedPrices[1] - selectedPrices[2] - selectedPrices[3]).toFixed(2);
+
+        document.getElementById("remainingBudget").value = newValue;
+
+        if (newValue < 0)
+        {
+            $('#submitButton').prop('disabled',true);
+        }
+        else
+        {
+            $('#submitButton').prop('disabled',false);
+        }
+    }
+
+    $('#teamnameDropDown').change(function() {
+        selectedTeam = $('#teamnameDropDown option:selected')
+        Update();
+
+
+    });
+
+    $('#driver1DropDown').change(function() {
+        var selectedValue = $('#driver1DropDown option:selected')
+        var str = selectedValue.val();
+        var result = str.split(",");
+        selectedPrices[0] = result[1];
+        Update();
+
+        if (selectedValue.val() != "") {
+            $('#driver2DropDown option[value="' + selectedValue.val() + '"]').remove();
+        }
+        else {
+            selectedValue = null;
+        }
+        if (firstSelected != null) {
+            $('#driver2DropDown').append($('<option>', { value : firstSelected.val() }).text(firstSelected.text()));
+
+        }
+        firstSelected = selectedValue;
+    });
+
+    $('#driver2DropDown').change(function() {
+        var selectedValue = $('#driver2DropDown option:selected')
+
+        var str = selectedValue.val();
+        var result = str.split(",");
+        selectedPrices[1] = result[1];
+        Update();
+
+        if (selectedValue.val() != "") {
+            $('#driver1DropDown option[value="' + selectedValue.val() + '"]').remove();
+        }
+        else {
+            selectedValue = null;
+        }
+
+        if (secondSelected != null) {
+            $('#driver1DropDown').append($('<option>', { value : secondSelected.val() }).text(secondSelected.text()));
+
+        }
+
+        //save the currently selected value
+        secondSelected = selectedValue;
+    });
+
+    $('#constructor1DropDown').change(function() {
+        var selectedValue = $('#constructor1DropDown option:selected')
+
+        var str = selectedValue.val();
+        var result = str.split(",");
+        selectedPrices[2] = result[1];
+        Update();
+
+        if (selectedValue.val() != "") {
+            $('#constructor2DropDown option[value="' + selectedValue.val() + '"]').remove();
+        }
+        else {
+            selectedValue = null;
+        }
+        if (firstConstructorSelected != null) {
+            $('#constructor2DropDown').append($('<option>', { value : firstConstructorSelected.val() }).text(firstConstructorSelected.text()));
+
+        }
+        firstConstructorSelected = selectedValue;
+    });
+
+    $('#constructor2DropDown').change(function() {
+        var selectedValue = $('#constructor2DropDown option:selected')
+
+        var str = selectedValue.val();
+        var result = str.split(",");
+        selectedPrices[3] = result[1];
+        Update();
+
+        if (selectedValue.val() != "") {
+            $('#constructor1DropDown option[value="' + selectedValue.val() + '"]').remove();
+        }
+        else {
+            selectedValue = null;
+        }
+
+        if (secondConstructorSelected != null) {
+            $('#constructor1DropDown').append($('<option>', { value : secondConstructorSelected.val() }).text(secondConstructorSelected.text()));
+
+        }
+
+        //save the currently selected value
+        secondConstructorSelected = selectedValue;
+    });
+
+    $.getJSON("teams.php", function(data) {
+        $.each(data, function(key,val) {
+            teamnames.push(val.teamname);
+            $("#teamnameDropDown").append($("<option />").val(val.teamname).text(val.teamname));
+        })
+    });
+
+    $.getJSON("drivers.php", function(data) {
+        $.each(data, function(key,val) {
+            driverNames.push(val.Name);
+            driverPrices.push(val.Price);
+            $("#driver1DropDown").append($("<option />").val(val.Name + ", " + val.Price).text(val.Name + " £" + val.Price));
+            $("#driver2DropDown").append($("<option />").val(val.Name + ", " + val.Price).text(val.Name + " £" + val.Price));
+        })
+    });
+
+    $.getJSON("constructors.php", function(data) {
+        $.each(data, function(key,val) {
+            constructorNames.push(val.Name);
+            constructorPrices.push(val.Price);
+            $("#constructor1DropDown").append($("<option />").val(val.Name + ", " + val.Price).text(val.Name + " £" + val.Price));
+            $("#constructor2DropDown").append($("<option />").val(val.Name + ", " + val.Price).text(val.Name + " £" + val.Price));
+        })
+    });
+
+    function getTeamSubmissions() {
+       // alert("insideGetTeamSubmission");
+        $.getJSON("getTeamSelectionsForRace.php", function(data) {
+         //   alert("Data is" + data);
+            $.each(data, function(key,val) {
+               // alert("inside");
+            })
+        });
+    }
+</script>
+
+
 
 <?php
 include 'includes/footer.php';
