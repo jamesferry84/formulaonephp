@@ -196,43 +196,6 @@ else{
                         </div>
                     </div>
                 </div>
-
-                <div id="raceResults" style="margin-top:50px;" class="col-md-6 ">
-                    <div class="panel panel-success" >
-                        <div class="panel-heading">
-                            <div class="panel-title">Race Results Form</div>
-                        </div>
-
-                        <div class="panel-body" >
-                            <form id="emailUpdateForm" class="form-horizontal" action="tbd.php" method="post">
-
-                                <div class="form-group" style="margin-top:20px;">
-                                    <label for="teamname" class="col-md-3 control-label">Fastest Lap:</label>
-                                    <div class="col-md-9">
-                                        <input id="login-username" type="email" class="form-control" name="teamname" placeholder="<?php echo $teamName?>" disabled="disabled"  >
-                                    </div>
-                                </div>
-
-                                <div class="form-group" style="margin-top:20px;">
-                                    <label for="email" class="col-md-3 control-label">Email:</label>
-                                    <div class="col-md-9">
-                                        <input id="email" type="email" class="form-control" name="email" placeholder="<?php echo $emailAddress?>"   >
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <input type="submit" class="btn btn-success" name="updateEmail" value="Update Email">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-
-
             </div>
         </div>
     </div>
