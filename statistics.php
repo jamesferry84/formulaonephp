@@ -47,6 +47,7 @@ $previousRace = $row["Country"];
                 </table>
             </div>
         </div>
+        <iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~Menomaths/27.embed?share_key=Syrz6ptFWUs8iRGGrgGVB5"></iframe>
     </div>
 
 <?php
