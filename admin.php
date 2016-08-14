@@ -407,24 +407,21 @@ else{
     <div id="raceResults" style="margin-top:50px;" class="col-lg-12 col-md-12 ">
         <div class="panel panel-success" >
             <div class="panel-heading">
-                <div class="panel-title">Race Results</div>
+                <div class="panel-title">Driver Results</div>
             </div>
 
             <div class="panel-body" >
-                <form action="submitResults.php" method="post">
+                <form action="submitDriverResults.php" method="post">
 
                     <div class="form-group" style="margin-top:20px;">
                         <table class="table table-striped">
                             <thead>
                             <tr>
                                 <th>Driver</th>
-                                <th>Constructor</th>
                                 <th>Position</th>
-                                <th>Fastest Lap?</th>
-                                <th>Fastest Pit?</th>
-                                <th>Pole?</th>
                                 <th>Complete Race?</th>
-                                <th>Best Combined Qualifying?</th>
+                                <th>Fastest Lap?</th>
+                                <th>Pole?</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -436,52 +433,40 @@ else{
                                 {
                                     echo'<tr>' .
                                         '<td>' . $row["Name"] . '</td>' .
-                                        '<td>' . $row["Team"] . '</td>' .
                                         '<td>
                                                     <select class="form-control" id="position" name="position[]">
                                                         <option value="0">NA</option>
-                                                        <option value="1">1st</option>
-                                                        <option value="2">2nd</option>
-                                                        <option value="3">3rd</option>
-                                                        <option value="4">4th</option>
-                                                        <option value="5">5th</option>
-                                                        <option value="6">6th</option>
-                                                        <option value="7">7th</option>
-                                                        <option value="8">8th</option>
-                                                        <option value="9">9th</option>
-                                                        <option value="10">10th</option>
-                                                    </select>
-                                                </td>' .
-                                        '<td>
-                                                    <select class="form-control" id="fastestLap" name="fastestLap[]">
-                                                        <option value="0">No</option>
-                                                        <option value="1">Yes</option>
-                                                    </select>
-                                                </td>' .
-                                        '<td>
-                                                    <select class="form-control" id="fastestPit" name="fastestPit[]">
-                                                        <option value="0">No</option>
-                                                        <option value="1">Yes</option>
-                                                    </select>
-                                                </td>' .
-                                        '<td>
-                                                    <select class="form-control" id="pole" name="pole[]">
-                                                        <option value="0">No</option>
-                                                        <option value="1">Yes</option>
+                                                        <option value="25">1st</option>
+                                                        <option value="18">2nd</option>
+                                                        <option value="15">3rd</option>
+                                                        <option value="12">4th</option>
+                                                        <option value="10">5th</option>
+                                                        <option value="8">6th</option>
+                                                        <option value="6">7th</option>
+                                                        <option value="4">8th</option>
+                                                        <option value="2">9th</option>
+                                                        <option value="1">10th</option>
                                                     </select>
                                                 </td>' .
                                         '<td>
                                                     <select class="form-control" id="completeRace" name="completeRace[]">
+                                                        <option value="5">Yes</option>
                                                         <option value="0">No</option>
-                                                        <option value="1">Yes</option>
                                                     </select>
                                                 </td>' .
                                         '<td>
-                                                    <select class="form-control" id="bestCombined" name="bestCombined[]">
+                                            <select class="form-control" id="fastestLap" name="fastestLap[]">
                                                         <option value="0">No</option>
-                                                        <option value="1">Yes</option>
+                                                        <option value="5">Yes</option>
                                                     </select>
-                                                </td>' .
+                                        </td>' .
+                                        '<td>
+                                             <select class="form-control" id="pole" name="pole[]">
+                                                        <option value="0">No</option>
+                                                        <option value="5">Yes</option>
+                                                    </select>
+                                        </td>' .
+                                        '<td>  <input type="hidden" name="driverName[]" value="' . $row["Name"] .'" ></td>' .
                                         '</tr>';
                                 }
                                 ?>
@@ -493,7 +478,68 @@ else{
 
                     <div class="form-group">
                         <div class="col-md-offset-10 col-md-9">
-<!--                            <button class="btn btn-success" name="submitButton" type="submit" disabled="disabled">Submit Selections</button>-->
+                            <button class="btn btn-success" name="submitButton" type="submit">Submit Selections</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="constructorResults" style="margin-top:50px;" class="col-lg-12 col-md-12 ">
+        <div class="panel panel-success" >
+            <div class="panel-heading">
+                <div class="panel-title">Constructor Results</div>
+            </div>
+
+            <div class="panel-body" >
+                <form action="submitConstructorResults.php" method="post">
+
+                    <div class="form-group" style="margin-top:20px;">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Constructor</th>
+                                <th>Best Combined Qualifying?</th>
+                                <th>Both Cars Finish Race?</th>
+                                <th>Fastest Pit?</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <?php
+                                $sql = "select Name from team";
+                                $result = $conn->query($sql);
+                                while($row = mysqli_fetch_assoc($result))
+                                {
+                                    echo'<tr>' .
+                                        '<td>' . $row["Name"] . '</td>' .
+                                        '<td>
+                                                    <select class="form-control" id="bestCombined" name="bestCombined[]">
+                                                        <option value="0">No</option>
+                                                        <option value="1">Yes</option>
+                                                    </select>
+                                                </td>' .
+                                        '<td>
+                                                    <select class="form-control" id="bothFinish" name="bothFinish[]">
+                                                        <option value="0">No</option>
+                                                        <option value="1">Yes</option>
+                                                    </select>
+                                                </td>' .
+                                        '<td> <input type="checkbox" name="fastestPit">  </td>' .
+                                        '</tr>';
+                                }
+                                ?>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-10 col-md-9">
+                                                        <button class="btn btn-success" name="submitButton" type="submit" >Submit Selections</button>
                         </div>
                     </div>
                 </form>
