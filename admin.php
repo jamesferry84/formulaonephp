@@ -295,7 +295,7 @@ else{
                             ?>
                         </div>
                     </div>
-                    <form class="form-horizontal" action="submit.php" method="post" onsubmit="return confirm('Are you sure you want to submit this team?');">
+                    <form class="form-horizontal" action="adminSubmitTeam.php" method="post" onsubmit="return confirm('Are you sure you want to submit this team?');">
 
                         <div class="form-group">
                             <label for = "user" class = "col-lg-3 control-label">Team Name:</label>
@@ -388,7 +388,7 @@ else{
                         <div class="form-group">
                             <div class="col-md-offset-3 col-md-9 col-sm-offset-3 col-sm-9">
                                 <button type="button" class="btn btn-danger " id="resetButton" onclick="resetTeam()">Reset Team</button>
-<!--                                <button class="btn btn-success" id="submitButton" type="submit">Submit Team</button>-->
+                                <button class="btn btn-success" id="submitButton" type="submit">Submit Team</button>
                             </div>
                         </div>
 
@@ -527,7 +527,12 @@ else{
                                                         <option value="1">Yes</option>
                                                     </select>
                                                 </td>' .
-                                        '<td> <input type="checkbox" name="fastestPit">  </td>' .
+                                        '<td>
+                                               <select class="form-control" id="fastestPit" name="fastestPit[]">
+                                                        <option value="0">No</option>
+                                                        <option value="5">Yes</option>
+                                                    </select>
+                                        </td>' .
                                         '</tr>';
                                 }
                                 ?>
