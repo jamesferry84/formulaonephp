@@ -352,11 +352,11 @@ else{
                             $row = mysqli_fetch_assoc($queryResult)
 
                             ?>
-                            <label for = "jokerUsed" class = "col-lg-3 control-label">Use Joker? (Jokers available <?php echo (5 - $row["jokers"]) ?>)</label>
+                            <label for = "jokerUsed" class = "col-lg-3 control-label">Use Joker?</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="jokerUsed" name="jokerUsed" >
                                     <option selected value="0">No</option>
-                                    <?php if($row["jokers"] < 5){echo '<option value="1">Yes</option>';}?>
+                                    <option value="1">Yes</option>
                                 </select>
                             </div>
                         </div>
