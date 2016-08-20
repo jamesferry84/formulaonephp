@@ -510,6 +510,7 @@ else{
                             <thead>
                             <tr>
                                 <th>Constructor</th>
+                                <th>Position</th>
                                 <th>Best Combined Qualifying?</th>
                                 <th>Both Cars Finish Race?</th>
                                 <th>Fastest Pit?</th>
@@ -525,15 +526,30 @@ else{
                                     echo'<tr>' .
                                         '<td>' . $row["Name"] . '</td>' .
                                         '<td>
+                                                     <select class="form-control" id="consPosition" name="consPosition[]">
+                                                        <option value="25">1st</option>
+                                                        <option value="18">2nd</option>
+                                                        <option value="15">3rd</option>
+                                                        <option value="12">4th</option>
+                                                        <option value="10">5th</option>
+                                                        <option value="8">6th</option>
+                                                        <option value="6">7th</option>
+                                                        <option value="4">8th</option>
+                                                        <option value="2">9th</option>
+                                                        <option value="1">10th</option>
+                                                        <option value="0">11th</option>
+                                                    </select>
+                                                </td>' .
+                                        '<td>
                                                     <select class="form-control" id="bestCombined" name="bestCombined[]">
                                                         <option value="0">No</option>
-                                                        <option value="1">Yes</option>
+                                                        <option value="5">Yes</option>
                                                     </select>
                                                 </td>' .
                                         '<td>
                                                     <select class="form-control" id="bothFinish" name="bothFinish[]">
                                                         <option value="0">No</option>
-                                                        <option value="1">Yes</option>
+                                                        <option value="5">Yes</option>
                                                     </select>
                                                 </td>' .
                                         '<td>
@@ -542,6 +558,7 @@ else{
                                                         <option value="5">Yes</option>
                                                     </select>
                                         </td>' .
+                                        '<td>  <input type="hidden" name="constructorName[]" value="' . $row["Name"] .'" ></td>' .
                                         '</tr>';
                                 }
                                 ?>
