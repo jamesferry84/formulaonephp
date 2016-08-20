@@ -14,6 +14,7 @@ if (empty($_POST) === false) {
     $result = $conn->query($getUsername);
     $rowresult = mysqli_fetch_assoc($result);
     $username = $rowresult["UserName"];
+    $country = $_POST["race"];
     $driver1 = $_POST["driver1"];
     $driver2 = $_POST["driver2"];
     $constructor1 = $_POST["constructor1"];
@@ -38,15 +39,6 @@ if (empty($_POST) === false) {
     }
     else {
         $today = date("y-m-d");
-        $sql = "select * from racecalendar where Date >= CURDATE() order by date LIMIT 0,1";
-        $queryResult = $conn->query($sql);
-        $numrows=mysqli_num_rows($queryResult);
-        $country = "";
-
-        while($row = mysqli_fetch_assoc($queryResult))
-        {
-            $country =  $row["Country"];
-        }
 
         $balance = $_POST["remainingBudget"];
 

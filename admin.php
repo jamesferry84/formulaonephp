@@ -284,7 +284,7 @@ else{
         <div class = "panel panel-default">
             <div class = "panel-body">
                 <div class="page-header">
-                    <h3>Team Choices for <?php echo $country ?></h3>
+                    <h3>Override Team Choices</h3>
                     <div class="well">
                         <div class="alert-danger">
                             <?php
@@ -303,7 +303,16 @@ else{
                                 <select class="form-control" id="teamnameDropDown" name="teamname" required="required" onchange="getTeamSubmissions()" >
                                     <option value=""></option>
                                 </select>
-                                <input type="text" hidden="hidden" value="$country" name="country">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for = "race" class = "col-lg-3 control-label">Race:</label>
+                            <div class = "col-lg-5">
+                                <select class="form-control" id="raceDropDown" name="race" required="required">
+                                    <option value=""></option>
+                                </select>
                             </div>
                         </div>
 
@@ -565,6 +574,7 @@ else{
     var constructor2Price = <?php echo $constructor2Price ?>;
 
     var teamnames = [];
+    var races = [];
     var selectedTeam = "";
     var selectedTeamsCarryOver = 0;
 
@@ -643,6 +653,13 @@ else{
 
     $('#teamnameDropDown').change(function() {
         selectedTeam = $('#teamnameDropDown option:selected')
+        Update();
+
+
+    });
+
+    $('#raceDropDown').change(function() {
+        selectedTeam = $('#raceDropDown option:selected')
         Update();
 
 
@@ -741,6 +758,13 @@ else{
         $.each(data, function(key,val) {
             teamnames.push(val.teamname);
             $("#teamnameDropDown").append($("<option />").val(val.teamname).text(val.teamname));
+        })
+    });
+
+    $.getJSON("races.php", function(data) {
+        $.each(data, function(key,val) {
+            races.push(val.Country);
+            $("#raceDropDown").append($("<option />").val(val.Country).text(val.Country));
         })
     });
 
