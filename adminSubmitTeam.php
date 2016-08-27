@@ -34,8 +34,8 @@ if (empty($_POST) === false) {
 
     unset($_SESSION["submitErrorMessage"]);
 
-    if (empty($driver1) === true || empty($driver2) === true || empty($constructor1) === true || empty($constructor2) === true) {
-        $errors[] = "Submit Error: You need to select Two Drivers and Two Constructors";
+    if (empty($driver1) === true && empty($driver2) === true && empty($constructor1) === true && empty($constructor2) === true) {
+        $errors[] = "Submit Error: You need to select at least one driver or constructor";
     }
     else {
         $today = date("y-m-d");

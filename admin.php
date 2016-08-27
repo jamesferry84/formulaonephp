@@ -319,7 +319,7 @@ else{
                         <div class="form-group">
                             <label for = "driver" class = "col-lg-3 control-label">Driver 1:</label>
                             <div class = "col-lg-5">
-                                <select class="form-control" id="driver1DropDown" name="driver1" required="required" >
+                                <select class="form-control" id="driver1DropDown" name="driver1" >
                                     <option value=""></option>
                                 </select>
                             </div>
@@ -328,7 +328,7 @@ else{
                         <div class="form-group">
                             <label for = "driver" class = "col-lg-3 control-label">Driver 2:</label>
                             <div class = "col-lg-5">
-                                <select class="form-control" id="driver2DropDown" name="driver2" required="required">
+                                <select class="form-control" id="driver2DropDown" name="driver2">
                                     <option value=""></option>
                                 </select>
                             </div>
@@ -337,7 +337,7 @@ else{
                         <div class="form-group">
                             <label for = "constructor" class = "col-lg-3 control-label">Constructor 1:</label>
                             <div class = "col-lg-5">
-                                <select class="form-control" id="constructor1DropDown" name="constructor1" required="required">
+                                <select class="form-control" id="constructor1DropDown" name="constructor1">
                                     <option value=""></option>
                                 </select>
                             </div>
@@ -346,7 +346,7 @@ else{
                         <div class="form-group">
                             <label for = "constructor" class = "col-lg-3 control-label">Constructor 2:</label>
                             <div class = "col-lg-5">
-                                <select class="form-control" id="constructor2DropDown" name="constructor2" required="required" >
+                                <select class="form-control" id="constructor2DropDown" name="constructor2" >
                                     <option value=""></option>
                                 </select>
                             </div>
