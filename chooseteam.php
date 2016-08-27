@@ -268,8 +268,7 @@ if ($numberofrows > 0) {
                 hasAdminOpenedSubmissions = result;
                 var todayDate = new Date();
                 var isSubmissionClosed = false;
-                alert(todayDate);
-                alert(date);
+
 
                 if (hasAdminOpenedSubmissions == 1) {
                     isSubmissionClosed = false;
