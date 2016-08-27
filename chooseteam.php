@@ -270,16 +270,14 @@ if ($numberofrows > 0) {
             success : function (result) {
                 hasAdminOpenedSubmissions = result;
 
-                alert(todayDate);
-                alert(date);
 
                 if (hasAdminOpenedSubmissions == 1) {
-                    alert("yes admin opened");
+                   // alert("yes admin opened");
                     isSubmissionClosed = false;
                 }
 
                 if (todayDate >= date || hasAdminOpenedSubmissions == 0) {
-                    alert("submissions are closed")
+                  //  alert("submissions are closed")
                     isSubmissionClosed = true;
                 }
 
