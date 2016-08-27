@@ -254,27 +254,32 @@ if ($numberofrows > 0) {
     var constructor1Price = <?php echo $constructor1Price ?>;
     var constructor2Price = <?php echo $constructor2Price ?>;
 
+    var div = document.getElementById("nextpractice");
+    var timeToNextPractice = div.textContent;
+    var date = new Date(timeToNextPractice);
+    var todayDate = new Date();
+    var isSubmissionClosed = false;
 
 
     $(function() {
-        var div = document.getElementById("nextpractice");
-        var timeToNextPractice = div.textContent;
-        var date = new Date(timeToNextPractice);
 
+        var hasAdminOpenedSubmissions;
         $.ajax({
             url : "textdata/admin.txt",
             dataType: "text",
             success : function (result) {
                 hasAdminOpenedSubmissions = result;
-                var todayDate = new Date();
-                var isSubmissionClosed = false;
 
+                alert(todayDate);
+                alert(date);
 
                 if (hasAdminOpenedSubmissions == 1) {
+                    alert("yes admin opened");
                     isSubmissionClosed = false;
                 }
 
                 if (todayDate >= date || hasAdminOpenedSubmissions == 0) {
+                    alert("submissions are closed")
                     isSubmissionClosed = true;
                 }
 
@@ -375,7 +380,9 @@ if ($numberofrows > 0) {
         }
         else
         {
-            $('#submitButton').prop('disabled',false);
+            if (todayDate < date || hasAdminOpenedSubmissions == 1) {
+                $('#submitButton').prop('disabled', false);
+            }
         }
     }
 
