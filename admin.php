@@ -50,6 +50,19 @@ if ($numberofrows > 0) {
     $queryResult = $conn->query($constructor2priceSql);
     $constructor2PriceRow = mysqli_fetch_assoc($queryResult);
     $constructor2Price = $constructor2PriceRow["Price"];
+
+    if (empty($driver1Price)) {
+        $driver1Price = 0;
+    }
+    if (empty($driver2Price)) {
+        $driver2Price = 0;
+    }
+    if (empty($constructor1Price)) {
+        $constructor1Price = 0;
+    }
+    if (empty($constructor2Price)) {
+        $constructor2Price = 0;
+    }
 }
 
 if ($_SESSION["admin"] == 1)

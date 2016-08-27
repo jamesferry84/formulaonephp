@@ -48,6 +48,19 @@ if ($numberofrows > 0) {
     $queryResult = $conn->query($constructor2priceSql);
     $constructor2PriceRow = mysqli_fetch_assoc($queryResult);
     $constructor2Price = $constructor2PriceRow["Price"];
+
+    if (empty($driver1Price)) {
+        $driver1Price = 0;
+    }
+    if (empty($driver2Price)) {
+        $driver2Price = 0;
+    }
+    if (empty($constructor1Price)) {
+        $constructor1Price = 0;
+    }
+    if (empty($constructor2Price)) {
+        $constructor2Price = 0;
+    }
 }
 
 
@@ -217,6 +230,7 @@ if ($numberofrows > 0) {
     }
     ?>
 </div>
+
 <div id="nextpractice" style="display: none">
     <?php
     $today = date("y-m-d");
@@ -230,7 +244,7 @@ if ($numberofrows > 0) {
     }
     ?>
 </div>
-</body>
+
 
 
 <script>
@@ -239,6 +253,7 @@ if ($numberofrows > 0) {
     var driver2Price = <?php echo $driver2Price ?>;
     var constructor1Price = <?php echo $constructor1Price ?>;
     var constructor2Price = <?php echo $constructor2Price ?>;
+
 
 
     $(function() {
@@ -253,6 +268,8 @@ if ($numberofrows > 0) {
                 hasAdminOpenedSubmissions = result;
                 var todayDate = new Date();
                 var isSubmissionClosed = false;
+                alert(todayDate);
+                alert(date);
 
                 if (hasAdminOpenedSubmissions == 1) {
                     isSubmissionClosed = false;
