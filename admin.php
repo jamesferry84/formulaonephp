@@ -209,9 +209,86 @@ else{
                         </div>
                     </div>
                 </div>
+
+
+                    <div class="panel panel-success" >
+                        <div class="panel-heading">
+                            <div class="panel-title">Driver Points</div>
+                        </div>
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for = "driverPointsRace" class = "col-lg-3 control-label">Select Race:</label>
+                                <div class = "col-lg-5">
+                                    <select class="form-control" id="driverPointsRace" name="driverPointsRace">
+                                        <option value="AbuDPoints">Abu Dhabi</option>
+                                        <option value="AmerPoints">American</option>
+                                        <option value="OzzyPoints">Australian</option>
+                                        <option value="AustPoints">Austrian</option>
+                                        <option value="BahrPoints">Bahraini</option>
+                                        <option value="BelgPoints">Belgian</option>
+                                        <option value="BrazPoints">Brazilian</option>
+                                        <option value="BritPoints">British</option>
+                                        <option value="CanaPoints">Canadian</option>
+                                        <option value="ChinPoints">Chinese</option>
+                                        <option value="EuroPoints">European</option>
+                                        <option value="GermPoints">German</option>
+                                        <option value="HungPoints">Hungarian</option>
+                                        <option value="ItalPoints">Italian</option>
+                                        <option value="JapaPoints">Japanese</option>
+                                        <option value="MalaPoints">Malaysian</option>
+                                        <option value="MexiPoints">Mexican</option>
+                                        <option value="MonaPoints">Monaco</option>
+                                        <option value="RussPoints">Russian</option>
+                                        <option value="SingPoints">Singapore</option>
+                                        <option value="SpanPoints">Spanish</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <form class="form-horizontal">
+                                <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
+                                    <table class="table table-bordered text-center">
+                                        <thead>
+                                        <tr>
+                                            <th>Driver</th>
+                                            <th>Points</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="driverRacePointsTable">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                            <form class="form-horizontal">
+                                <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
+                                    <table class="table table-bordered text-center">
+                                        <thead>
+                                        <tr>
+                                            <th>Constructor</th>
+                                            <th>Points</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="constructorRacePointsTable">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
             </div>
         </div>
     </div>
+
+    <!-- Points Driver / Constructor -->
 
     <div class="row">
         <form class="form-horizontal" action="updateDriverPrices.php" method="post">
@@ -285,6 +362,12 @@ else{
             </div>
         </form>
     </div>
+
+
+
+
+
+
 
 
     <!--
@@ -790,6 +873,46 @@ else{
             $("#teamnameDropDown").append($("<option />").val(val.teamname).text(val.teamname));
         })
     });
+
+    $('#driverPointsRace').change(function() {
+        var optionValue = $('#driverPointsRace').val();
+        var trHtml = "";
+        $('#driverRacePointsTable').empty();
+        $.ajax({
+            url:"GetDriverPointsForRace.php",
+            type:"POST",
+            dataType:'json',
+            data: ({driverPointsRace: optionValue }),
+            success: function(data) {
+                $.each(data,  function(key,val) {
+                    console.log(optionValue);
+                    console.log(val[optionValue]);
+                    trHtml += '<tr><td>' + val.DriverName + '</td><td>' + val[optionValue] + '</td></tr>'
+
+                });
+                $('#driverRacePointsTable').append(trHtml);
+
+            }
+        });
+        $.ajax({
+            url:"GetConstructorPointsForRace.php",
+            type:"POST",
+            dataType:'json',
+            data: ({driverPointsRace: optionValue }),
+            success: function(data) {
+                $.each(data,  function(key,val) {
+                    console.log(optionValue);
+                    console.log(val[optionValue]);
+                    trHtml += '<tr><td>' + val.ConstructorName + '</td><td>' + val[optionValue] + '</td></tr>'
+
+                });
+                $('#constructorRacePointsTable').append(trHtml);
+
+            }
+        });
+
+    });
+
 
     $.getJSON("races.php", function(data) {
         $.each(data, function(key,val) {
