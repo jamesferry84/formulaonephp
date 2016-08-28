@@ -213,7 +213,7 @@ else{
 
                     <div class="panel panel-success" >
                         <div class="panel-heading">
-                            <div class="panel-title">Driver Points</div>
+                            <div class="panel-title">Points</div>
                         </div>
 
                         <form class="form-horizontal">
@@ -250,10 +250,9 @@ else{
                             <form class="form-horizontal">
                                 <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
                                     <table class="table table-bordered text-center">
-                                        <thead>
-                                        <tr>
-                                            <th>Driver</th>
-                                            <th>Points</th>
+                                        <tr class ="success">
+                                            <th class="text-center">Driver</th>
+                                            <th class="text-center">Points</th>
                                         </tr>
                                         </thead>
                                         <tbody id="driverRacePointsTable">
@@ -265,10 +264,9 @@ else{
                             <form class="form-horizontal">
                                 <div class="table-responsive  col-lg-6 col-md-12 col-sm-12">
                                     <table class="table table-bordered text-center">
-                                        <thead>
-                                        <tr>
-                                            <th>Constructor</th>
-                                            <th>Points</th>
+                                        <tr class ="success">
+                                            <th class="text-center">Constructor</th>
+                                            <th class="text-center">Points</th>
                                         </tr>
                                         </thead>
                                         <tbody id="constructorRacePointsTable">
@@ -876,8 +874,10 @@ else{
 
     $('#driverPointsRace').change(function() {
         var optionValue = $('#driverPointsRace').val();
-        var trHtml = "";
+        var trDriverHtml = "";
+        var trConstructorHtml = "";
         $('#driverRacePointsTable').empty();
+        $('#constructorRacePointsTable').empty();
         $.ajax({
             url:"GetDriverPointsForRace.php",
             type:"POST",
@@ -887,10 +887,10 @@ else{
                 $.each(data,  function(key,val) {
                     console.log(optionValue);
                     console.log(val[optionValue]);
-                    trHtml += '<tr><td>' + val.DriverName + '</td><td>' + val[optionValue] + '</td></tr>'
+                    trDriverHtml += '<tr><td>' + val.DriverName + '</td><td>' + val[optionValue] + '</td></tr>'
 
                 });
-                $('#driverRacePointsTable').append(trHtml);
+                $('#driverRacePointsTable').append(trDriverHtml);
 
             }
         });
@@ -903,10 +903,10 @@ else{
                 $.each(data,  function(key,val) {
                     console.log(optionValue);
                     console.log(val[optionValue]);
-                    trHtml += '<tr><td>' + val.ConstructorName + '</td><td>' + val[optionValue] + '</td></tr>'
+                    trConstructorHtml += '<tr><td>' + val.ConstructorName + '</td><td>' + val[optionValue] + '</td></tr>'
 
                 });
-                $('#constructorRacePointsTable').append(trHtml);
+                $('#constructorRacePointsTable').append(trConstructorHtml);
 
             }
         });
