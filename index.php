@@ -54,7 +54,7 @@ include 'includes/navbar.php';
         <div class="table-responsive  col-lg-12">
             <table class="table table-bordered text-center">
                 <tr class ="success">
-                    <td>+/-</td><td>Rank</td><td>Player Name</td><td>Team Name</td><td>Player Score</td><td>Jokers Played</td><td>Budget Rollover (£m)</td>
+                    <td>+/-</td><td>Rank</td><td>Player Name</td><td>Team Name</td><td>Player Score</td><td>Jokers Played</td><td>Carryover (£m)</td>
                 </tr>
                 <?php
                 $today = date("y-m-d");
@@ -73,7 +73,7 @@ include 'includes/navbar.php';
                         <td><?php echo $row["teamname"]?></td>
                         <td><?php echo $row["points"]?></td>
                         <td> <?php echo $row["jokers"]?></td>
-                        <td> <?php echo $row["budget"]?></td>
+                        <td> <?php echo $row["carryover"]?></td>
                     </tr>
                     <?php
                 }
