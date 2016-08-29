@@ -8,17 +8,17 @@ $completeRace = $_POST["completeRace"];
 $fastestLap = $_POST["fastestLap"];
 $pole = $_POST["pole"];
 
-$raceAbbr = "";
+$raceAbbr = $_POST["raceSelection"];
 
-$raceSql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
-$raceResult = $conn->query($raceSql);
-
-while($row = mysqli_fetch_assoc($raceResult))
-{
-    $country =  $row["RaceAbbr"];
-}
-
-$raceAbbr = $country . "Points";
+//$raceSql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
+//$raceResult = $conn->query($raceSql);
+//
+//while($row = mysqli_fetch_assoc($raceResult))
+//{
+//    $country =  $row["RaceAbbr"];
+//}
+//
+//$raceAbbr = $country . "Points";
 
 $rowCount = count($_POST["driverName"]);
 for ($i=0; $i <$rowCount; $i++) {

@@ -516,6 +516,35 @@ else{
             <div class="panel-body" >
                 <form action="submitDriverResults.php" method="post">
 
+                    <div class="form-group">
+                        <label for = "raceSelection" class = "col-lg-3 control-label">Select Race:</label>
+                        <div class = "col-lg-5">
+                            <select class="form-control" id="raceSelection" name="raceSelection">
+                                <option value="AbuDPoints">Abu Dhabi</option>
+                                <option value="AmerPoints">American</option>
+                                <option value="OzzyPoints">Australian</option>
+                                <option value="AustPoints">Austrian</option>
+                                <option value="BahrPoints">Bahraini</option>
+                                <option value="BelgPoints">Belgian</option>
+                                <option value="BrazPoints">Brazilian</option>
+                                <option value="BritPoints">British</option>
+                                <option value="CanaPoints">Canadian</option>
+                                <option value="ChinPoints">Chinese</option>
+                                <option value="EuroPoints">European</option>
+                                <option value="GermPoints">German</option>
+                                <option value="HungPoints">Hungarian</option>
+                                <option value="ItalPoints">Italian</option>
+                                <option value="JapaPoints">Japanese</option>
+                                <option value="MalaPoints">Malaysian</option>
+                                <option value="MexiPoints">Mexican</option>
+                                <option value="MonaPoints">Monaco</option>
+                                <option value="RussPoints">Russian</option>
+                                <option value="SingPoints">Singapore</option>
+                                <option value="SpanPoints">Spanish</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="form-group" style="margin-top:20px;">
                         <table class="table table-striped">
                             <thead>
@@ -598,6 +627,35 @@ else{
 
             <div class="panel-body" >
                 <form action="submitConstructorResults.php" method="post">
+
+                    <div class="form-group">
+                        <label for = "raceSelection" class = "col-lg-3 control-label">Select Race:</label>
+                        <div class = "col-lg-5">
+                            <select class="form-control" id="raceSelection" name="raceSelection">
+                                <option value="AbuDPoints">Abu Dhabi</option>
+                                <option value="AmerPoints">American</option>
+                                <option value="OzzyPoints">Australian</option>
+                                <option value="AustPoints">Austrian</option>
+                                <option value="BahrPoints">Bahraini</option>
+                                <option value="BelgPoints">Belgian</option>
+                                <option value="BrazPoints">Brazilian</option>
+                                <option value="BritPoints">British</option>
+                                <option value="CanaPoints">Canadian</option>
+                                <option value="ChinPoints">Chinese</option>
+                                <option value="EuroPoints">European</option>
+                                <option value="GermPoints">German</option>
+                                <option value="HungPoints">Hungarian</option>
+                                <option value="ItalPoints">Italian</option>
+                                <option value="JapaPoints">Japanese</option>
+                                <option value="MalaPoints">Malaysian</option>
+                                <option value="MexiPoints">Mexican</option>
+                                <option value="MonaPoints">Monaco</option>
+                                <option value="RussPoints">Russian</option>
+                                <option value="SingPoints">Singapore</option>
+                                <option value="SpanPoints">Spanish</option>
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="form-group" style="margin-top:20px;">
                         <table class="table table-striped">

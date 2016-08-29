@@ -9,14 +9,14 @@ $fastestPit = $_POST["fastestPit"];
 $bestCombined = $_POST["bestCombined"];
 
 
-$raceAbbr = "";
-$raceSql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
-$raceResult = $conn->query($raceSql);
-while($row = mysqli_fetch_assoc($raceResult))
-{
-    $country =  $row["RaceAbbr"];
-}
-$raceAbbr = $country . "Points";
+$raceAbbr = $_POST["raceSelection"];
+//$raceSql = "select * from racecalendar where Date >= CURDATE() ORDER BY date LIMIT 0,1";
+//$raceResult = $conn->query($raceSql);
+//while($row = mysqli_fetch_assoc($raceResult))
+//{
+//    $country =  $row["RaceAbbr"];
+//}
+//$raceAbbr = $country . "Points";
 
 
 $rowCount = count($_POST["constructorName"]);
