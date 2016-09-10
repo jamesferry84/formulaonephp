@@ -286,13 +286,21 @@ if ($numberofrows > 0) {
 
                 if (isSubmissionClosed)
                 {
-                    $('#submitButton').prop('disabled',true);
-                    $('#resetButton').prop('disabled',true);
+                    var element = document.getElementById('submitButton');
+                    element.setAttribute('disabled', 'false');
+                    var element = document.getElementById('resetButton');
+                    element.setAttribute('disabled', 'disabled');
+                 //   $('#submitButton').prop('disabled',true);
+                 //   $('#resetButton').prop('disabled',true);
                 }
                 else
                 {
-                    $('#submitButton').prop('disabled',false);
-                    $('#resetButton').prop('disabled',false);
+                    var element = document.getElementById('submitButton');
+                    element.removeAttribute('disabled');
+                    var element = document.getElementById('resetButton');
+                    element.removeAttribute('disabled');
+//                    $('#submitButton').prop('disabled',false);
+//                    $('#resetButton').prop('disabled',false);
                 }
 
             }
