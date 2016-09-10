@@ -257,9 +257,7 @@ if ($numberofrows > 0) {
 
     var div = document.getElementById("nextpractice");
     var timeToNextPractice = div.textContent;
-    alert(timeToNextPractice);
     timeToNextPractice = timeToNextPractice.replace(/-/g, ' ');
-    alert(timeToNextPractice);
 
     var date = new Date(timeToNextPractice);
     var todayDate = new Date();
