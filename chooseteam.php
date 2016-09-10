@@ -248,6 +248,7 @@ if ($numberofrows > 0) {
 
 
 <script>
+
     var alreadySubmitted = <?php echo $numberofrows ?>;
     var driver1Price = <?php echo $driver1Price ?>;
     var driver2Price = <?php echo $driver2Price ?>;
@@ -256,6 +257,10 @@ if ($numberofrows > 0) {
 
     var div = document.getElementById("nextpractice");
     var timeToNextPractice = div.textContent;
+    alert(timeToNextPractice);
+    timeToNextPractice = timeToNextPractice.replace(/-/g, ' ');
+    alert(timeToNextPractice);
+
     var date = new Date(timeToNextPractice);
     var todayDate = new Date();
     var isSubmissionClosed = false;
