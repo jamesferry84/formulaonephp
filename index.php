@@ -13,7 +13,7 @@ if (isset($_SESSION["username"]))
 else{
     header("location:login.php");
 }
-$previousRaceSql = "select * from racecalendar where Date <= CURDATE() ORDER BY date desc LIMIT 0,1;";
+$previousRaceSql = "select * from racecalendar where Date <= CURDATE() + 1 ORDER BY date desc LIMIT 0,1;";
 $result = $conn->query($previousRaceSql);
 $prevracesql = mysqli_fetch_assoc($result);
 $previousRace = $prevracesql["Country"];
