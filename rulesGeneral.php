@@ -13,7 +13,7 @@ while($row = mysqli_fetch_assoc($queryResult))
     $country =  $row["Country"];
 }
 ?>
-?>
+
 
 <html>
 <head>
