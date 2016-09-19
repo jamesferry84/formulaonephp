@@ -56,7 +56,7 @@ while($row = mysqli_fetch_assoc($queryResult))
                         <h3>HOW TO PLAY</h3>
                     </div>
                     <ol>
-                        <li>You are allocated an operating budget &pound;55 million for your team line-ups during the season - for each race you recruit two Drivers and two Constructors who each incur a cost.  The current prices going into the 2016 <?php echo $country?> Grand Prix are shown <a href="index.php#driverPrices">here</a> </li>
+                        <li>You are allocated an operating budget &pound;55 million for your team line-ups during the season - for each race you recruit two Drivers and two Constructors who each incur a cost.</li>
                         <li>Unspent Team budgets from one Race will be rolled over into the next race.</li>
                         <li>Driver and Constructor prices will be recalculated after each race, based on their performance over a rolling 12 month period. For example, once the Australian G.P. is complete each Driver's and Team's price for the next race will be re-calculated on the Total 2015 season points scored minus the 2015 Australian GP plus the 2016 Australian GP points, and so on after each race.</li>
                         <li>You cannot submit the same Driver or Constructor more than once for the same race, e.g. choose Alonso as your two Drivers for the Monaco Grand Prix.</li>
@@ -155,10 +155,10 @@ while($row = mysqli_fetch_assoc($queryResult))
 
                                 </tr>
                                 <tr>
-                                    <td>Driver 1 : Alonso (£15.39 million)</td><td>Constructor 1 : Mercedes (£16.32 million)</td>
+                                    <td>Driver 1 : Alonso (&pound15.39 million)</td><td>Constructor 1 : Mercedes (&pound16.32 million)</td>
                                 </tr>
                                 <tr>
-                                    <td>Driver 2 : Grosjean (£11.73 million)</td><td>Constructor 2 : Sauber (£10.14 million)</td>
+                                    <td>Driver 2 : Grosjean (&pound11.73 million)</td><td>Constructor 2 : Sauber (&pound10.14 million)</td>
                                 </tr>
                                 <tr>
                                     <td>Driver 1 : 18 Points - Final Race Position</td><td>Constructor 1 : 8 Points - Combined Race Position</td>
@@ -186,8 +186,8 @@ while($row = mysqli_fetch_assoc($queryResult))
                         <div class="clearfix visible-xs-block"></div>
                         <li>The constructor placings will be determined by addition of the Constructor's Driver's final Race positions, with the lowest scoring constructor placing first and the highest scoring constructor placing eleventh. In the event of a tie between constructors for a particular race, the average number of points will be used, i.e. 3 constructors tying for 4th place, then the points for 4th, 5th and 6th places will be equally shared between the 3 constructors (rounded up to nearest whole number).</li>
                         <li>If any Constructor teams are tied for Best Combined Qualifying Performance, then all tied teams will score 5 Points.</li>
-                        <li>The Driver Placing, Constructor Placing, Fastest Lap Time, Fastest Pitstop and Completed Race Points will all be determined using the official www.f1.com results. The Fastest Pitstop is determined from data on the FIA's website, with the time being from when the Driver enters the pitlane until they exit it after their stop.</li>
-                        <li>A driver will be deemed to have completed the race if he is not listed as having retired from the race on www.f1.com - if a driver finishes the race but has been lapped by the race winner then they will be deemed to have completed the race and will score the 5 point bonus.</li>
+                        <li>The Driver Placing, Constructor Placing, Fastest Lap Time, Fastest Pitstop and Completed Race Points will all be determined using the official <a href="http://www.formula1.com">www.formula1.com</a> results. The Fastest Pitstop is determined from data on the FIA's website, with the time being from when the Driver enters the pitlane until they exit it after their stop.</li>
+                        <li>A driver will be deemed to have completed the race if he is not listed as having retired from the race on <a href="http://www.formula1.com">www.formula1.com</a> - if a driver finishes the race but has been lapped by the race winner then they will be deemed to have completed the race and will score the 5 point bonus.</li>
 
                     </ol>
                     <p>* Disclaimer - The Dictator-in-Chief of the League does not accept responsibility if you suffer any symptoms due to the thrilling effects of being part of this league. Please consult your G.P. if you experience any shortness of breath, arrythmia, sweaty palms or homicidal tendencies towards fellow League members during the course of the season.</p>
