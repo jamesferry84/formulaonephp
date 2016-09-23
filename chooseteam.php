@@ -150,14 +150,14 @@ if ($numberofrows > 0) {
                             $row = mysqli_fetch_assoc($queryResult)
 
                             ?>
-                            <label for = "carriedOver" class = "col-lg-3 control-label">Carried Over:</label>
+                            <label for = "carriedOver" class = "col-lg-3 control-label">Carried Over To Next Race:</label>
                             <div class = "col-lg-5">
                                 <input type = "text" class="form-control" id="carriedOver" name="carriedOver" readonly value=<?php echo $row["carryover"] ?>  />
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for = "remainingBudget" class = "col-lg-3 control-label">Remaining Budget:</label>
+                            <label for = "remainingBudget" class = "col-lg-3 control-label">Remaining Budget For Current Race:</label>
                             <div class = "col-lg-5">
                                 <input type = "text" class="form-control" id="remainingBudget" name="remainingBudget" readonly />
                             </div>
