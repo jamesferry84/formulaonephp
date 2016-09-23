@@ -286,7 +286,40 @@ else{
         </div>
     </div>
 
-    <!-- Points Driver / Constructor -->
+    <div class="row">
+        <form class="form-horizontal" action="updatePlayerPoints.php" method="post">
+            <div class="table-responsive  col-lg-12 col-md-12 col-sm-12">
+                <table class="table table-bordered text-center">
+                    <th class="text-center" colspan="2">Update Player Points</th>
+                    <tr class ="success">
+                        <td>Team Name</td>
+                        <td>Points)</td>
+                    </tr>
+                    <?php
+                    $sql = "select teamname,points from users order by points DESC";
+                    $result = $conn->query($sql);
+                    while($row = mysqli_fetch_assoc($result))
+                    {
+                        echo'<tr>' .
+                            '<td>' . '<input name="teamnames[]" value="' . $row["teamname"] .'" readonly>' . '</td>' .
+                            '<td>' . '<input id="playerPoints" name="playerPoints[]" type="text" value="' . $row["points"] . '">' . '</td>' .
+                            '</tr>';
+                    }
+                    ?>
+                </table>
+                <div class="form-group">
+                    <div class="col-md-offset-8 col-md-9 col-sm-offset-8 col-sm-9">
+                        <button class="btn btn-success" name="submitPlayerPoints" type="submit">Update Player Points</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <br />
+    <div class="clearfix visible-xs-block"></div>
+
+        <!-- Points Driver / Constructor -->
 
     <div class="row">
         <form class="form-horizontal" action="updateDriverPrices.php" method="post">
