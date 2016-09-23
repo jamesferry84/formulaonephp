@@ -50,6 +50,7 @@ include 'includes/navbar.php';
     <div class="row">
         <div class="page-header text-center">
             <h3>Overall League Standings - After <?php echo $previousRace ?> GP</h3>
+            <p>*Jokers Played and Carry Over values include any changes for the coming race</p>
         </div>
         <div class="table-responsive  col-lg-12">
             <table class="table table-bordered text-center">
