@@ -293,7 +293,7 @@ else{
                     <th class="text-center" colspan="2">Update Player Points</th>
                     <tr class ="success">
                         <td>Team Name</td>
-                        <td>Points)</td>
+                        <td>Points</td>
                     </tr>
                     <?php
                     $sql = "select teamname,points from users order by points DESC";
