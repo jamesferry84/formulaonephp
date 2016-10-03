@@ -170,7 +170,7 @@ else{
                                                 <th>Constructor 1</th>
                                                 <th>Constructor 2</th>
                                                 <th>Joker?</th>
-
+                                                <th>Carried Over</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -185,7 +185,7 @@ else{
                                                     $country =  $row["Country"];
                                                 }
 
-                                                $query = "SELECT u.teamname, s.Driver1, s.Driver2, s.Constructor1,s.Constructor2, s.joker FROM `users` u left join `submissions` s on u.username = s.username  AND s.country = '$country'";
+                                                $query = "SELECT u.teamname, s.Driver1, s.Driver2, s.Constructor1,s.Constructor2, s.joker, u.carryover FROM `users` u left join `submissions` s on u.username = s.username  AND s.country = '$country'";
                                                 // $query = "SELECT teamname, driver1, driver2, constructor1,constructor2 FROM `submissions` s join `users` u on u.username = s.username  AND s.country = '$country'";
                                                 $usersNotSubmitted = $conn->query($query);
                                                 while($row = mysqli_fetch_assoc($usersNotSubmitted))
@@ -197,6 +197,7 @@ else{
                                                         '<td>' . $row["Constructor1"] . '</td>' .
                                                         '<td>' . $row["Constructor2"] . '</td>' .
                                                         '<td>';  if ($row["joker"] == 1) {echo "Y";} else {echo "N";} echo '</td>' .
+                                                        '<td>' . $row["carryover"] . '</td>' .
                                                     '</tr>';
                                                 }
                                                 ?>
