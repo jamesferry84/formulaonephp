@@ -29,6 +29,18 @@ function user_exists($username)
     return false;
 }
 
+function team_exists($teamname)
+{
+    global $conn;
+    $sql="SELECT * FROM users WHERE teamname='$teamname'";
+    $result = $conn->query($sql);
+
+    if($result->num_rows == 1) {
+        return true;
+    }
+    return false;
+}
+
 function user_active($username)
 {
     global $conn;

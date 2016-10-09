@@ -23,7 +23,11 @@ if (empty($_POST) === false) {
     }
     else if (user_exists($email) === true) {
         $errors[] = "Register Error: That email has already been registered";
-    } else {
+    }
+    else if (team_exists($teamname) === true) {
+        $errors[] = "Register Error: That team name has already been registered";
+    }
+    else {
         $encryptedPass = md5($password);
          if (register_user($email, $encryptedPass, $username, $teamname) == true)
          {

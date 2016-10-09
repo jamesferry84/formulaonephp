@@ -1,5 +1,6 @@
 <?php
 include 'init.php';
+include 'functions/general.php';
 
 unset($_SESSION["passwordErrorMessage"]);
 unset($_SESSION["passwordSuccessMessage"]);
@@ -15,6 +16,12 @@ if (empty($username) === true || empty($newEmail) === true ) {
 
 if (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
     $_SESSION["passwordErrorMessage"] = "Email Update Error: That email address is not a valid format";
+    header("location:profile.php?");
+    die();
+}
+
+if (user_exists($newEmail) === true) {
+    $_SESSION["passwordErrorMessage"] = " That email has already been registered";
     header("location:profile.php?");
     die();
 }
