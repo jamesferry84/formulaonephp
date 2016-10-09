@@ -59,7 +59,7 @@ include 'includes/navbar.php';
                 </tr>
                 <?php
                 $today = date("y-m-d");
-                $sql = "select * from users order by points desc";
+                $sql = "select * from users where Activated = '1' order by points desc";
                 $queryResult = $conn->query($sql);
                 $numrows=mysqli_num_rows($queryResult);
                 $rank = 0;
