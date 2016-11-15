@@ -45,6 +45,14 @@ $active="home";
 
             $balance = $_POST["remainingBudget"];
 
+            //check if already played a joker
+            $sql2 = "select * from submissions where username = '{$_SESSION['username']}' and Country = '$country'";
+            $queryResult2 = $conn->query($sql2);
+            $numrows2=mysqli_num_rows($queryResult2);
+            $row2 = mysqli_fetch_assoc($queryResult2);
+            $alreadyPlayedJoker = $row2["joker"];
+
+
             $query = "INSERT INTO `submissions` (`UserName`, `driver1`, `driver2`, `constructor1`, `constructor2`, `joker`, `Country`, `BudgetRollover`)
                   VALUES ('$username', '$driver1', '$driver2', '$constructor1', '$constructor2', '$joker', '$country', '$carryOver') ON DUPLICATE KEY UPDATE
                   driver1 = VALUES(driver1),
@@ -56,7 +64,7 @@ $active="home";
             $conn->query($query);
 
 
-            if ($joker == 1)
+            if ($joker == 1 && $alreadyPlayedJoker == 0)
             {
                 $sql="SELECT * FROM users WHERE UserName='$username'";
                 $result = $conn->query($sql);
@@ -65,6 +73,19 @@ $active="home";
                 if($result->num_rows == 1) {
                     $row = $result->fetch_assoc();
                     $numJokers = $row["jokers"] + 1;
+
+                    $query = "UPDATE `users` SET `jokers`='$numJokers',`carryover`='$carryOver' WHERE `UserName`='$username'";
+                    $conn->query($query);
+                }
+            }
+            else if ($alreadyPlayedJoker == 1 && $joker == 0) {
+                $sql="SELECT * FROM users WHERE UserName='$username'";
+                $result = $conn->query($sql);
+
+
+                if($result->num_rows == 1) {
+                    $row = $result->fetch_assoc();
+                    $numJokers = $row["jokers"] - 1;
 
                     $query = "UPDATE `users` SET `jokers`='$numJokers',`carryover`='$carryOver' WHERE `UserName`='$username'";
                     $conn->query($query);

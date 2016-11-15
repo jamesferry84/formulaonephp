@@ -130,11 +130,18 @@ if ($numberofrows > 0) {
                             $row = mysqli_fetch_assoc($queryResult)
 
                             ?>
-                            <label for = "jokerUsed" class = "col-lg-3 control-label">Use Joker? (Jokers available <?php echo (5 - $row["jokers"]) ?>)</label>
+                            <?php
+                            $sql2 = "select * from submissions where username = '{$_SESSION['username']}' and Country = '$country'";
+                            $queryResult2 = $conn->query($sql2);
+                            $numrows2=mysqli_num_rows($queryResult2);
+                            $row2 = mysqli_fetch_assoc($queryResult2)
+
+                            ?>
+                            <label for = "jokerUsed" class = "col-lg-3 control-label">Use Joker? (Jokers available <?php echo (5 - ($row["jokers"] - $row2["joker"])) ?>)</label>
                             <div class = "col-lg-5">
                                 <select class="form-control" id="jokerUsed" name="jokerUsed" >
                                     <option selected value="0">No</option>
-                                    <?php if($row["jokers"] < 5){echo '<option value="1">Yes</option>';}?>
+                                    <?php if(($row["jokers"] - $row2["joker"]) < 5){echo '<option value="1">Yes</option>';}?>
                                 </select>
                             </div>
                         </div>
