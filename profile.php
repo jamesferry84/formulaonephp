@@ -74,6 +74,42 @@ while($row = mysqli_fetch_assoc($result))
 
                         </div>
                     </div>
+
+                    <div id="teamBox" style="margin-top:50px;" class="col-md-6 ">
+                        <div class="panel panel-success" >
+                            <div class="panel-heading">
+                                <div class="panel-title">Update TeamName Form</div>
+                            </div>
+
+                            <div class="panel-body" >
+                                <form id="teamUpdateForm" class="form-horizontal" action="updateTeamName.php" method="post" onsubmit='return checkTeamName()'>
+
+                                    <div class="form-group" style="margin-top:20px;">
+                                        <label for="teamnameform" class="col-md-3 control-label">Current Team Name:</label>
+                                        <div class="col-md-9">
+                                            <input id="login-username" type="email" class="form-control" name="oldteamname" placeholder="<?php echo $teamName?>" disabled="disabled"  >
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" style="margin-top:20px;">
+                                        <label for="newteamname" class="col-md-3 control-label">New Team Name:</label>
+                                        <div class="col-md-9">
+                                            <input id="teamname" class="form-control" name="teamname" >
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <input type="submit" class="btn btn-success" name="updateTeamName" value="Update Team Name">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
                     <div id="passwordBox" style="margin-top:50px;" class="col-md-6 ">
                         <div class="panel panel-success" >
                             <div class="panel-heading">
@@ -133,6 +169,21 @@ while($row = mysqli_fetch_assoc($result))
             }
 
             return confirm("This will update your email to: " + lowerNewEmail + " are you sure?");
+        }
+
+        function checkTeamName() {
+            var currentTeamname = "<?php echo $teamName?>";
+            var newTeamname = document.getElementById("teamname").value;
+            var lowerTeamName = newTeamname.toLowerCase();
+            var lowerCurrentTeamName = currentTeamname.toLowerCase();
+
+            if (lowerCurrentTeamName == lowerTeamName)
+            {
+                alert("Cannot use the team name already registered")
+                return false;
+            }
+
+            return confirm("This will update your teamname to: " + lowerTeamName + " are you sure?");
         }
 
         function checkPassword() {

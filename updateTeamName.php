@@ -8,7 +8,7 @@ unset($_SESSION["teamnameSuccessMessage"]);
 $username = $_SESSION["username"];
 $newTeamname = $_POST["teamname"];
 
-if (empty($username) === true || empty($teamname) === true ) {
+if (empty($username) === true || empty($newTeamname) === true ) {
     $_SESSION["teamnameErrorMessage"] = "Team Name Update Error: Team Name not filled out";
     header("location:profile.php?");
     die();
