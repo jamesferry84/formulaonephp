@@ -37,7 +37,7 @@ include 'includes/navbar.php';
         <h1>Welcome to F1 Predictor 2017</h1>
         <p>If you love Formula 1 or motorsport in general then this is the F1 Predictor league for you!
             Unlike other F1 Predictor websites, who ask you to predict who will finish on the podium (dull!!), you choose a Team of 2 Drivers and 2 Constructors for each Race weekend and score Points based on how well they perform from First Practice to the chequered flag.
-            This is the fourth year our League has been up and running, and the first year it has been available online.
+            This is the fifth year our League has been up and running, and the second year it has been available online.
             Our Predictor League is a privately run website for Players we know.</p>
 <!--        <p> Next Race: --><?php //echo $country; ?><!--</p>-->
 <!--        <p >Submissions close in: <p id="clock"></p></p>-->
