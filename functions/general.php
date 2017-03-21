@@ -97,7 +97,7 @@ function check_login($username, $password)
 function register_user($email, $password, $username, $teamname)
 {
     global $conn;
-    $sql = "INSERT INTO users (UserName,Password,Email,teamname,Activated,jokers,budget,points) VALUES ('$username','$password','$email','$teamname','0','5','55.00','0')";
+    $sql = "INSERT INTO users (UserName,Password,Email,teamname,Activated,jokers,budget,points) VALUES ('$username','$password','$email','$teamname','0','0','55.00','0')";
     $result = $conn->query($sql);
 
     if ($result === TRUE) {
