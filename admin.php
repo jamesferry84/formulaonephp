@@ -723,7 +723,6 @@ else{
                                                         <option value="4">8th</option>
                                                         <option value="2">9th</option>
                                                         <option value="1">10th</option>
-                                                        <option value="0">11th</option>
                                                     </select>
                                                 </td>' .
                                         '<td>
