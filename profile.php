@@ -74,7 +74,7 @@ while($row = mysqli_fetch_assoc($result))
 
                         </div>
                     </div>
-
+                    <!--
                     <div id="teamBox" style="margin-top:50px;" class="col-md-6 ">
                         <div class="panel panel-success" >
                             <div class="panel-heading">
@@ -109,7 +109,7 @@ while($row = mysqli_fetch_assoc($result))
 
                         </div>
                     </div>
-
+                    -->
                     <div id="passwordBox" style="margin-top:50px;" class="col-md-6 ">
                         <div class="panel panel-success" >
                             <div class="panel-heading">
