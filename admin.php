@@ -845,7 +845,7 @@ else{
 
         if (newValue < 0)
         {
-            $('#submitButton').prop('disabled',true);
+           // $('#submitButton').prop('disabled',true);
         }
         else
         {
